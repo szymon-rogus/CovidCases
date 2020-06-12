@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="card text-white bg-dark mb-3" style="padding: 5px; margin: 20px;" (click)="expandCountry()">
+        <div class="row">
+            <div class="col-4">
+                {{country.Country}}
+            </div>
+        </div>
+        <div *ngIf="expand">
+            <hr>
+            <div class="row" style="padding-top: 10px;"> 
+                <div class="col-6">
+                    Total confirmed cases:
+                </div>
+                <div class="col-6" style="color: red;">
+                    {{country.TotalConfirmed}}
+                </div>
+            </div>
+            <div class="row" style="padding-top: 10px;"> 
+                <div class="col-6">
+                    Total confirmed deaths:
+                </div>
+                <div class="col-6" style="color: black; font-weight: bold;">
+                    {{country.TotalDeaths}}
+                </div>
+            </div>
+            <div class="row" style="padding-top: 10px;"> 
+                <div class="col-6">
+                    Total recovered:
+                </div>
+                <div class="col-6" style="color: rgb(16, 170, 16);">
+                    {{country.TotalRecovered}}
+                </div>
+            </div>
+            <div class="row" style="padding-top: 10px;"> 
+                <div class="col-6">
+                    Active cases:
+                </div>
+                <div class="col-6" style="color: yellow;">
+                    {{country.TotalConfirmed - country.TotalRecovered - country.TotalDeaths}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

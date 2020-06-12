@@ -1,5 +1,8 @@
 # CovidCases
 
+> Simple app to vizualize covid outbreak with new data
+> project in first version
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.
 
 ## Development server
