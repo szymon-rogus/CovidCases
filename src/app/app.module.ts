@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { ServerComponent } from './server/server.component';
 import { CountryComponent } from './server/country/country.component';
 import { GlobalComponent } from './server/global/global.component';
+import { CountryDetailsComponent } from './server/country-details/country-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ServerComponent,
     CountryComponent,
-    GlobalComponent
+    GlobalComponent,
+    CountryDetailsComponent
   ],
   imports: [
     BrowserModule,

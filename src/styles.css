@@ -1,1 +1,5 @@
 @import "~bootstrap/dist/css/bootstrap.css";
+
+@font-face {
+  font-family: 'Glyphicons Halflings';
+}

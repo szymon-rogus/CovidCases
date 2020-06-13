@@ -1,13 +1,17 @@
 <div class="container-fluid w-100">
-    <div class="card text-white bg-dark mb-3" style="padding: 10px; margin: 20px;" (click)="expandCountry()">
-        <div class="row">
+    <div class="card text-white bg-dark mb-3" style="padding: 10px; margin: 20px;">
+        <div class="row" (click)="expandCountry()">
             <div class="col-8">
                 {{country.Country}}
             </div>
+          <div class="col-4">
+            <i *ngIf="!expand" class="fa fa-chevron-down" aria-hidden="true"></i>
+            <i *ngIf="expand" class="fa fa-chevron-up" aria-hidden="true"></i>
+          </div>
         </div>
         <div *ngIf="expand">
             <hr style="margin: 20px; border: 1px solid;">
-            <div class="row" style="padding-top: 10px;"> 
+            <div class="row" style="padding-top: 10px;">
                 <div class="col-6">
                     Total confirmed cases:
                 </div>
@@ -15,7 +19,7 @@
                     {{country.TotalConfirmed}}
                 </div>
             </div>
-            <div class="row" style="padding-top: 10px;"> 
+            <div class="row" style="padding-top: 10px;">
                 <div class="col-6">
                     Total confirmed deaths:
                 </div>
@@ -23,7 +27,7 @@
                     {{country.TotalDeaths}}
                 </div>
             </div>
-            <div class="row" style="padding-top: 10px;"> 
+            <div class="row" style="padding-top: 10px;">
                 <div class="col-6">
                     Total recovered:
                 </div>
@@ -31,7 +35,7 @@
                     {{country.TotalRecovered}}
                 </div>
             </div>
-            <div class="row" style="padding-top: 10px;"> 
+            <div class="row" style="padding-top: 10px;">
                 <div class="col-6">
                     Active cases:
                 </div>
@@ -39,6 +43,12 @@
                     {{country.TotalConfirmed - country.TotalRecovered - country.TotalDeaths}}
                 </div>
             </div>
+          <div class="row" style="padding-top: 20px;">
+            <div class="col-6">
+              <button class="btn btn-light" [routerLink]="['/', country.Country]"
+                      routerLinkActive="active">Details</button>
+            </div>
+          </div>
         </div>
     </div>
 </div>

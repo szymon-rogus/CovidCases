@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Country } from '../../model/country'
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-country',
