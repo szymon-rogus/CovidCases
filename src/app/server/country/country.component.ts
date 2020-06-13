@@ -16,10 +16,6 @@ export class CountryComponent implements OnInit {
   }
 
   expandCountry = () => {
-    if(!this.expand)
-      this.expand = true;
-    else
-      this.expand = false;
+    this.expand = !this.expand;
   }
-
 }
