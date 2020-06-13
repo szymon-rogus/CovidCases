@@ -1,12 +1,14 @@
 <div class="container-fluid w-100">
     <div class="card text-white bg-dark mb-3" style="padding: 10px; margin: 20px;">
         <div class="row" (click)="expandCountry()">
-            <div class="col-8">
+            <div class="col-9">
                 {{country.Country}}
             </div>
-          <div class="col-4">
-            <i *ngIf="!expand" class="fa fa-chevron-down" aria-hidden="true"></i>
-            <i *ngIf="expand" class="fa fa-chevron-up" aria-hidden="true"></i>
+          <div class="col-3">
+            <i *ngIf="!expand; else collapse" class="fa fa-chevron-down" aria-hidden="true"></i>
+            <ng-template #collapse>
+              <i class="fa fa-chevron-up" aria-hidden="true"></i>
+            </ng-template>
           </div>
         </div>
         <div *ngIf="expand">
