@@ -10,6 +10,8 @@ import { ɵangular_packages_platform_browser_dynamic_platform_browser_dynamic_a 
 export class ServerComponent implements OnInit {
 
   countryList : any = [];
+  sortBy: any = 'Country';
+  reverse: boolean = false;
 
   constructor(private countryListService : CountryListService) { }
 

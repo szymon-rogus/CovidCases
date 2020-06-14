@@ -8,6 +8,8 @@ import { ServerComponent } from './server/server.component';
 import { CountryComponent } from './server/country/country.component';
 import { GlobalComponent } from './server/global/global.component';
 import { CountryDetailsComponent } from './server/country-details/country-details.component';
+import {OrderModule} from "ngx-order-pipe";
+import { SorterComponent } from './server/sorter/sorter.component';
 
 @NgModule({
   declarations: [
@@ -15,14 +17,16 @@ import { CountryDetailsComponent } from './server/country-details/country-detail
     ServerComponent,
     CountryComponent,
     GlobalComponent,
-    CountryDetailsComponent
+    CountryDetailsComponent,
+    SorterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    OrderModule
   ],
-  providers: [],
+  providers: [CountryComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

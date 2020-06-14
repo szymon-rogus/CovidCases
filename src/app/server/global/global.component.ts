@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { GlobalDataService } from 'src/app/services/global-data.service';
 import { GlobalData } from 'src/app/model/global';
+import {CountryListService} from "../../services/country-list.service";
 
 @Component({
   selector: 'app-global',
@@ -11,10 +11,10 @@ export class GlobalComponent implements OnInit {
 
   globalData : GlobalData;
 
-  constructor(private globalDataService : GlobalDataService) { }
+  constructor(private globalDataService : CountryListService) { }
 
   ngOnInit(): void {
-    this.globalDataService.getGlobalData()
+    this.globalDataService.getCountryList()
         .subscribe(data => {
           this.globalData = data.Global;
         });
