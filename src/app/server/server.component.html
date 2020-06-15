@@ -1,4 +1,4 @@
-<div class="container-fluid" style="background-color: black;">
+<div class="container-fluid" style="background-color: black; min-height: 970px">
     <div class="row">
         <div class="col-6">
             <app-country *ngFor="let country of countryList | filter:filterName | orderBy: sortBy: reverse" [country]="country">
@@ -7,7 +7,7 @@
         <div class="col-6">
             <app-global></app-global>
             <app-sorter></app-sorter>
-            <app-filters [name]="filterName" (update)="newName($event)">
+            <app-filters [name]="filterName" (update)="filterByName($event)">
             </app-filters>
         </div>
     </div>

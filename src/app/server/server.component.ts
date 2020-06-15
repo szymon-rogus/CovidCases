@@ -24,7 +24,7 @@ export class ServerComponent implements OnInit {
         });
   }
 
-  newName($event: string) {
+  filterByName($event: string) {
     console.log($event);
     this.filterName = $event;
   }

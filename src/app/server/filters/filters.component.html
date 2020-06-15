@@ -3,8 +3,33 @@
     <div class="row" style="padding-left: 20px">
       <h3> Filter countries: </h3>
     </div>
-    <div class="row" style="padding-left: 20px">
-      <input [(ngModel)]="name" (ngModelChange)="emit(name)">
+    <div class="row" style="padding-left: 20px; margin-top: 10px;">
+      <a style="margin-right: 10px;">By Name:</a>
+      <input class="text" [(ngModel)]="name" (ngModelChange)="emit(name)">
+    </div>
+    <div class="row" style="padding-left: 20px; margin-top: 10px;">
+      <a style="margin-right: 10px;">By Minimal Total Cases:</a>
+      <input>
+    </div>
+    <div class="row" style="padding-left: 20px; margin-top: 10px;">
+      <a style="margin-right: 10px;">By Maximal Total Cases:</a>
+      <input>
+    </div>
+    <div class="row" style="padding-left: 20px; margin-top: 10px;">
+      <a style="margin-right: 10px;">By Minimal Deaths</a>
+      <input>
+    </div>
+    <div class="row" style="padding-left: 20px; margin-top: 10px;">
+      <a style="margin-right: 10px;">By Maximal Deaths</a>
+      <input>
+    </div>
+    <div class="row" style="padding-left: 20px; margin-top: 10px;">
+      <a style="margin-right: 10px;">By Minimal Recovered</a>
+      <input>
+    </div>
+    <div class="row" style="padding-left: 20px; margin-top: 10px;">
+      <a style="margin-right: 10px;">By Maximal Recovered</a>
+      <input>
     </div>
   </div>
 </div>
