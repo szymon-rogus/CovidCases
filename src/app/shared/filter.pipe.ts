@@ -7,7 +7,7 @@ import {FiltersComponent} from "../server/filters/filters.component";
 })
 export class FilterPipe implements PipeTransform {
 
-  transform(countries: Country[], name: string, minTotal: number, maxTotal: number): unknown {
+  transform(countries: Country[], name: string, minTotal?: number, maxTotal?: number): unknown {
     return countries.filter(country => this.startsWith(country.Country, name))
                     .filter(country => this.minTotal(country.TotalConfirmed, minTotal))
                     .filter(country => this.maxTotal(country.TotalConfirmed, maxTotal));
@@ -19,10 +19,14 @@ export class FilterPipe implements PipeTransform {
   }
 
   minTotal = (totalConfirmed: number, minTotal: number) => {
+    if(!minTotal)
+      return true;
     return totalConfirmed >= minTotal;
   }
 
   maxTotal = (totalConfirmed: number, maxTotal: number) => {
+    if(!maxTotal)
+      return true;
     return totalConfirmed <= maxTotal;
   }
 
