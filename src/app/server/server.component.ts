@@ -13,6 +13,8 @@ export class ServerComponent implements OnInit {
   sortBy: any = 'Country';
   reverse: boolean = false;
   filterName: string = '';
+  filterMinTotal: number = 0;
+  filterMaxTotal: number;
 
   constructor(private countryListService : CountryListService) {
   }
@@ -21,11 +23,19 @@ export class ServerComponent implements OnInit {
     this.countryListService.getCountryList()
         .subscribe(data => {
           this.countryList = data.Countries;
+          this.filterMaxTotal = data.Global.TotalConfirmed;
         });
   }
 
   filterByName($event: string) {
-    console.log($event);
     this.filterName = $event;
+  }
+
+  filterByMinTotalCases($event : number) {
+    this.filterMinTotal = $event;
+  }
+
+  filterByMaxTotalCases($event : number) {
+    this.filterMaxTotal = $event;
   }
 }

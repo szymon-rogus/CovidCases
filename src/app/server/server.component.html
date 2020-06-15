@@ -1,13 +1,25 @@
 <div class="container-fluid" style="background-color: black; min-height: 970px">
     <div class="row">
         <div class="col-6">
-            <app-country *ngFor="let country of countryList | filter:filterName | orderBy: sortBy: reverse" [country]="country">
+            <div class="card text-white bg-dark mb-3" style="padding: 10px; margin: 30px;">
+              <div class="row">
+                <div class="col-6" style="padding-left: 35px">
+                  Country:
+                </div>
+                <div class="col-6">
+                  Total confirmed Cases:
+                </div>
+              </div>
+            </div>
+            <app-country *ngFor="let country of countryList | filter:filterName:filterMinTotal:filterMaxTotal | orderBy: sortBy: reverse" [country]="country">
             </app-country>
         </div>
         <div class="col-6">
             <app-global></app-global>
             <app-sorter></app-sorter>
-            <app-filters [name]="filterName" (update)="filterByName($event)">
+            <app-filters (updateName)="filterByName($event)"
+            (updateMinTotal)="filterByMinTotalCases($event)"
+            (updateMaxTotal)="filterByMaxTotalCases($event)" [maxTotalCases]="filterMaxTotal" >
             </app-filters>
         </div>
     </div>

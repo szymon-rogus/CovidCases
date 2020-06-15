@@ -9,14 +9,28 @@ import {ServerComponent} from "../server.component";
 export class FiltersComponent implements OnInit{
 
   @Input() name = '';
-  @Output('update') filterName = new EventEmitter<string>();
+  @Output('updateName') filterName = new EventEmitter<string>();
+
+  @Input() minTotalCases = 0;
+  @Output('updateMinTotal') filterMinTotalCases = new EventEmitter<number>();
+
+  @Input() maxTotalCases;
+  @Output('updateMaxTotal') filterMaxTotalCases = new EventEmitter<number>();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  emit(name: string) {
+  filterByName(name: string) {
     this.filterName.emit(name);
+  }
+
+  filerByMinTotal(value: number) {
+    this.filterMinTotalCases.emit(value);
+  }
+
+  filerByMaxTotal(value: number) {
+    this.filterMaxTotalCases.emit(value);
   }
 }

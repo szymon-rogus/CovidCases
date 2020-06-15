@@ -5,15 +5,15 @@
     </div>
     <div class="row" style="padding-left: 20px; margin-top: 10px;">
       <a style="margin-right: 10px;">By Name:</a>
-      <input class="text" [(ngModel)]="name" (ngModelChange)="emit(name)">
+      <input class="text" [(ngModel)]="name" (ngModelChange)="filterByName(name)">
     </div>
     <div class="row" style="padding-left: 20px; margin-top: 10px;">
       <a style="margin-right: 10px;">By Minimal Total Cases:</a>
-      <input>
+      <input class="text" [(ngModel)]="minTotalCases" (ngModelChange)="filerByMinTotal(minTotalCases)">
     </div>
     <div class="row" style="padding-left: 20px; margin-top: 10px;">
       <a style="margin-right: 10px;">By Maximal Total Cases:</a>
-      <input>
+      <input class="text" [(ngModel)]="maxTotalCases" (ngModelChange)="filerByMaxTotal(maxTotalCases)">
     </div>
     <div class="row" style="padding-left: 20px; margin-top: 10px;">
       <a style="margin-right: 10px;">By Minimal Deaths</a>
