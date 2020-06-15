@@ -10,6 +10,9 @@ import { GlobalComponent } from './server/global/global.component';
 import { CountryDetailsComponent } from './server/country-details/country-details.component';
 import {OrderModule} from "ngx-order-pipe";
 import { SorterComponent } from './server/sorter/sorter.component';
+import { FilterPipe } from './shared/filter.pipe';
+import { FiltersComponent} from './server/filters/filters.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -18,15 +21,21 @@ import { SorterComponent } from './server/sorter/sorter.component';
     CountryComponent,
     GlobalComponent,
     CountryDetailsComponent,
-    SorterComponent
+    SorterComponent,
+    FilterPipe,
+    FiltersComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    OrderModule
+    OrderModule,
+    FormsModule
   ],
-  providers: [CountryComponent],
+  providers: [
+    CountryComponent,
+    FiltersComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

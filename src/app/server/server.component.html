@@ -1,12 +1,14 @@
 <div class="container-fluid" style="background-color: black;">
     <div class="row">
         <div class="col-6">
-            <app-country *ngFor="let country of countryList| orderBy: sortBy: reverse" [country]="country">
+            <app-country *ngFor="let country of countryList | filter:filterName | orderBy: sortBy: reverse" [country]="country">
             </app-country>
         </div>
         <div class="col-6">
             <app-global></app-global>
             <app-sorter></app-sorter>
+            <app-filters [name]="filterName" (update)="newName($event)">
+            </app-filters>
         </div>
     </div>
 </div>

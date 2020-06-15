@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostListener, Input, OnInit} from '@angular/core';
 import {CountryListService} from '../services/country-list.service';
-import { ɵangular_packages_platform_browser_dynamic_platform_browser_dynamic_a } from '@angular/platform-browser-dynamic';
+import {FiltersComponent} from "./filters/filters.component";
 
 @Component({
   selector: 'app-server',
@@ -12,8 +12,10 @@ export class ServerComponent implements OnInit {
   countryList : any = [];
   sortBy: any = 'Country';
   reverse: boolean = false;
+  filterName: string = '';
 
-  constructor(private countryListService : CountryListService) { }
+  constructor(private countryListService : CountryListService) {
+  }
 
   ngOnInit(): void {
     this.countryListService.getCountryList()
@@ -22,4 +24,8 @@ export class ServerComponent implements OnInit {
         });
   }
 
+  newName($event: string) {
+    console.log($event);
+    this.filterName = $event;
+  }
 }
