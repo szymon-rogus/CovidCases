@@ -13,6 +13,7 @@ import { SorterComponent } from './server/sorter/sorter.component';
 import { FilterPipe } from './shared/filter.pipe';
 import { FiltersComponent} from './server/filters/filters.component';
 import {FormsModule} from "@angular/forms";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import {FormsModule} from "@angular/forms";
     AppRoutingModule,
     HttpClientModule,
     OrderModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [
     CountryComponent,
