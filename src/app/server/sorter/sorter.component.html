@@ -4,7 +4,7 @@
         <h3> Sort by:</h3>
     </div>
     <div class="row" style="padding-left: 20px; padding-top: 10px">
-        <button class="btn btn-light" (click)="setSorter('Name', upName)" (click)="upName=!upName">Name
+        <button class="btn btn-light" (click)="setSorter('Country', upName)" (click)="upName=!upName">Name
           <i *ngIf="upName; else downName" class="fa fa-sort-asc" aria-hidden="true"></i>
           <ng-template #downName>
             <i class="fa fa-sort-desc" aria-hidden="true"></i>

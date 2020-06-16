@@ -21,6 +21,7 @@ import {animate, style, transition, trigger} from "@angular/animations";
 })
 export class CountryComponent implements OnInit {
   @Input() country : Country;
+  @Input() sortBy: string;
   expand: boolean = false;
 
   constructor() { }

@@ -11,7 +11,7 @@
                 </div>
               </div>
             </div>
-            <app-country *ngFor="let country of countryList | filter:filterName:filterMinTotal:filterMaxTotal | orderBy: sortBy: reverse" [country]="country">
+            <app-country *ngFor="let country of countryList | filter:filterName:filterMinTotal:filterMaxTotal | orderBy: sortBy: reverse" [country]="country" [sortBy]="sortBy">
             </app-country>
         </div>
         <div class="col-6">
