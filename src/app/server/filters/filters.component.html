@@ -9,27 +9,27 @@
     </div>
     <div class="row" style="padding-left: 20px; margin-top: 10px;">
       <a style="margin-right: 10px;">By Minimal Total Cases:</a>
-      <input class="text" [(ngModel)]="minTotalCases" (ngModelChange)="filerByMinTotal(minTotalCases)">
+      <input class="text" [(ngModel)]="minTotal" (ngModelChange)="filerByMinTotal(minTotal)">
     </div>
     <div class="row" style="padding-left: 20px; margin-top: 10px;">
       <a style="margin-right: 10px;">By Maximal Total Cases:</a>
-      <input class="text" [(ngModel)]="maxTotalCases" (ngModelChange)="filerByMaxTotal(maxTotalCases)">
+      <input class="text" [(ngModel)]="maxTotal" (ngModelChange)="filerByMaxTotal(maxTotal)">
     </div>
     <div class="row" style="padding-left: 20px; margin-top: 10px;">
       <a style="margin-right: 10px;">By Minimal Deaths</a>
-      <input>
+      <input class="text">
     </div>
     <div class="row" style="padding-left: 20px; margin-top: 10px;">
       <a style="margin-right: 10px;">By Maximal Deaths</a>
-      <input>
+      <input class="text">
     </div>
     <div class="row" style="padding-left: 20px; margin-top: 10px;">
       <a style="margin-right: 10px;">By Minimal Recovered</a>
-      <input>
+      <input class="text" [(ngModel)]="minRecovered" (ngModelChange)="filterByMinRecovered(minRecovered)">
     </div>
     <div class="row" style="padding-left: 20px; margin-top: 10px;">
       <a style="margin-right: 10px;">By Maximal Recovered</a>
-      <input>
+      <input class="text" [(ngModel)]="maxRecovered" (ngModelChange)="filterByMaxRecovered(maxRecovered)">
     </div>
   </div>
 </div>

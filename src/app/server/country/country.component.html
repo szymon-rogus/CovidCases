@@ -13,6 +13,8 @@
           <div *ngIf="!expand && sortBy=='TotalRecovered'" class="col-4" style="color: rgb(16, 170, 16);">
             {{country.TotalRecovered}}
           </div>
+          <div *ngIf="expand" class="col-4">
+          </div>
           <div class="col-2">
             <i *ngIf="!expand; else collapse" class="fa fa-chevron-down" aria-hidden="true"></i>
             <ng-template #collapse>

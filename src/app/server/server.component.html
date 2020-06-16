@@ -4,22 +4,23 @@
             <div class="card text-white bg-dark mb-3" style="padding: 10px; margin: 30px;">
               <div class="row">
                 <div class="col-6" style="padding-left: 35px">
-                  Country:
-                </div>
-                <div class="col-6">
-                  Total confirmed Cases:
+                  <h3>Country:</h3>
                 </div>
               </div>
             </div>
-            <app-country *ngFor="let country of countryList | filter:filterName:filterMinTotal:filterMaxTotal | orderBy: sortBy: reverse" [country]="country" [sortBy]="sortBy">
+            <app-country *ngFor="let country of countryList
+              | filter:filterName:filterMinTotal:filterMaxTotal:filterMinRecovered:filterMaxRecovered
+              | orderBy: sortBy: reverse" [country]="country" [sortBy]="sortBy">
             </app-country>
         </div>
         <div class="col-6">
             <app-global></app-global>
             <app-sorter></app-sorter>
             <app-filters (updateName)="filterByName($event)"
-            (updateMinTotal)="filterByMinTotalCases($event)"
-            (updateMaxTotal)="filterByMaxTotalCases($event)" [maxTotalCases]="filterMaxTotal" >
+                         (updateMinTotal)="filterByMinTotal($event)"
+                         (updateMaxTotal)="filterByMaxTotal($event)" [maxTotal]="filterMaxTotal"
+                         (updateMinRecovered)="filterByMinRecovered($event)"
+                         (updateMaxRecovered)="filterByMaxRecovered($event)" [maxRecovered]="filterMaxRecovered">
             </app-filters>
         </div>
     </div>

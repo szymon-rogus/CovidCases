@@ -15,6 +15,8 @@ export class ServerComponent implements OnInit {
   filterName: string = '';
   filterMinTotal: number = 0;
   filterMaxTotal: number;
+  filterMinRecovered: number = 0;
+  filterMaxRecovered: number;
 
   constructor(private countryListService : CountryListService) {
   }
@@ -31,11 +33,19 @@ export class ServerComponent implements OnInit {
     this.filterName = $event;
   }
 
-  filterByMinTotalCases($event : number) {
+  filterByMinTotal($event : number) {
     this.filterMinTotal = $event;
   }
 
-  filterByMaxTotalCases($event : number) {
+  filterByMaxTotal($event : number) {
     this.filterMaxTotal = $event;
+  }
+
+  filterByMinRecovered($event : number) {
+    this.filterMinRecovered = $event;
+  }
+
+  filterByMaxRecovered($event : number) {
+    this.filterMaxRecovered = $event;
   }
 }

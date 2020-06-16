@@ -7,10 +7,13 @@ import {FiltersComponent} from "../server/filters/filters.component";
 })
 export class FilterPipe implements PipeTransform {
 
-  transform(countries: Country[], name: string, minTotal?: number, maxTotal?: number): unknown {
+  transform(countries: Country[], name: string, minTotal?: number, maxTotal?: number,
+            minRecovered?: number, maxRecovered?: number): unknown {
     return countries.filter(country => this.startsWith(country.Country, name))
-                    .filter(country => this.minTotal(country.TotalConfirmed, minTotal))
-                    .filter(country => this.maxTotal(country.TotalConfirmed, maxTotal));
+                    .filter(country => this.minValue(country.TotalConfirmed, minTotal))
+                    .filter(country => this.maxValue(country.TotalConfirmed, maxTotal))
+                    .filter(country => this.minValue(country.TotalRecovered, minRecovered))
+                    .filter(country => this.maxValue(country.TotalRecovered, maxRecovered));
   }
 
   startsWith = (name: string, regex: string) => {
@@ -18,13 +21,13 @@ export class FilterPipe implements PipeTransform {
     return name.substring(0, size) == regex;
   }
 
-  minTotal = (totalConfirmed: number, minTotal: number) => {
+  minValue = (totalConfirmed: number, minTotal: number) => {
     if(!minTotal)
       return true;
     return totalConfirmed >= minTotal;
   }
 
-  maxTotal = (totalConfirmed: number, maxTotal: number) => {
+  maxValue = (totalConfirmed: number, maxTotal: number) => {
     if(!maxTotal)
       return true;
     return totalConfirmed <= maxTotal;

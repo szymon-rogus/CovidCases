@@ -11,11 +11,17 @@ export class FiltersComponent implements OnInit{
   @Input() name = '';
   @Output('updateName') filterName = new EventEmitter<string>();
 
-  @Input() minTotalCases = 0;
-  @Output('updateMinTotal') filterMinTotalCases = new EventEmitter<number>();
+  @Input() minTotal = 0;
+  @Output('updateMinTotal') filterMinTotal = new EventEmitter<number>();
 
-  @Input() maxTotalCases;
-  @Output('updateMaxTotal') filterMaxTotalCases = new EventEmitter<number>();
+  @Input() maxTotal;
+  @Output('updateMaxTotal') filterMaxTotal = new EventEmitter<number>();
+
+  @Input() minRecovered = 0;
+  @Output('updateMinRecovered') filterMinRecovered = new EventEmitter<number>();
+
+  @Input() maxRecovered;
+  @Output('updateMaxRecovered') filterMaxRecovered = new EventEmitter<number>();
 
   constructor() { }
 
@@ -27,10 +33,18 @@ export class FiltersComponent implements OnInit{
   }
 
   filerByMinTotal(value: number) {
-    this.filterMinTotalCases.emit(value);
+    this.filterMinTotal.emit(value);
   }
 
   filerByMaxTotal(value: number) {
-    this.filterMaxTotalCases.emit(value);
+    this.filterMaxTotal.emit(value);
+  }
+
+  filterByMinRecovered(value: number) {
+    this.filterMinRecovered.emit(value);
+  }
+
+  filterByMaxRecovered(value: number) {
+    this.filterMaxRecovered.emit(value);
   }
 }
