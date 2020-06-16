@@ -11,13 +11,19 @@ export class FiltersComponent implements OnInit{
   @Input() name = '';
   @Output('updateName') filterName = new EventEmitter<string>();
 
-  @Input() minTotal = 0;
+  @Input() minTotal;
   @Output('updateMinTotal') filterMinTotal = new EventEmitter<number>();
 
   @Input() maxTotal;
   @Output('updateMaxTotal') filterMaxTotal = new EventEmitter<number>();
 
-  @Input() minRecovered = 0;
+  @Input() minDeaths;
+  @Output('updateMinDeaths') filterMinDeaths = new EventEmitter<number>();
+
+  @Input() maxDeaths;
+  @Output('updateMaxDeaths') filterMaxDeaths = new EventEmitter<number>();
+
+  @Input() minRecovered;
   @Output('updateMinRecovered') filterMinRecovered = new EventEmitter<number>();
 
   @Input() maxRecovered;
@@ -46,5 +52,13 @@ export class FiltersComponent implements OnInit{
 
   filterByMaxRecovered(value: number) {
     this.filterMaxRecovered.emit(value);
+  }
+
+  filterByMinDeaths(value: number) {
+    this.filterMinDeaths.emit(value);
+  }
+
+  filterByMaxDeaths(value: number) {
+    this.filterMaxDeaths.emit(value);
   }
 }

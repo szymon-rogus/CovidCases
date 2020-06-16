@@ -9,7 +9,7 @@
               </div>
             </div>
             <app-country *ngFor="let country of countryList
-              | filter:filterName:filterMinTotal:filterMaxTotal:filterMinRecovered:filterMaxRecovered
+              | filter:filterName:filterMinTotal:filterMaxTotal:filterMinRecovered:filterMaxRecovered:filterMinDeaths:filterMaxDeaths
               | orderBy: sortBy: reverse" [country]="country" [sortBy]="sortBy">
             </app-country>
         </div>
@@ -18,9 +18,11 @@
             <app-sorter></app-sorter>
             <app-filters (updateName)="filterByName($event)"
                          (updateMinTotal)="filterByMinTotal($event)"
-                         (updateMaxTotal)="filterByMaxTotal($event)" [maxTotal]="filterMaxTotal"
+                         (updateMaxTotal)="filterByMaxTotal($event)"
                          (updateMinRecovered)="filterByMinRecovered($event)"
-                         (updateMaxRecovered)="filterByMaxRecovered($event)" [maxRecovered]="filterMaxRecovered">
+                         (updateMaxRecovered)="filterByMaxRecovered($event)"
+                         (updateMinDeaths)="filterByMinDeaths($event)"
+                         (updateMaxDeaths)="filterByMaxDeaths($event)">
             </app-filters>
         </div>
     </div>

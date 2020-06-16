@@ -8,12 +8,15 @@ import {FiltersComponent} from "../server/filters/filters.component";
 export class FilterPipe implements PipeTransform {
 
   transform(countries: Country[], name: string, minTotal?: number, maxTotal?: number,
-            minRecovered?: number, maxRecovered?: number): unknown {
+            minRecovered?: number, maxRecovered?: number,
+            minDeaths?: number, maxDeaths?: number): unknown {
     return countries.filter(country => this.startsWith(country.Country, name))
                     .filter(country => this.minValue(country.TotalConfirmed, minTotal))
                     .filter(country => this.maxValue(country.TotalConfirmed, maxTotal))
                     .filter(country => this.minValue(country.TotalRecovered, minRecovered))
-                    .filter(country => this.maxValue(country.TotalRecovered, maxRecovered));
+                    .filter(country => this.maxValue(country.TotalRecovered, maxRecovered))
+                    .filter(country => this.minValue(country.TotalDeaths, minDeaths))
+                    .filter(country => this.maxValue(country.TotalDeaths, maxDeaths));
   }
 
   startsWith = (name: string, regex: string) => {

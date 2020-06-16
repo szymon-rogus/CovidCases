@@ -17,6 +17,8 @@ export class ServerComponent implements OnInit {
   filterMaxTotal: number;
   filterMinRecovered: number = 0;
   filterMaxRecovered: number;
+  filterMinDeaths: number = 0;
+  filterMaxDeaths: number;
 
   constructor(private countryListService : CountryListService) {
   }
@@ -25,7 +27,6 @@ export class ServerComponent implements OnInit {
     this.countryListService.getCountryList()
         .subscribe(data => {
           this.countryList = data.Countries;
-          this.filterMaxTotal = data.Global.TotalConfirmed;
         });
   }
 
@@ -47,5 +48,13 @@ export class ServerComponent implements OnInit {
 
   filterByMaxRecovered($event : number) {
     this.filterMaxRecovered = $event;
+  }
+
+  filterByMinDeaths($event : number) {
+    this.filterMinDeaths = $event;
+  }
+
+  filterByMaxDeaths($event : number) {
+    this.filterMaxDeaths = $event;
   }
 }

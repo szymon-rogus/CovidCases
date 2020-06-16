@@ -17,11 +17,11 @@
     </div>
     <div class="row" style="padding-left: 20px; margin-top: 10px;">
       <a style="margin-right: 10px;">By Minimal Deaths</a>
-      <input class="text">
+      <input class="text" [(ngModel)]="minDeaths" (ngModelChange)="filterByMinDeaths(minDeaths)">
     </div>
     <div class="row" style="padding-left: 20px; margin-top: 10px;">
       <a style="margin-right: 10px;">By Maximal Deaths</a>
-      <input class="text">
+      <input class="text" [(ngModel)]="maxDeaths" (ngModelChange)="filterByMaxRecovered(maxDeaths)">
     </div>
     <div class="row" style="padding-left: 20px; margin-top: 10px;">
       <a style="margin-right: 10px;">By Minimal Recovered</a>
