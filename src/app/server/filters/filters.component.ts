@@ -1,5 +1,4 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {ServerComponent} from "../server.component";
 
 @Component({
   selector: 'app-filters',

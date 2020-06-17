@@ -10,6 +10,7 @@ import {FiltersComponent} from "./filters/filters.component";
 export class ServerComponent implements OnInit {
 
   countryList : any = [];
+  expandAll: boolean = false;
   sortBy: any = 'Country';
   reverse: boolean = false;
   filterName: string = '';

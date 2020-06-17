@@ -3,14 +3,20 @@
         <div class="col-6">
             <div class="card text-white bg-dark mb-3" style="padding: 10px; margin: 30px;">
               <div class="row">
-                <div class="col-6" style="padding-left: 35px">
+                <div class="col-10" style="padding-left: 35px">
                   <h3>Country:</h3>
+                </div>
+                <div class="col-2" (click)="expandAll=!expandAll">
+                  <i *ngIf="!expandAll; else collapseAll" class="fa fa-chevron-down" aria-hidden="true"></i>
+                  <ng-template #collapseAll>
+                    <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                  </ng-template>
                 </div>
               </div>
             </div>
             <app-country *ngFor="let country of countryList
               | filter:filterName:filterMinTotal:filterMaxTotal:filterMinRecovered:filterMaxRecovered:filterMinDeaths:filterMaxDeaths
-              | orderBy: sortBy: reverse" [country]="country" [sortBy]="sortBy">
+              | orderBy: sortBy: reverse" [country]="country" [sortBy]="sortBy" [expand]="expandAll">
             </app-country>
         </div>
         <div class="col-6">
