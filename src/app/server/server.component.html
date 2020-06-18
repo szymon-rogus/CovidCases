@@ -1,6 +1,6 @@
 <div class="container-fluid" style="background-color: black; min-height: 970px">
     <div class="row">
-        <div class="col-6">
+        <div class="col-5">
             <div class="card text-white bg-dark mb-3" style="padding: 10px; margin: 30px;">
               <div class="row">
                 <div class="col-10" style="padding-left: 35px">
@@ -19,17 +19,23 @@
               | orderBy: sortBy: reverse" [country]="country" [sortBy]="sortBy" [expand]="expandAll">
             </app-country>
         </div>
-        <div class="col-6">
+        <div class="col-7">
             <app-global></app-global>
-            <app-sorter></app-sorter>
-            <app-filters (updateName)="filterByName($event)"
-                         (updateMinTotal)="filterByMinTotal($event)"
-                         (updateMaxTotal)="filterByMaxTotal($event)"
-                         (updateMinRecovered)="filterByMinRecovered($event)"
-                         (updateMaxRecovered)="filterByMaxRecovered($event)"
-                         (updateMinDeaths)="filterByMinDeaths($event)"
-                         (updateMaxDeaths)="filterByMaxDeaths($event)">
-            </app-filters>
+            <div id="rowing" class="row">
+              <div class="col-xl-5 col-12">
+                <app-sorter></app-sorter>
+              </div>
+              <div class="col-xl-7 col-12">
+                <app-filters (updateName)="filterByName($event)"
+                             (updateMinTotal)="filterByMinTotal($event)"
+                             (updateMaxTotal)="filterByMaxTotal($event)"
+                             (updateMinRecovered)="filterByMinRecovered($event)"
+                             (updateMaxRecovered)="filterByMaxRecovered($event)"
+                             (updateMinDeaths)="filterByMinDeaths($event)"
+                             (updateMaxDeaths)="filterByMaxDeaths($event)">
+                </app-filters>
+              </div>
+            </div>
         </div>
     </div>
 </div>
