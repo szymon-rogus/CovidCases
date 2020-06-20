@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-filters',
@@ -7,25 +7,25 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 })
 export class FiltersComponent implements OnInit{
 
-  @Input() name = '';
+  name: string;
   @Output('updateName') filterName = new EventEmitter<string>();
 
-  @Input() minTotal;
+  minTotal: number;
   @Output('updateMinTotal') filterMinTotal = new EventEmitter<number>();
 
-  @Input() maxTotal;
+  maxTotal: number;
   @Output('updateMaxTotal') filterMaxTotal = new EventEmitter<number>();
 
-  @Input() minDeaths;
+  minDeaths: number;
   @Output('updateMinDeaths') filterMinDeaths = new EventEmitter<number>();
 
-  @Input() maxDeaths;
+  maxDeaths: number;
   @Output('updateMaxDeaths') filterMaxDeaths = new EventEmitter<number>();
 
-  @Input() minRecovered;
+  minRecovered: number;
   @Output('updateMinRecovered') filterMinRecovered = new EventEmitter<number>();
 
-  @Input() maxRecovered;
+  maxRecovered: number;
   @Output('updateMaxRecovered') filterMaxRecovered = new EventEmitter<number>();
 
   constructor() { }
