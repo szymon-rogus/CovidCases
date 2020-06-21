@@ -1,4 +1,4 @@
-import {AfterContentInit, AfterViewChecked, AfterViewInit, Component, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {CountryDetailsService} from "../../services/country-details.service";
 import {CountryDayInfo} from "../../model/country-day-info";
@@ -26,31 +26,40 @@ export class CountryDetailsComponent implements OnInit{
       });
   }
 
-  chartType: string = 'line';
-
-  public chartDatasets: Array<any> = [
-    { data: [65, 59, 80, 81, 56, 55, 40], label: 'My First dataset' },
-    { data: [28, 48, 40, 19, 86, 27, 90], label: 'My Second dataset' }
-  ];
-
-  public chartLabels: Array<any> = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-
-  public chartColors: Array<any> = [
-    {
-      backgroundColor: 'rgba(105, 0, 132, .2)',
-      borderColor: 'rgba(200, 99, 132, .7)',
-      borderWidth: 2,
-    },
-    {
-      backgroundColor: 'rgba(0, 137, 132, .2)',
-      borderColor: 'rgba(0, 10, 130, .7)',
-      borderWidth: 2,
+  createDays() {
+    let days = []
+    let k = 1;
+    if(this.size <= 500 && this.size > 200) {
+      k = 2;
     }
-  ];
+    if(this.size <= 1000 && this.size > 500) {
+      k = 4;
+    }
+    if(this.size > 1000) {
+      k = 8;
+    }
+    for(let i = 1; i <= this.size; i=i+k) {
+      days.push(i);
+    }
+    return days;
+  }
 
-  public chartOptions: any = {
-    responsive: true
-  };
-  public chartClicked(e: any): void { }
-  public chartHovered(e: any): void { }
+  getCountryStats() {
+    if(this.size <= 500 && this.size > 200) {
+      return this.countryStats.filter((value, index) => {
+        return index % 2 == 0;
+      })
+    }
+    if(this.size <= 1000 && this.size > 500) {
+      return this.countryStats.filter((value, index) => {
+        return index % 4 == 0;
+      })
+    }
+    if(this.size > 1000) {
+      return this.countryStats.filter((value, index) => {
+        return index % 8 == 0;
+      })
+    }
+    return this.countryStats;
+  }
 }

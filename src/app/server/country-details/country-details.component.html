@@ -1,19 +1,8 @@
-<div class="container-fluid" style="background-color: black;">
+<div class="container-fluid" style="background-color: black; min-height: 970px;">
   <div class="row">
-    <div class="col-12">
-      <div class="card text-white bg-light mb-3">
-        <div style="display: block">
-          <canvas baseChart
-                  [chartType]="chartType"
-                  [datasets]="chartDatasets"
-                  [labels]="chartLabels"
-                  [colors]="chartColors"
-                  [options]="chartOptions"
-                  [legend]="true"
-                  (chartHover)="chartHovered($event)"
-                  (chartClick)="chartClicked($event)">
-          </canvas>
-        </div>
+    <div class="col-9">
+      <div class="card text-white bg-light mb-3" *ngIf="countryStats && size">
+        <app-details-chart [statistics]="getCountryStats()" [size]="createDays()"></app-details-chart>
       </div>
     </div>
   </div>
