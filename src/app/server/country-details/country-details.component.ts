@@ -26,7 +26,7 @@ export class CountryDetailsComponent implements OnInit{
       });
   }
 
-  createDays() {
+  getDays() {
     let days = []
     let k = 1;
     if(this.size <= 500 && this.size > 200) {

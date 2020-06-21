@@ -7,7 +7,7 @@ import {Observable} from "rxjs";
 })
 export class CountryDetailsService {
 
-  url = 'https://api.covid19api.com/dayone/country/';
+  url = 'https://api.covid19api.com/total/dayone/country/';
 
   constructor(private client: HttpClient) {
   }

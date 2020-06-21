@@ -11,14 +11,19 @@ export class DetailsChartComponent implements OnInit {
   @Input() statistics: CountryDayInfo[] = [];
   @Input() size: number[];
 
+  totalOn: boolean = true;
+  deathsOn: boolean = false;
+  recoveredOn: boolean = false;
+
   chartDatasets: Array<any>;
   chartType: string = 'line';
   chartLabels: number[];
   chartColors: Array<any> = [
     {
-      backgroundColor: 'rgba(105, 0, 132, .2)',
-      borderColor: 'rgba(200, 99, 132, .7)',
+      backgroundColor: 'rgba(255, 0, 0, .2)',
+      borderColor: 'rgba(255, 0, 0, .7)',
       borderWidth: 2,
+      id: 'red',
     }
   ];
   chartOptions: any = {
@@ -28,12 +33,72 @@ export class DetailsChartComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.statistics);
-    console.log(this.size);
     this.chartDatasets = [
       { data: this.getTotal(this.statistics), label: 'Total Confirmed'}
     ];
     this.chartLabels = this.size;
+  }
+
+  toggleTotal = () => {
+    if(this.totalOn){
+      this.chartDatasets = this.chartDatasets.filter(value => {
+        return value.label != 'Total Confirmed';
+      });
+      this.chartColors = this.chartColors.filter(value => {
+        return value.id != 'red';
+      });
+    }
+    else {
+      this.chartColors.push({backgroundColor: 'rgba(255, 0, 0, .2)',
+        borderColor: 'rgba(255, 0, 0, .7)',
+        borderWidth: 2,
+        id: 'red',
+      });
+      this.chartDatasets.push({ data: this.getTotal(this.statistics), label: 'Total Confirmed'});
+    }
+    this.totalOn = !this.totalOn;
+  }
+
+  toggleDeaths = () => {
+    if(this.deathsOn){
+      this.chartDatasets = this.chartDatasets.filter(value => {
+        return value.label != 'Total Deaths';
+      });
+      this.chartColors = this.chartColors.filter(value => {
+        return value.id != 'black';
+      });
+    }
+    else {
+      this.chartColors.push({backgroundColor: 'rgba(0, 0, 0, .2)',
+        borderColor: 'rgba(0, 0, 0, .7)',
+        borderWidth: 2,
+        id: 'black',
+      });
+      this.chartDatasets.push({ data: this.getDeaths(this.statistics), label: 'Total Deaths'});
+    }
+    this.deathsOn = !this.deathsOn;
+  }
+
+  toggleRecovered = () => {
+    if(this.recoveredOn){
+      this.chartDatasets = this.chartDatasets.filter(value => {
+        return value.label != 'Total Recovered';
+      });
+      this.chartColors = this.chartColors.filter(value => {
+        return value.id != 'green';
+      });
+    }
+    else {
+      this.chartColors.push({backgroundColor: 'rgba(0, 255, 0, .2)',
+        borderColor: 'rgba(0, 255, 0, .7)',
+        borderWidth: 2,
+        id: 'green',
+      });
+      this.chartDatasets.push({ data: this.getRecovered(this.statistics), label: 'Total Recovered'});
+    }
+    this.recoveredOn = !this.recoveredOn;
+    console.log(this.chartColors.length);
+    console.log(this.chartDatasets.length);
   }
 
   getTotal = (data: CountryDayInfo[]) => {
@@ -48,6 +113,14 @@ export class DetailsChartComponent implements OnInit {
     let newData = [];
     data.forEach(value => {
       newData.push(value.Deaths);
+    });
+    return newData;
+  }
+
+  getRecovered = (data: CountryDayInfo[]) => {
+    let newData = [];
+    data.forEach(value => {
+      newData.push(value.Recovered);
     });
     return newData;
   }
