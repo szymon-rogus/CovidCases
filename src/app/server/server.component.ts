@@ -29,6 +29,7 @@ export class ServerComponent implements OnInit {
         .subscribe(data => {
           this.countryList = data.Countries;
         });
+    console.log(this.countryList);
   }
 
   filterByName($event: string) {
