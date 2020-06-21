@@ -1,9 +1,56 @@
 <div class="container-fluid" style="background-color: black; min-height: 970px;">
   <div class="row">
-    <div class="col-9">
+    <div class="col-xl-8 col-12">
       <div class="card text-white bg-light mb-3" *ngIf="countryStats && size">
         <app-details-chart [statistics]="getCountryStats()" [size]="getDays()"></app-details-chart>
       </div>
     </div>
+      <div class="col-xl-4 col-12">
+        <div class="card text-white bg-dark mb-3" style="font-size: 24px; margin: 20px; padding: 20px;">
+          <div class="row" style="justify-content: center; margin-bottom: 20px;">
+            <h3 style="font-weight: bold">{{country}}</h3>
+          </div>
+          <div class="row">
+            <div class="col-8">
+              Date:
+            </div>
+            <div class="col-4" style="color: white; padding-bottom: 20px;">
+              {{getDate()}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-8">
+              Total Confirmed:
+            </div>
+            <div class="col-4" style="color: red;">
+              {{countryStats[size-1].Confirmed}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-8">
+              Total Deaths:
+            </div>
+            <div class="col-4" style="color: black;">
+              {{countryStats[size-1].Deaths}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-8">
+              Total Recovered:
+            </div>
+            <div class="col-4" style="color: green;">
+              {{countryStats[size-1].Recovered}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-8">
+              Active Cases:
+            </div>
+            <div class="col-4" style="color: orange;">
+              {{countryStats[size-1].Active}}
+            </div>
+          </div>
+        </div>
+      </div>
   </div>
 </div>

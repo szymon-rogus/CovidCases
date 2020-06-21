@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "preinstall": "npm install -g angular-cli",
+    "preinstall": "npm install -g angular",
     "heroku-postbuild": "ng build --prod"
   },
   "private": true,
@@ -28,6 +28,7 @@
     "express": "^4.17.1",
     "font-awesome": "^4.7.0",
     "ng2-charts": "^2.3.2",
+    "ng4-loading-spinner": "^1.2.3",
     "ngx-order-pipe": "^2.0.4",
     "path": "^0.12.7",
     "rxjs": "~6.5.4",

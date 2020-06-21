@@ -13,6 +13,7 @@ export class CountryDetailsComponent implements OnInit{
   country: string;
   size: number;
   countryStats: CountryDayInfo[] = [];
+  date: Date;
 
   constructor(route: ActivatedRoute, private countryDetailsService: CountryDetailsService) {
     this.country = route.snapshot.params.country;
@@ -24,6 +25,10 @@ export class CountryDetailsComponent implements OnInit{
         this.countryStats = data;
         this.size = data.length;
       });
+  }
+
+  getDate = () => {
+    return new Date(this.countryStats[this.size-1].Date).toLocaleDateString();
   }
 
   getDays() {

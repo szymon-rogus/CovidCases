@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {ServerComponent} from "../server.component";
-import {CountryComponent} from "../country/country.component";
 
 @Component({
   selector: 'app-sorter',

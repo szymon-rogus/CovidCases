@@ -14,6 +14,7 @@ export class DetailsChartComponent implements OnInit {
   totalOn: boolean = true;
   deathsOn: boolean = false;
   recoveredOn: boolean = false;
+  activeOn: boolean = false;
 
   chartDatasets: Array<any>;
   chartType: string = 'line';
@@ -47,6 +48,7 @@ export class DetailsChartComponent implements OnInit {
       this.chartColors = this.chartColors.filter(value => {
         return value.id != 'red';
       });
+      this.chartColors.entries();
     }
     else {
       this.chartColors.push({backgroundColor: 'rgba(255, 0, 0, .2)',
@@ -97,8 +99,26 @@ export class DetailsChartComponent implements OnInit {
       this.chartDatasets.push({ data: this.getRecovered(this.statistics), label: 'Total Recovered'});
     }
     this.recoveredOn = !this.recoveredOn;
-    console.log(this.chartColors.length);
-    console.log(this.chartDatasets.length);
+  }
+
+  toggleActive = () => {
+    if(this.activeOn){
+      this.chartDatasets = this.chartDatasets.filter(value => {
+        return value.label != 'Active Cases';
+      });
+      this.chartColors = this.chartColors.filter(value => {
+        return value.id != 'yellow';
+      });
+    }
+    else {
+      this.chartColors.push({backgroundColor: 'rgba(255, 165, 0, .2)',
+        borderColor: 'rgba(255, 165, 0, .7)',
+        borderWidth: 2,
+        id: 'yellow',
+      });
+      this.chartDatasets.push({ data: this.getActive(this.statistics), label: 'Active Cases'});
+    }
+    this.activeOn = !this.activeOn;
   }
 
   getTotal = (data: CountryDayInfo[]) => {
@@ -121,6 +141,14 @@ export class DetailsChartComponent implements OnInit {
     let newData = [];
     data.forEach(value => {
       newData.push(value.Recovered);
+    });
+    return newData;
+  }
+
+  getActive = (data: CountryDayInfo[]) => {
+    let newData = [];
+    data.forEach(value => {
+      newData.push(value.Active);
     });
     return newData;
   }

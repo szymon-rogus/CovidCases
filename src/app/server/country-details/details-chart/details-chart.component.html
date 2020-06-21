@@ -9,7 +9,7 @@
           (chartHover)="chartHovered($event)"
           (chartClick)="chartClicked($event)">
   </canvas>
-  <div class="container" style="color: black">
+  <div class="container" style="color: black; float: left; margin: 20px;">
     <div class="form-check form-check">
       <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" checked="checked" (click)="toggleTotal()">
       <label class="form-check-label" for="inlineCheckbox1">Total Confirmed</label>
@@ -21,6 +21,10 @@
     <div class="form-check form-check">
       <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" (click)="toggleRecovered()">
       <label class="form-check-label" for="inlineCheckbox3">Total Recovered</label>
+    </div>
+    <div class="form-check form-check">
+      <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4" (click)="toggleActive()">
+      <label class="form-check-label" for="inlineCheckbox3">Active Cases</label>
     </div>
   </div>
 </div>

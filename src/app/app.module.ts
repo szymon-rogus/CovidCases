@@ -36,7 +36,7 @@ import { DetailsChartComponent } from './server/country-details/details-chart/de
     OrderModule,
     FormsModule,
     BrowserAnimationsModule,
-    ChartsModule
+    ChartsModule,
   ],
   providers: [
     CountryComponent,
