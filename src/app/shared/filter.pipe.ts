@@ -20,7 +20,7 @@ export class FilterPipe implements PipeTransform {
 
   startsWith = (name: string, regex: string) => {
     let size = regex.length;
-    return name.substring(0, size) == regex;
+    return name.substring(0, size).toLowerCase() == regex.toLowerCase();
   }
 
   minValue = (totalConfirmed: number, minTotal: number) => {

@@ -1,6 +1,6 @@
-import {Component, HostListener, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {CountryListService} from '../services/country-list.service';
-import {FiltersComponent} from "./filters/filters.component";
+import {GlobalData} from "../model/global";
 
 @Component({
   selector: 'app-server',
@@ -10,6 +10,7 @@ import {FiltersComponent} from "./filters/filters.component";
 export class ServerComponent implements OnInit {
 
   countryList : any = [];
+  globalData: GlobalData;
   expandAll: boolean = false;
   sortBy: any = 'Country';
   reverse: boolean = false;
@@ -28,8 +29,8 @@ export class ServerComponent implements OnInit {
     this.countryListService.getCountryList()
         .subscribe(data => {
           this.countryList = data.Countries;
+          this.globalData = data.Global;
         });
-    console.log(this.countryList);
   }
 
   filterByName($event: string) {

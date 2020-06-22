@@ -20,7 +20,7 @@
             </app-country>
         </div>
         <div class="col-7">
-            <app-global>
+            <app-global *ngIf="globalData" [globalData]="globalData">
             </app-global>
             <div id="rowing" class="row">
               <div class="col-xl-6 col-12">
