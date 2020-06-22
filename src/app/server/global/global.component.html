@@ -1,34 +1,34 @@
-<div class="container-fluid w-100" style="font-size: 26px;">
-    <div class="card text-white bg-dark mb-3" style="padding: 20px; margin: 20px;">
-        <div class="row" style="padding-top: 20px;">
+<div class="container-fluid w-100">
+    <div class="card text-white bg-dark mb-3">
+        <div class="row">
             <div class="col-6">
                 Total confirmed cases:
             </div>
-            <div class="col-6" style="color: red; font-weight: bold;">
+            <div class="col-6" style="color: red;">
                 {{globalData?.TotalConfirmed}}
             </div>
         </div>
-        <div class="row" style="padding-top: 20px;">
+        <div class="row">
             <div class="col-6">
                 Total confirmed deaths:
             </div>
-            <div class="col-6" style="color: black; font-weight: bold;">
+            <div class="col-6" style="color: black;">
                 {{globalData?.TotalDeaths}}
             </div>
         </div>
-        <div class="row" style="padding-top: 20px;">
+        <div class="row">
             <div class="col-6">
                 Total recovered:
             </div>
-            <div class="col-6" style="color: rgb(16, 170, 16); font-weight: bold">
+            <div class="col-6" style="color: rgb(16, 170, 16);">
                 {{globalData?.TotalRecovered}}
             </div>
         </div>
-        <div class="row" style="padding-top: 20px;">
+        <div class="row">
             <div class="col-6">
                 Active cases:
             </div>
-            <div class="col-6" style="color: yellow; font-weight: bold">
+            <div class="col-6" style="color: yellow;">
                 {{globalData?.TotalConfirmed - globalData?.TotalRecovered - globalData?.TotalDeaths}}
             </div>
         </div>

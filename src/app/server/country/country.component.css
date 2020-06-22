@@ -1,3 +1,14 @@
 .row {
     padding-left: 20px;
 }
+
+@media screen and (max-width: 992px) {
+  .col-4 {
+    display:none;
+    width:0;
+    height:0;
+    opacity:0;
+    visibility: collapse;
+
+  }
+}

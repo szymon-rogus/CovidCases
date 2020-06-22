@@ -1,0 +1,16 @@
+.container-fluid {
+  font-size: 26px;
+}
+
+.card {
+  padding: 20px;
+  margin: 20px;
+}
+
+.row {
+  padding-top: 20px;
+}
+
+.col-6 {
+  font-weight: bold;
+}

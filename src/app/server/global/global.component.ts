@@ -19,5 +19,4 @@ export class GlobalComponent implements OnInit {
           this.globalData = data.Global;
         });
   }
-
 }
