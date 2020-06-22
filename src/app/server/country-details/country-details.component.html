@@ -1,7 +1,7 @@
 <div class="container-fluid" style="background-color: black; min-height: 970px;">
   <div class="row">
     <div class="col-xl-8 col-12">
-      <div class="card text-white bg-light mb-3" *ngIf="countryStats && size">
+      <div class="card text-white bg-light mb-3" *ngIf="countryStats && size" style="margin: 10px;">
         <app-details-chart [statistics]="countryStats" [size]="getDays()"></app-details-chart>
       </div>
     </div>

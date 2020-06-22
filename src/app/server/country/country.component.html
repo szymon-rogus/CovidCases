@@ -1,10 +1,10 @@
 <div class="container-fluid w-100">
     <div class="card text-white bg-dark mb-3" style="padding: 10px; margin: 20px;">
-        <div class="row" (click)="expandCountry()">
+        <div class="row">
           <div class="col-lg-6 col-md-9">
                 {{country.Country}}
           </div>
-          <div *ngIf="!expand && (sortBy=='TotalConfirmed' || sortBy=='Country')" class="col-4" style="color: #ff0000">
+          <div *ngIf="!expand && (sortBy=='TotalConfirmed' || sortBy=='Country')" class="col-4" style="color: red">
             {{country.TotalConfirmed}}
           </div>
           <div *ngIf="!expand && sortBy=='TotalDeaths'" class="col-4" style="color: black; font-weight: bold;">
@@ -15,7 +15,7 @@
           </div>
           <div *ngIf="expand" class="col-4">
           </div>
-          <div class="col-lg-2 col-md-3">
+          <div class="col-lg-2 col-md-3" (click)="expandCountry()">
             <i *ngIf="!expand; else collapse" class="fa fa-chevron-down" aria-hidden="true"></i>
             <ng-template #collapse>
               <i class="fa fa-chevron-up" aria-hidden="true"></i>
