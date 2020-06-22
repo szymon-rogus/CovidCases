@@ -29,15 +29,15 @@ import { DetailsChartComponent } from './server/country-details/details-chart/de
     FiltersComponent,
     DetailsChartComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    OrderModule,
-    FormsModule,
-    BrowserAnimationsModule,
-    ChartsModule,
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        OrderModule,
+        FormsModule,
+        BrowserAnimationsModule,
+        ChartsModule,
+    ],
   providers: [
     CountryComponent,
     FiltersComponent
