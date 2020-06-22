@@ -33,38 +33,9 @@ export class CountryDetailsComponent implements OnInit{
 
   getDays() {
     let days = []
-    let k = 1;
-    if(this.size <= 500 && this.size > 200) {
-      k = 2;
-    }
-    if(this.size <= 1000 && this.size > 500) {
-      k = 4;
-    }
-    if(this.size > 1000) {
-      k = 8;
-    }
-    for(let i = 1; i <= this.size; i=i+k) {
+    for(let i = 1; i <= this.size; i++) {
       days.push(i);
     }
     return days;
-  }
-
-  getCountryStats() {
-    if(this.size <= 500 && this.size > 200) {
-      return this.countryStats.filter((value, index) => {
-        return index % 2 == 0;
-      })
-    }
-    if(this.size <= 1000 && this.size > 500) {
-      return this.countryStats.filter((value, index) => {
-        return index % 4 == 0;
-      })
-    }
-    if(this.size > 1000) {
-      return this.countryStats.filter((value, index) => {
-        return index % 8 == 0;
-      })
-    }
-    return this.countryStats;
   }
 }
