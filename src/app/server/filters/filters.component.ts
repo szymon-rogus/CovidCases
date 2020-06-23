@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, HostListener, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-filters',
@@ -27,6 +27,8 @@ export class FiltersComponent implements OnInit{
 
   maxRecovered: number;
   @Output('updateMaxRecovered') filterMaxRecovered = new EventEmitter<number>();
+
+  resize: boolean = true;
 
   constructor() { }
 
@@ -59,5 +61,10 @@ export class FiltersComponent implements OnInit{
 
   filterByMaxDeaths(value: number) {
     this.filterMaxDeaths.emit(value);
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.resize = !(event.target.innerWidth < 1800 && event.target.innerWidth >= 1200);
   }
 }

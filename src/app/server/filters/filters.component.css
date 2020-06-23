@@ -4,10 +4,17 @@
 }
 
 .row {
-  padding-left: 20px;
   margin-top: 10px;
 }
 
 a {
-  margin-right: 10px;
+  margin-right: 5px;
+}
+
+.noResized {
+  padding-left: 20px;
+}
+
+#filter {
+  padding-left: 20px;
 }

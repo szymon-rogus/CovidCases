@@ -15,7 +15,7 @@
     </div>
     <div class="row" style="padding-left: 20px; padding-top: 10px">
       <div class="col-12">
-        <button class="btn btn-light" (click)="setSorter('TotalConfirmed', upConfirmed)" (click)="upConfirmed=!upConfirmed">Total Confirmed
+        <button class="btn btn-light" (click)="setSorter('TotalConfirmed', upConfirmed)" (click)="upConfirmed=!upConfirmed">Total confirmed
           <i *ngIf="upConfirmed; else downConfirmed" class="fa fa-sort-asc" aria-hidden="true"></i>
           <ng-template #downConfirmed>
             <i class="fa fa-sort-desc" aria-hidden="true"></i>
@@ -25,7 +25,7 @@
     </div>
     <div class="row" style="padding-left: 20px; padding-top: 10px">
       <div class="col-12">
-        <button class="btn btn-light" (click)="setSorter('TotalDeaths', upDeaths)" (click)="upDeaths=!upDeaths">Total Deaths
+        <button class="btn btn-light" (click)="setSorter('TotalDeaths', upDeaths)" (click)="upDeaths=!upDeaths">Total deaths
           <i *ngIf="upDeaths; else downDeaths" class="fa fa-sort-asc" aria-hidden="true"></i>
           <ng-template #downDeaths>
             <i class="fa fa-sort-desc" aria-hidden="true"></i>
@@ -35,7 +35,7 @@
     </div>
     <div class="row" style="padding-left: 20px; padding-top: 10px">
       <div class="col-12">
-        <button class="btn btn-light" (click)="setSorter('TotalRecovered', upRecovered)" (click)="upRecovered=!upRecovered">Total Recovered
+        <button class="btn btn-light" (click)="setSorter('TotalRecovered', upRecovered)" (click)="upRecovered=!upRecovered">Total recovered
           <i *ngIf="upRecovered; else downRecovered" class="fa fa-sort-asc" aria-hidden="true"></i>
           <ng-template #downRecovered>
             <i class="fa fa-sort-desc" aria-hidden="true"></i>

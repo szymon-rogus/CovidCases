@@ -1,35 +1,54 @@
-<div class="container-fluid w-100">
+<div (window:resize)="onResize($event)" class="container-fluid w-100">
   <div class="card text-white bg-dark mb-3">
-    <div class="row">
+    <div class="row" id="filter">
       <h3> Filter countries: </h3>
     </div>
     <div class="row">
-      <a>By Name:</a>
-      <input class="text" [(ngModel)]="name" (ngModelChange)="filterByName(name)">
+      <div class="col-4">
+        <a>By name:</a>
+      </div>
+      <div class="col-8">
+        <input class="text w-75" [(ngModel)]="name" (ngModelChange)="filterByName(name)">
+      </div>
     </div>
     <div class="row">
-      <a>By Minimal Total Cases:</a>
-      <input class="text" [(ngModel)]="minTotal" (ngModelChange)="filerByMinTotal(minTotal)">
+      <div [ngClass]="{'col-3': resize, noResized: !resize}">
+        <a>By confirmed:</a>
+      </div>
+      <div [ngClass]="{'col-5': resize, noResized: !resize}">
+        <a>from</a>
+        <input class="text w-75" [(ngModel)]="minTotal" (ngModelChange)="filerByMinTotal(minTotal)">
+      </div>
+      <div [ngClass]="{'col-4': resize, noResized: !resize}">
+        <a>to</a>
+        <input class="text w-75" [(ngModel)]="maxTotal" (ngModelChange)="filerByMaxTotal(maxTotal)">
+      </div>
     </div>
     <div class="row">
-      <a>By Maximal Total Cases:</a>
-      <input class="text" [(ngModel)]="maxTotal" (ngModelChange)="filerByMaxTotal(maxTotal)">
+      <div [ngClass]="{'col-3': resize, noResized: !resize}">
+        <a>By deaths:</a>
+      </div>
+      <div [ngClass]="{'col-5': resize, noResized: !resize}">
+        <a>from</a>
+        <input class="text w-75" [(ngModel)]="minDeaths" (ngModelChange)="filterByMinDeaths(minDeaths)">
+      </div>
+      <div [ngClass]="{'col-4': resize, noResized: !resize}">
+        <a>to</a>
+        <input class="text w-75" [(ngModel)]="maxDeaths" (ngModelChange)="filterByMaxDeaths(maxDeaths)">
+      </div>
     </div>
     <div class="row">
-      <a>By Minimal Deaths:</a>
-      <input class="text" [(ngModel)]="minDeaths" (ngModelChange)="filterByMinDeaths(minDeaths)">
-    </div>
-    <div class="row">
-      <a>By Maximal Deaths:</a>
-      <input class="text" [(ngModel)]="maxDeaths" (ngModelChange)="filterByMaxDeaths(maxDeaths)">
-    </div>
-    <div class="row">
-      <a>By Minimal Recovered:</a>
-      <input class="text" [(ngModel)]="minRecovered" (ngModelChange)="filterByMinRecovered(minRecovered)">
-    </div>
-    <div class="row">
-      <a>By Maximal Recovered:</a>
-      <input class="text" [(ngModel)]="maxRecovered" (ngModelChange)="filterByMaxRecovered(maxRecovered)">
+      <div [ngClass]="{'col-3': resize, noResized: !resize}">
+        <a>By recovered:</a>
+      </div>
+      <div [ngClass]="{'col-5': resize, noResized: !resize}">
+        <a>from</a>
+        <input class="text w-75" [(ngModel)]="minRecovered" (ngModelChange)="filterByMinRecovered(minRecovered)">
+      </div>
+      <div [ngClass]="{'col-4': resize, noResized: !resize}">
+        <a>to</a>
+        <input class="text w-75" [(ngModel)]="maxRecovered" (ngModelChange)="filterByMaxRecovered(maxRecovered)">
+      </div>
     </div>
   </div>
 </div>

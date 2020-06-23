@@ -35,7 +35,7 @@ export class DetailsChartComponent implements OnInit {
 
   ngOnInit(): void {
     this.chartDatasets = [
-      { data: this.getTotal(this.statistics), label: 'Total Confirmed'}
+      { data: this.getTotal(this.statistics), label: 'Total confirmed'}
     ];
     this.chartLabels = this.size;
   }
@@ -43,7 +43,7 @@ export class DetailsChartComponent implements OnInit {
   toggleTotal = () => {
     if(this.totalOn){
       this.chartDatasets = this.chartDatasets.filter(value => {
-        return value.label != 'Total Confirmed';
+        return value.label != 'Total confirmed';
       });
       this.chartColors = this.chartColors.filter(value => {
         return value.id != 'red';
@@ -56,7 +56,7 @@ export class DetailsChartComponent implements OnInit {
         borderWidth: 2,
         id: 'red',
       });
-      this.chartDatasets.push({ data: this.getTotal(this.statistics), label: 'Total Confirmed'});
+      this.chartDatasets.push({ data: this.getTotal(this.statistics), label: 'Total confirmed'});
     }
     this.totalOn = !this.totalOn;
   }
@@ -64,7 +64,7 @@ export class DetailsChartComponent implements OnInit {
   toggleDeaths = () => {
     if(this.deathsOn){
       this.chartDatasets = this.chartDatasets.filter(value => {
-        return value.label != 'Total Deaths';
+        return value.label != 'Total deaths';
       });
       this.chartColors = this.chartColors.filter(value => {
         return value.id != 'black';
@@ -76,7 +76,7 @@ export class DetailsChartComponent implements OnInit {
         borderWidth: 2,
         id: 'black',
       });
-      this.chartDatasets.push({ data: this.getDeaths(this.statistics), label: 'Total Deaths'});
+      this.chartDatasets.push({ data: this.getDeaths(this.statistics), label: 'Total deaths'});
     }
     this.deathsOn = !this.deathsOn;
   }
@@ -84,7 +84,7 @@ export class DetailsChartComponent implements OnInit {
   toggleRecovered = () => {
     if(this.recoveredOn){
       this.chartDatasets = this.chartDatasets.filter(value => {
-        return value.label != 'Total Recovered';
+        return value.label != 'Total recovered';
       });
       this.chartColors = this.chartColors.filter(value => {
         return value.id != 'green';
@@ -96,7 +96,7 @@ export class DetailsChartComponent implements OnInit {
         borderWidth: 2,
         id: 'green',
       });
-      this.chartDatasets.push({ data: this.getRecovered(this.statistics), label: 'Total Recovered'});
+      this.chartDatasets.push({ data: this.getRecovered(this.statistics), label: 'Total recovered'});
     }
     this.recoveredOn = !this.recoveredOn;
   }
@@ -104,7 +104,7 @@ export class DetailsChartComponent implements OnInit {
   toggleActive = () => {
     if(this.activeOn){
       this.chartDatasets = this.chartDatasets.filter(value => {
-        return value.label != 'Active Cases';
+        return value.label != 'Active cases';
       });
       this.chartColors = this.chartColors.filter(value => {
         return value.id != 'yellow';
@@ -116,7 +116,7 @@ export class DetailsChartComponent implements OnInit {
         borderWidth: 2,
         id: 'yellow',
       });
-      this.chartDatasets.push({ data: this.getActive(this.statistics), label: 'Active Cases'});
+      this.chartDatasets.push({ data: this.getActive(this.statistics), label: 'Active cases'});
     }
     this.activeOn = !this.activeOn;
   }
