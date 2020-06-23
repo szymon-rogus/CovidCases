@@ -14,10 +14,18 @@
                 </div>
               </div>
             </div>
-            <app-country *ngFor="let country of countryList
-              | filter:filterName:filterMinTotal:filterMaxTotal:filterMinRecovered:filterMaxRecovered:filterMinDeaths:filterMaxDeaths
-              | orderBy: sortBy: reverse" [country]="country" [sortBy]="sortBy" [expand]="expandAll">
-            </app-country>
+          <app-country-list [countryList]="countryList"
+                            [filterName]="filterName"
+                            [filterMaxTotal]="filterMaxTotal"
+                            [filterMinTotal]="filterMinTotal"
+                            [filterMaxDeaths]="filterMaxDeaths"
+                            [filterMinDeaths]="filterMinDeaths"
+                            [filterMaxRecovered]="filterMaxRecovered"
+                            [filterMinRecovered]="filterMinRecovered"
+                            [expandAll]="expandAll"
+                            [sortBy]="sortBy"
+                            [reverse]="reverse">
+          </app-country-list>
         </div>
         <div class="col-7">
             <app-global *ngIf="globalData" [globalData]="globalData">

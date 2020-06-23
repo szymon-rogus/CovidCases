@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {CountryDetailsService} from "../../services/country-details.service";
 import {CountryDayInfo} from "../../model/country-day-info";
+import {Country} from "../../model/country";
 
 @Component({
   selector: 'app-country-details',
@@ -10,17 +11,19 @@ import {CountryDayInfo} from "../../model/country-day-info";
 })
 export class CountryDetailsComponent implements OnInit{
 
-  country: string;
+  country: Country;
+  countryName: string;
   size: number;
   countryStats: CountryDayInfo[] = [];
   date: Date;
 
-  constructor(route: ActivatedRoute, private countryDetailsService: CountryDetailsService) {
-    this.country = route.snapshot.params.country;
+  constructor(private router: Router, private route: ActivatedRoute, private countryDetailsService: CountryDetailsService) {
+    this.countryName = route.snapshot.params.country;
+    this.country = this.router.getCurrentNavigation().extras.state as Country;
   }
 
   ngOnInit(): void {
-    this.countryDetailsService.getCountryDetails(this.country)
+    this.countryDetailsService.getCountryDetails(this.countryName)
       .subscribe(data => {
         this.countryStats = data;
         this.size = data.length;

@@ -16,6 +16,7 @@ import {FormsModule} from "@angular/forms";
 import { ChartsModule } from 'ng2-charts';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { DetailsChartComponent } from './server/country-details/details-chart/details-chart.component';
+import { CountryListComponent } from './server/country-list/country-list.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { DetailsChartComponent } from './server/country-details/details-chart/de
     SorterComponent,
     FilterPipe,
     FiltersComponent,
-    DetailsChartComponent
+    DetailsChartComponent,
+    CountryListComponent
   ],
     imports: [
         BrowserModule,

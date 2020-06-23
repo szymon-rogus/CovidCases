@@ -1,0 +1,4 @@
+<app-country *ngFor="let country of countryList
+              | filter:filterName:filterMinTotal:filterMaxTotal:filterMinRecovered:filterMaxRecovered:filterMinDeaths:filterMaxDeaths
+              | orderBy: sortBy: reverse" [country]="country" [sortBy]="sortBy" [expand]="expandAll">
+</app-country>

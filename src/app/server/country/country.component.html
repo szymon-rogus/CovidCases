@@ -58,7 +58,8 @@
             </div>
           <div class="row" style="padding-top: 20px;">
             <div class="col-6">
-              <button class="btn btn-light" [routerLink]="['/', country.Country]"
+              <button *ngIf="country" class="btn btn-light" [routerLink]="['/', country.Country]"
+                      [state]="country"
                       routerLinkActive="active">Details</button>
             </div>
           </div>
