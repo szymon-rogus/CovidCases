@@ -5,7 +5,7 @@
         <app-details-chart [statistics]="countryStats" [size]="getDays()"></app-details-chart>
       </div>
     </div>
-      <div *ngIf="countryStats && size" class="col-xl-4 col-12">
+      <div id="data" *ngIf="countryStats && size" class="col-xl-4 col-12">
         <div class="card text-white bg-dark mb-3" style="font-size: 24px; margin: 20px; padding: 20px;">
           <div class="row" style="justify-content: center; margin-bottom: 20px;">
             <h3 style="font-weight: bold">{{countryName}}</h3>
@@ -15,7 +15,7 @@
               Date:
             </div>
             <div class="col-4" style="color: white; padding-bottom: 20px;">
-              {{getDate()}}
+              {{getDateAndCheckData()}}
             </div>
           </div>
           <div class="row">
@@ -54,7 +54,7 @@
             <div class="col-8" style="margin-top: 20px;">
               New confirmed:
             </div>
-            <div class="col-4" style="color: red; margin-top: 20px;">
+            <div *ngIf="country" class="col-4" style="color: red; margin-top: 20px;">
               {{country.NewConfirmed}}
             </div>
           </div>
@@ -62,7 +62,7 @@
             <div class="col-8">
               New deaths:
             </div>
-            <div class="col-4" style="color: black;">
+            <div *ngIf="country" class="col-4" style="color: black;">
               {{country.NewDeaths}}
             </div>
           </div>
@@ -70,7 +70,7 @@
             <div class="col-8">
               New recovered:
             </div>
-            <div class="col-4" style="color: green;">
+            <div *ngIf="country" class="col-4" style="color: green;">
               {{country.NewRecovered}}
             </div>
           </div>

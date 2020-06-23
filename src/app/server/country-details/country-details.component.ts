@@ -9,7 +9,7 @@ import {Country} from "../../model/country";
   templateUrl: './country-details.component.html',
   styleUrls: ['./country-details.component.css']
 })
-export class CountryDetailsComponent implements OnInit{
+export class CountryDetailsComponent implements OnInit {
 
   country: Country;
   countryName: string;
@@ -17,7 +17,8 @@ export class CountryDetailsComponent implements OnInit{
   countryStats: CountryDayInfo[] = [];
   date: Date;
 
-  constructor(private router: Router, private route: ActivatedRoute, private countryDetailsService: CountryDetailsService) {
+  constructor(private router: Router, private route: ActivatedRoute,
+              private countryDetailsService: CountryDetailsService) {
     this.countryName = route.snapshot.params.country;
     this.country = this.router.getCurrentNavigation().extras.state as Country;
   }
@@ -28,9 +29,21 @@ export class CountryDetailsComponent implements OnInit{
         this.countryStats = data;
         this.size = data.length;
       });
+    if(!this.country) {
+      this.country = new Country();
+    }
   }
 
-  getDate = () => {
+  checkForData = () => {
+    if(!this.country.NewConfirmed) {
+      this.country.NewConfirmed = this.countryStats[this.size - 1].Confirmed - this.countryStats[this.size - 2].Confirmed;
+      this.country.NewDeaths = this.countryStats[this.size - 1].Deaths - this.countryStats[this.size - 2].Deaths;
+      this.country.NewRecovered = this.countryStats[this.size - 1].Recovered - this.countryStats[this.size - 2].Recovered;
+    }
+  }
+
+  getDateAndCheckData = () => {
+    this.checkForData();
     return new Date(this.countryStats[this.size-1].Date).toLocaleDateString();
   }
 
