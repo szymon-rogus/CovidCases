@@ -9,10 +9,13 @@ import { GlobalData } from 'src/app/model/global';
 export class GlobalComponent implements OnInit {
 
   @Input() globalData : GlobalData;
+  activeCases: number;
 
   constructor() { }
 
   ngOnInit(): void {
-
+    this.activeCases = this.globalData.TotalConfirmed
+                      - this.globalData.TotalDeaths
+                      - this.globalData.TotalRecovered;
   }
 }

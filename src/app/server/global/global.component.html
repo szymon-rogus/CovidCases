@@ -5,7 +5,7 @@
                 Total confirmed cases:
             </div>
             <div class="col-6" style="color: red;">
-                {{globalData?.TotalConfirmed}}
+                {{globalData?.TotalConfirmed.toLocaleString()}}
             </div>
         </div>
         <div class="row">
@@ -13,7 +13,7 @@
                 Total confirmed deaths:
             </div>
             <div class="col-6" style="color: black;">
-                {{globalData?.TotalDeaths}}
+                {{globalData?.TotalDeaths.toLocaleString()}}
             </div>
         </div>
         <div class="row">
@@ -21,7 +21,7 @@
                 Total recovered:
             </div>
             <div class="col-6" style="color: rgb(16, 170, 16);">
-                {{globalData?.TotalRecovered}}
+                {{globalData?.TotalRecovered.toLocaleString()}}
             </div>
         </div>
         <div class="row">
@@ -29,7 +29,7 @@
                 Active cases:
             </div>
             <div class="col-6" style="color: yellow;">
-                {{globalData?.TotalConfirmed - globalData?.TotalRecovered - globalData?.TotalDeaths}}
+                {{activeCases?.toLocaleString()}}
             </div>
         </div>
     </div>

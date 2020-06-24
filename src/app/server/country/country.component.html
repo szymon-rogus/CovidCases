@@ -5,13 +5,13 @@
                 {{country.Country}}
           </div>
           <div *ngIf="!expand && (sortBy=='TotalConfirmed' || sortBy=='Country')" class="col-4" style="color: red">
-            {{country.TotalConfirmed}}
+            {{country.TotalConfirmed.toLocaleString()}}
           </div>
           <div *ngIf="!expand && sortBy=='TotalDeaths'" class="col-4" style="color: black; font-weight: bold;">
-            {{country.TotalDeaths}}
+            {{country.TotalDeaths.toLocaleString()}}
           </div>
           <div *ngIf="!expand && sortBy=='TotalRecovered'" class="col-4" style="color: rgb(16, 170, 16);">
-            {{country.TotalRecovered}}
+            {{country.TotalRecovered.toLocaleString()}}
           </div>
           <div *ngIf="expand" class="col-4">
           </div>
@@ -29,7 +29,7 @@
                     Total confirmed cases:
                 </div>
                 <div class="col-6" style="color: red;">
-                    {{country.TotalConfirmed}}
+                    {{country.TotalConfirmed.toLocaleString()}}
                 </div>
             </div>
             <div class="row" style="padding-top: 10px;">
@@ -37,7 +37,7 @@
                     Total confirmed deaths:
                 </div>
                 <div class="col-6" style="color: black; font-weight: bold;">
-                    {{country.TotalDeaths}}
+                    {{country.TotalDeaths.toLocaleString()}}
                 </div>
             </div>
             <div class="row" style="padding-top: 10px;">
@@ -45,7 +45,7 @@
                     Total recovered:
                 </div>
                 <div class="col-6" style="color: rgb(16, 170, 16);">
-                    {{country.TotalRecovered}}
+                    {{country.TotalRecovered.toLocaleString()}}
                 </div>
             </div>
             <div class="row" style="padding-top: 10px;">
@@ -53,7 +53,7 @@
                     Active cases:
                 </div>
                 <div class="col-6" style="color: yellow;">
-                    {{country.TotalConfirmed - country.TotalRecovered - country.TotalDeaths}}
+                    {{activeCases?.toLocaleString()}}
                 </div>
             </div>
           <div class="row" style="padding-top: 20px;">

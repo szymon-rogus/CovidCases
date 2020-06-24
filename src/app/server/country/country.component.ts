@@ -10,10 +10,14 @@ export class CountryComponent implements OnInit {
   @Input() country : Country;
   @Input() sortBy: string;
   @Input() expand: boolean = false;
+  activeCases: number;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.activeCases = this.country.TotalConfirmed
+                      - this.country.TotalDeaths
+                      - this.country.TotalRecovered;
   }
 
   expandCountry = () => {
