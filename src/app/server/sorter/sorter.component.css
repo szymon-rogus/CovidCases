@@ -1,3 +1,20 @@
+.row {
+  padding-bottom: 15px;
+}
+
+.col-12 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#sortBy {
+  padding-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 button {
   width: 80%;
 }

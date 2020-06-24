@@ -4,7 +4,7 @@
 }
 
 .row {
-  margin-top: 10px;
+  padding-bottom: 20px;
 }
 
 a {
@@ -16,5 +16,8 @@ a {
 }
 
 #filter {
-  padding-left: 20px;
+  padding-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
