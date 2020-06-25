@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServerComponent } from './server/server.component';
-import { CountryComponent } from './server/country/country.component';
+import { CountryComponent } from './server/country-list/country/country.component';
 import { GlobalComponent } from './server/global/global.component';
 import { CountryDetailsComponent } from './server/country-details/country-details.component';
 import {OrderModule} from "ngx-order-pipe";
