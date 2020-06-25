@@ -16,9 +16,9 @@
           <div *ngIf="expand" class="col-4">
           </div>
           <div class="col-lg-2 col-md-3" (click)="expandCountry()">
-            <i *ngIf="!expand; else collapse" class="fa fa-chevron-down" aria-hidden="true"></i>
+            <i *ngIf="!expand; else collapse" appEnlargeChevron [sizeNormal]="' fa'" [sizeLarge]="' fa-lg'" class="fa fa-chevron-down" aria-hidden="true"></i>
             <ng-template #collapse>
-              <i class="fa fa-chevron-up" aria-hidden="true"></i>
+              <i appEnlargeChevron [sizeNormal]="' fa'" [sizeLarge]="' fa-lg'" class="fa fa-chevron-up" aria-hidden="true"></i>
             </ng-template>
           </div>
         </div>

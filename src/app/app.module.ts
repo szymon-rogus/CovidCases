@@ -17,6 +17,7 @@ import { ChartsModule } from 'ng2-charts';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { DetailsChartComponent } from './server/country-details/details-chart/details-chart.component';
 import { CountryListComponent } from './server/country-list/country-list.component';
+import { EnlargeChevronDirective } from './server/country-list/enlarge-chevron/enlarge-chevron.directive';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { CountryListComponent } from './server/country-list/country-list.compone
     FilterPipe,
     FiltersComponent,
     DetailsChartComponent,
-    CountryListComponent
+    CountryListComponent,
+    EnlargeChevronDirective
   ],
     imports: [
         BrowserModule,

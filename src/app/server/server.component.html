@@ -7,9 +7,9 @@
                   <h3>Country:</h3>
                 </div>
                 <div class="col-lg-2 col-md-3" (click)="expandAll=!expandAll">
-                  <i *ngIf="!expandAll; else collapseAll" class="fa fa-eye fa-lg" aria-hidden="true"></i>
+                  <i *ngIf="!expandAll; else collapseAll" appEnlargeChevron [sizeNormal]="' fa-lg'" [sizeLarge]="' fa-2x'" class="fa fa-eye fa-lg" aria-hidden="true"></i>
                   <ng-template #collapseAll>
-                    <i class="fa fa-eye-slash fa-lg" aria-hidden="true"></i>
+                    <i appEnlargeChevron [sizeNormal]="' fa-lg'" [sizeLarge]="' fa-2x'" class="fa fa-eye-slash fa-lg" aria-hidden="true"></i>
                   </ng-template>
                 </div>
               </div>
