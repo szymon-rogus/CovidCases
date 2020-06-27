@@ -3,13 +3,6 @@
         <div class="col-5">
             <div *ngIf="countryList.length > 0">
               <app-country-list [countryList]="countryList"
-                                [filterName]="filterName"
-                                [filterMaxTotal]="filterMaxTotal"
-                                [filterMinTotal]="filterMinTotal"
-                                [filterMaxDeaths]="filterMaxDeaths"
-                                [filterMinDeaths]="filterMinDeaths"
-                                [filterMaxRecovered]="filterMaxRecovered"
-                                [filterMinRecovered]="filterMinRecovered"
                                 [expandAll]="expandAll"
                                 [sortBy]="sortBy"
                                 [reverse]="reverse">
@@ -24,14 +17,7 @@
                 <app-sorter></app-sorter>
               </div>
               <div class="col-xl-6 col-12">
-                <app-filters (updateName)="filterByName($event)"
-                             (updateMinTotal)="filterByMinTotal($event)"
-                             (updateMaxTotal)="filterByMaxTotal($event)"
-                             (updateMinRecovered)="filterByMinRecovered($event)"
-                             (updateMaxRecovered)="filterByMaxRecovered($event)"
-                             (updateMinDeaths)="filterByMinDeaths($event)"
-                             (updateMaxDeaths)="filterByMaxDeaths($event)">
-                </app-filters>
+                <app-filters></app-filters>
               </div>
             </div>
         </div>

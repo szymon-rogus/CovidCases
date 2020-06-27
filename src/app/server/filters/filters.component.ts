@@ -1,4 +1,5 @@
-import {Component, EventEmitter, HostListener, OnInit, Output} from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
+import {FilterService} from "../../services/filter.service";
 
 @Component({
   selector: 'app-filters',
@@ -8,59 +9,45 @@ import {Component, EventEmitter, HostListener, OnInit, Output} from '@angular/co
 export class FiltersComponent implements OnInit{
 
   name: string;
-  @Output('updateName') filterName = new EventEmitter<string>();
-
   minTotal: number;
-  @Output('updateMinTotal') filterMinTotal = new EventEmitter<number>();
-
   maxTotal: number;
-  @Output('updateMaxTotal') filterMaxTotal = new EventEmitter<number>();
-
   minDeaths: number;
-  @Output('updateMinDeaths') filterMinDeaths = new EventEmitter<number>();
-
   maxDeaths: number;
-  @Output('updateMaxDeaths') filterMaxDeaths = new EventEmitter<number>();
-
   minRecovered: number;
-  @Output('updateMinRecovered') filterMinRecovered = new EventEmitter<number>();
-
   maxRecovered: number;
-  @Output('updateMaxRecovered') filterMaxRecovered = new EventEmitter<number>();
-
   resize: boolean = true;
 
-  constructor() { }
+  constructor(private filterService: FilterService) { }
 
   ngOnInit(): void {
   }
 
   filterByName(name: string) {
-    this.filterName.emit(name);
+    this.filterService.filterName.emit(name);
   }
 
   filerByMinTotal(value: number) {
-    this.filterMinTotal.emit(value);
+    this.filterService.filterMinTotal.emit(value);
   }
 
   filerByMaxTotal(value: number) {
-    this.filterMaxTotal.emit(value);
+    this.filterService.filterMaxTotal.emit(value);
   }
 
   filterByMinRecovered(value: number) {
-    this.filterMinRecovered.emit(value);
+    this.filterService.filterMinRecovered.emit(value);
   }
 
   filterByMaxRecovered(value: number) {
-    this.filterMaxRecovered.emit(value);
+    this.filterService.filterMaxRecovered.emit(value);
   }
 
   filterByMinDeaths(value: number) {
-    this.filterMinDeaths.emit(value);
+    this.filterService.filterMinDeaths.emit(value);
   }
 
   filterByMaxDeaths(value: number) {
-    this.filterMaxDeaths.emit(value);
+    this.filterService.filterMaxDeaths.emit(value);
   }
 
   @HostListener('window:resize', ['$event'])

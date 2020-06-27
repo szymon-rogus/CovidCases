@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Country} from "../../model/country";
+import {FilterService} from "../../services/filter.service";
 
 @Component({
   selector: 'app-country-list',
@@ -12,19 +13,47 @@ export class CountryListComponent implements OnInit {
   @Input() expandAll: boolean = false;
   @Input() sortBy: any = 'Country';
   @Input() reverse: boolean = false;
-  @Input() filterName: string = '';
-  @Input() filterMinTotal: number = 0;
-  @Input() filterMaxTotal: number;
-  @Input() filterMinRecovered: number = 0;
-  @Input() filterMaxRecovered: number;
-  @Input() filterMinDeaths: number = 0;
-  @Input() filterMaxDeaths: number;
+  filterName: string = '';
+  filterMinTotal: number = 0;
+  filterMaxTotal: number;
+  filterMinRecovered: number = 0;
+  filterMaxRecovered: number;
+  filterMinDeaths: number = 0;
+  filterMaxDeaths: number;
 
   page: number = 1;
 
-  constructor() { }
+  constructor(private filterService: FilterService) { }
 
   ngOnInit(): void {
+    this.filterService.filterName
+      .subscribe((name: string) => {
+        this.filterName = name;
+      });
+    this.filterService.filterMinTotal
+      .subscribe((value: number) => {
+        this.filterMinTotal = value;
+      });
+    this.filterService.filterMaxTotal
+      .subscribe((value: number) => {
+        this.filterMaxTotal = value;
+      });
+    this.filterService.filterMinRecovered
+      .subscribe((value: number) => {
+        this.filterMinRecovered = value;
+      });
+    this.filterService.filterMaxRecovered
+      .subscribe((value: number) => {
+        this.filterMaxRecovered = value;
+      });
+    this.filterService.filterMinDeaths
+      .subscribe((value: number) => {
+        this.filterMinDeaths = value;
+      });
+    this.filterService.filterMaxDeaths
+      .subscribe((value: number) => {
+        this.filterMaxDeaths = value;
+      });
   }
 
   setPage($event: number) {

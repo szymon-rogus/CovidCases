@@ -13,7 +13,6 @@ export class CountryDetailsComponent implements OnInit {
 
   country: Country;
   countryName: string;
-  population: number;
   size: number;
   countryStats: CountryDayInfo[] = [];
   date: Date;
