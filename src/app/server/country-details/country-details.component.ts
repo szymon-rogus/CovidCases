@@ -13,6 +13,7 @@ export class CountryDetailsComponent implements OnInit {
 
   country: Country;
   countryName: string;
+  population: number;
   size: number;
   countryStats: CountryDayInfo[] = [];
   date: Date;
@@ -49,7 +50,7 @@ export class CountryDetailsComponent implements OnInit {
     return new Date(this.countryStats[this.size-1].Date).toLocaleDateString();
   }
 
-  getDays() {
+  getDays = () => {
     let days = []
     for(let i = 1; i <= this.size; i++) {
       days.push(i);
