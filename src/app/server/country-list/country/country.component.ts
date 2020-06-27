@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {Component, OnInit, Input, HostListener} from '@angular/core';
 import { Country } from '../../../model/country';
 
 @Component({
@@ -10,6 +10,7 @@ export class CountryComponent implements OnInit {
   @Input() country : Country;
   @Input() sortBy: string;
   @Input() expand: boolean = false;
+
   activeCases: number;
 
   constructor() { }

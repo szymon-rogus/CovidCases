@@ -3,5 +3,5 @@ import { GlobalData } from './global';
 
 export class CountryList {
     Global : GlobalData
-    countryList : Array<Country>;
+    Countries : Array<Country>;
 }

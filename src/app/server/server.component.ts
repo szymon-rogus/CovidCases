@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {CountryListService} from '../services/country-list.service';
 import {GlobalData} from "../model/global";
+import {Country} from "../model/country";
 
 @Component({
   selector: 'app-server',
@@ -9,7 +10,7 @@ import {GlobalData} from "../model/global";
 })
 export class ServerComponent implements OnInit {
 
-  countryList : any = [];
+  countryList : Country[] = [];
   globalData: GlobalData;
   expandAll: boolean = false;
   sortBy: any = 'Country';

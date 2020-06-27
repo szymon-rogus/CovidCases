@@ -18,6 +18,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { DetailsChartComponent } from './server/country-details/details-chart/details-chart.component';
 import { CountryListComponent } from './server/country-list/country-list.component';
 import { EnlargeChevronDirective } from './server/country-list/enlarge-chevron/enlarge-chevron.directive';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { PaginationComponent } from './server/country-list/pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import { EnlargeChevronDirective } from './server/country-list/enlarge-chevron/e
     FiltersComponent,
     DetailsChartComponent,
     CountryListComponent,
-    EnlargeChevronDirective
+    EnlargeChevronDirective,
+    PaginationComponent
   ],
     imports: [
         BrowserModule,
@@ -41,6 +44,7 @@ import { EnlargeChevronDirective } from './server/country-list/enlarge-chevron/e
         FormsModule,
         BrowserAnimationsModule,
         ChartsModule,
+        NgxPaginationModule
     ],
   providers: [
     CountryComponent,

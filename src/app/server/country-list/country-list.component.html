@@ -1,4 +1,20 @@
+<div class="card text-white bg-dark mb-3" style="padding: 10px; margin: 30px;">
+  <div class="row">
+    <div class="col-lg-10 col-md-9" style="padding-left: 35px;">
+      <h3>Country:</h3>
+    </div>
+    <div class="col-lg-2 col-md-3" (click)="expandAll=!expandAll">
+      <i *ngIf="!expandAll; else collapseAll" appEnlargeChevron [sizeNormal]="' fa-lg'" [sizeLarge]="' fa-2x'" class="fa fa-eye fa-lg" aria-hidden="true"></i>
+      <ng-template #collapseAll>
+        <i appEnlargeChevron [sizeNormal]="' fa-lg'" [sizeLarge]="' fa-2x'" class="fa fa-eye-slash fa-lg" aria-hidden="true"></i>
+      </ng-template>
+    </div>
+  </div>
+</div>
 <app-country *ngFor="let country of countryList
               | filter:filterName:filterMinTotal:filterMaxTotal:filterMinRecovered:filterMaxRecovered:filterMinDeaths:filterMaxDeaths
-              | orderBy: sortBy: reverse" [country]="country" [sortBy]="sortBy" [expand]="expandAll">
+              | orderBy: sortBy: reverse
+              | paginate: {itemsPerPage: 15,
+               currentPage: page}" [country]="country" [expand]="expandAll" [sortBy]="sortBy">
 </app-country>
+<app-pagination (actualPage)="setPage($event)" ></app-pagination>

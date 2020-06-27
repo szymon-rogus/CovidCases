@@ -1,31 +1,20 @@
 <div class="container-fluid" style="background-color: black; min-height: 970px">
     <div class="row">
         <div class="col-5">
-            <div class="card text-white bg-dark mb-3" style="padding: 10px; margin: 30px;">
-              <div class="row">
-                <div class="col-lg-10 col-md-9" style="padding-left: 35px;">
-                  <h3>Country:</h3>
-                </div>
-                <div class="col-lg-2 col-md-3" (click)="expandAll=!expandAll">
-                  <i *ngIf="!expandAll; else collapseAll" appEnlargeChevron [sizeNormal]="' fa-lg'" [sizeLarge]="' fa-2x'" class="fa fa-eye fa-lg" aria-hidden="true"></i>
-                  <ng-template #collapseAll>
-                    <i appEnlargeChevron [sizeNormal]="' fa-lg'" [sizeLarge]="' fa-2x'" class="fa fa-eye-slash fa-lg" aria-hidden="true"></i>
-                  </ng-template>
-                </div>
-              </div>
+            <div *ngIf="countryList.length > 0">
+              <app-country-list [countryList]="countryList"
+                                [filterName]="filterName"
+                                [filterMaxTotal]="filterMaxTotal"
+                                [filterMinTotal]="filterMinTotal"
+                                [filterMaxDeaths]="filterMaxDeaths"
+                                [filterMinDeaths]="filterMinDeaths"
+                                [filterMaxRecovered]="filterMaxRecovered"
+                                [filterMinRecovered]="filterMinRecovered"
+                                [expandAll]="expandAll"
+                                [sortBy]="sortBy"
+                                [reverse]="reverse">
+              </app-country-list>
             </div>
-          <app-country-list [countryList]="countryList"
-                            [filterName]="filterName"
-                            [filterMaxTotal]="filterMaxTotal"
-                            [filterMinTotal]="filterMinTotal"
-                            [filterMaxDeaths]="filterMaxDeaths"
-                            [filterMinDeaths]="filterMinDeaths"
-                            [filterMaxRecovered]="filterMaxRecovered"
-                            [filterMinRecovered]="filterMinRecovered"
-                            [expandAll]="expandAll"
-                            [sortBy]="sortBy"
-                            [reverse]="reverse">
-          </app-country-list>
         </div>
         <div class="col-7">
             <app-global *ngIf="globalData" [globalData]="globalData">

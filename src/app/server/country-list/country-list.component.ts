@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {Country} from "../../model/country";
 
 @Component({
   selector: 'app-country-list',
@@ -7,7 +8,7 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class CountryListComponent implements OnInit {
 
-  @Input() countryList : any = [];
+  @Input() countryList : any[] = [];
   @Input() expandAll: boolean = false;
   @Input() sortBy: any = 'Country';
   @Input() reverse: boolean = false;
@@ -19,9 +20,14 @@ export class CountryListComponent implements OnInit {
   @Input() filterMinDeaths: number = 0;
   @Input() filterMaxDeaths: number;
 
+  page: number = 1;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  setPage($event: number) {
+    this.page = $event;
+  }
 }

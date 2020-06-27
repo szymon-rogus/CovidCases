@@ -16,6 +16,7 @@ export class CountryDetailsComponent implements OnInit {
   size: number;
   countryStats: CountryDayInfo[] = [];
   date: Date;
+  isFetched: boolean = false;
 
   constructor(private router: Router, private route: ActivatedRoute,
               private countryDetailsService: CountryDetailsService) {
@@ -32,6 +33,7 @@ export class CountryDetailsComponent implements OnInit {
     if(!this.country) {
       this.country = new Country();
     }
+    this.isFetched = true;
   }
 
   checkForData = () => {

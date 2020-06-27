@@ -5,7 +5,7 @@
         <app-details-chart [statistics]="countryStats" [size]="getDays()"></app-details-chart>
       </div>
     </div>
-      <div id="data" *ngIf="countryStats && size" class="col-xl-4 col-12">
+      <div id="data" *ngIf="countryStats && size && isFetched" class="col-xl-4 col-12">
         <div class="card text-white bg-dark mb-3" style="font-size: 24px; margin: 20px; padding: 20px;">
           <div class="row" style="justify-content: center; margin-bottom: 20px;">
             <h3 style="font-weight: bold">{{countryName}}</h3>

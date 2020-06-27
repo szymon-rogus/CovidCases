@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import { GlobalData } from 'src/app/model/global';
+import {delay} from "rxjs/operators";
 
 @Component({
   selector: 'app-global',
