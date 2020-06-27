@@ -15,7 +15,7 @@ export class PaginationComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  changePage(value: number) {
+  changePage = (value: number) => {
     this.newPage.emit(value);
   }
 }

@@ -121,7 +121,7 @@ export class DetailsChartComponent implements OnInit {
     this.activeOn = !this.activeOn;
   }
 
-  getTotal = (data: CountryDayInfo[]) => {
+  private getTotal = (data: CountryDayInfo[]) => {
     let newData = [];
     data.forEach(value => {
       newData.push(value.Confirmed);
@@ -129,7 +129,7 @@ export class DetailsChartComponent implements OnInit {
     return newData;
   }
 
-  getDeaths = (data: CountryDayInfo[]) => {
+  private getDeaths = (data: CountryDayInfo[]) => {
     let newData = [];
     data.forEach(value => {
       newData.push(value.Deaths);
@@ -137,7 +137,7 @@ export class DetailsChartComponent implements OnInit {
     return newData;
   }
 
-  getRecovered = (data: CountryDayInfo[]) => {
+  private getRecovered = (data: CountryDayInfo[]) => {
     let newData = [];
     data.forEach(value => {
       newData.push(value.Recovered);

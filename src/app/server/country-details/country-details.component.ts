@@ -36,7 +36,7 @@ export class CountryDetailsComponent implements OnInit {
     this.isFetched = true;
   }
 
-  checkForData = () => {
+  private checkForData = () => {
     if(!this.country.NewConfirmed) {
       this.country.NewConfirmed = this.countryStats[this.size - 1].Confirmed - this.countryStats[this.size - 2].Confirmed;
       this.country.NewDeaths = this.countryStats[this.size - 1].Deaths - this.countryStats[this.size - 2].Deaths;
