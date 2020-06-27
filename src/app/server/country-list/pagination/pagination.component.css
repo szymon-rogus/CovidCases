@@ -26,4 +26,5 @@
   display: inline-block;
   font-weight: bold;
   padding-right: 10px;
+  cursor: pointer;
 }
