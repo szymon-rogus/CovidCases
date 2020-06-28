@@ -5,7 +5,8 @@
     </div>
     <div class="row">
       <div class="col-12">
-        <button class="btn btn-light" (click)="setSorter('Country', upName)" (click)="upName=!upName">Name
+        <button (click)="setSorter('Country', upName)" (click)="upName=!upName"
+                class="btn btn-light">Name
           <i *ngIf="upName; else downName" class="fa fa-sort-asc" aria-hidden="true"></i>
           <ng-template #downName>
             <i class="fa fa-sort-desc" aria-hidden="true"></i>
@@ -15,7 +16,8 @@
     </div>
     <div class="row">
       <div class="col-12">
-        <button class="btn btn-light" (click)="setSorter('TotalConfirmed', upConfirmed)" (click)="upConfirmed=!upConfirmed">Total confirmed
+        <button (click)="setSorter('TotalConfirmed', upConfirmed)" (click)="upConfirmed=!upConfirmed"
+                class="btn btn-light">Total confirmed
           <i *ngIf="upConfirmed; else downConfirmed" class="fa fa-sort-asc" aria-hidden="true"></i>
           <ng-template #downConfirmed>
             <i class="fa fa-sort-desc" aria-hidden="true"></i>
@@ -25,7 +27,8 @@
     </div>
     <div class="row">
       <div class="col-12">
-        <button class="btn btn-light" (click)="setSorter('TotalDeaths', upDeaths)" (click)="upDeaths=!upDeaths">Total deaths
+        <button (click)="setSorter('TotalDeaths', upDeaths)" (click)="upDeaths=!upDeaths"
+                class="btn btn-light">Total deaths
           <i *ngIf="upDeaths; else downDeaths" class="fa fa-sort-asc" aria-hidden="true"></i>
           <ng-template #downDeaths>
             <i class="fa fa-sort-desc" aria-hidden="true"></i>
@@ -35,7 +38,8 @@
     </div>
     <div class="row">
       <div class="col-12">
-        <button class="btn btn-light" (click)="setSorter('TotalRecovered', upRecovered)" (click)="upRecovered=!upRecovered">Total recovered
+        <button (click)="setSorter('TotalRecovered', upRecovered)" (click)="upRecovered=!upRecovered"
+                class="btn btn-light">Total recovered
           <i *ngIf="upRecovered; else downRecovered" class="fa fa-sort-asc" aria-hidden="true"></i>
           <ng-template #downRecovered>
             <i class="fa fa-sort-desc" aria-hidden="true"></i>

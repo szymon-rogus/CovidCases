@@ -29,7 +29,7 @@
                     Total confirmed cases:
                 </div>
                 <div class="col-6" style="color: red;">
-                    {{country.TotalConfirmed.toLocaleString()}}
+                    {{country?.TotalConfirmed.toLocaleString()}}
                 </div>
             </div>
             <div class="row" style="padding-top: 10px;">
@@ -37,7 +37,7 @@
                     Total confirmed deaths:
                 </div>
                 <div class="col-6" style="color: black; font-weight: bold;">
-                    {{country.TotalDeaths.toLocaleString()}}
+                    {{country?.TotalDeaths.toLocaleString()}}
                 </div>
             </div>
             <div class="row" style="padding-top: 10px;">
@@ -45,7 +45,7 @@
                     Total recovered:
                 </div>
                 <div class="col-6" style="color: rgb(16, 170, 16);">
-                    {{country.TotalRecovered.toLocaleString()}}
+                    {{country?.TotalRecovered.toLocaleString()}}
                 </div>
             </div>
             <div class="row" style="padding-top: 10px;">
@@ -59,8 +59,7 @@
           <div class="row" style="padding-top: 20px;">
             <div class="col-6">
               <button *ngIf="country" class="btn btn-light" [routerLink]="['/', country.Country]"
-                      [state]="country"
-                      routerLinkActive="active">Details</button>
+                      [state]="country">Details</button>
             </div>
           </div>
         </div>

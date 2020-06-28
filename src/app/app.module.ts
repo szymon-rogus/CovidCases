@@ -8,17 +8,17 @@ import { ServerComponent } from './server/server.component';
 import { CountryComponent } from './server/country-list/country/country.component';
 import { GlobalComponent } from './server/global/global.component';
 import { CountryDetailsComponent } from './server/country-details/country-details.component';
-import {OrderModule} from "ngx-order-pipe";
+import { OrderModule } from "ngx-order-pipe";
 import { SorterComponent } from './server/sorter/sorter.component';
 import { FilterPipe } from './shared/filter.pipe';
 import { FiltersComponent} from './server/filters/filters.component';
-import {FormsModule} from "@angular/forms";
+import { FormsModule } from "@angular/forms";
 import { ChartsModule } from 'ng2-charts';
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { DetailsChartComponent } from './server/country-details/details-chart/details-chart.component';
 import { CountryListComponent } from './server/country-list/country-list.component';
 import { EnlargeChevronDirective } from './server/country-list/enlarge-chevron/enlarge-chevron.directive';
-import {NgxPaginationModule} from 'ngx-pagination';
+import { NgxPaginationModule } from 'ngx-pagination';
 import { PaginationComponent } from './server/country-list/pagination/pagination.component';
 
 @NgModule({

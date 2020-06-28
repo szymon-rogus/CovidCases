@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from "@angular/router";
+import {ActivatedRoute, Params, Router} from "@angular/router";
 import {CountryDetailsService} from "../../services/country-details.service";
 import {CountryDayInfo} from "../../model/country-day-info";
 import {Country} from "../../model/country";
@@ -25,15 +25,21 @@ export class CountryDetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.countryDetailsService.getCountryDetails(this.countryName)
-      .subscribe(data => {
-        this.countryStats = data;
-        this.size = data.length;
-      });
+    if(this.countryDetailsService.trustedCountry(this.countryName)){
+      this.countryDetailsService.getCountryDetails(this.countryName)
+        .subscribe(data => {
+          this.countryStats = data;
+          this.size = data.length;
+        });
+    }
     if(!this.country) {
       this.country = new Country();
     }
     this.isFetched = true;
+    this.route.params
+      .subscribe((params: Params) => {
+        this.countryName = params['country'];
+      })
   }
 
   private checkForData = () => {
