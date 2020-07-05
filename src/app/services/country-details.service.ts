@@ -26,6 +26,6 @@ export class CountryDetailsService {
   }
 
   trustedCountry = (country: string) => {
-    return !(country == 'China' || country == 'Australia');
+    return !(country == 'China' || country == 'Australia' || country == 'Korea (South)');
   }
 }
