@@ -21,9 +21,13 @@ export class CountryListComponent implements OnInit {
   filterMinDeaths: number = 0;
   filterMaxDeaths: number;
 
-  page: number = 1;
+  page: number;
+  pageItems: number;
 
-  constructor(private filterService: FilterService) { }
+  constructor(private filterService: FilterService) {
+    this.page = 1;
+    this.pageItems = 14;
+  }
 
   ngOnInit(): void {
     this.filterService.filterName
@@ -58,5 +62,9 @@ export class CountryListComponent implements OnInit {
 
   setPage($event: number) {
     this.page = $event;
+  }
+
+  getIndex = (index: number) => {
+    return (index+1)+((this.page-1)*this.pageItems)
   }
 }
