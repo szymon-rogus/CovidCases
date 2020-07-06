@@ -10,6 +10,7 @@ export class CountryComponent implements OnInit {
   @Input() country : Country;
   @Input() sortBy: string;
   @Input() expand: boolean = false;
+  @Input() index: number;
 
   activeCases: number;
 

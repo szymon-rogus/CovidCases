@@ -15,6 +15,6 @@
               | filter:filterName:filterMinTotal:filterMaxTotal:filterMinRecovered:filterMaxRecovered:filterMinDeaths:filterMaxDeaths
               | orderBy: sortBy: reverse
               | paginate: {itemsPerPage: 14,
-               currentPage: page}" [country]="country" [expand]="expandAll" [sortBy]="sortBy">
+               currentPage: page}; let i = index" [country]="country" [expand]="expandAll" [sortBy]="sortBy" [index]="i+1">
 </app-country>
 <app-pagination (actualPage)="setPage($event)" ></app-pagination>

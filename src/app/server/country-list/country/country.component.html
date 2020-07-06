@@ -2,7 +2,7 @@
     <div class="card text-white bg-dark mb-3" style="padding: 10px; margin: 20px;">
         <div class="row">
           <div class="col-lg-6 col-md-9">
-                {{country.Country}}
+                {{index}}. {{country.Country}}
           </div>
           <div *ngIf="!expand && (sortBy=='TotalConfirmed' || sortBy=='Country')" class="col-4" style="color: red">
             {{country.TotalConfirmed.toLocaleString()}}
