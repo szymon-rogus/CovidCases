@@ -22,32 +22,32 @@ export class FiltersComponent implements OnInit{
   ngOnInit(): void {
   }
 
-  filterByName = (name: string) => {
-    this.filterService.filterName.emit(name);
+  filterByName = () => {
+    this.filterService.filterName.emit(this.name);
   }
 
-  filerByMinTotal = (value: number) => {
-    this.filterService.filterMinTotal.emit(value);
+  filerByMinTotal = () => {
+    this.filterService.filterMinTotal.emit(this.minTotal);
   }
 
-  filerByMaxTotal = (value: number) => {
-    this.filterService.filterMaxTotal.emit(value);
+  filerByMaxTotal = () => {
+    this.filterService.filterMaxTotal.emit(this.maxTotal);
   }
 
-  filterByMinRecovered = (value: number) => {
-    this.filterService.filterMinRecovered.emit(value);
+  filterByMinRecovered = () => {
+    this.filterService.filterMinRecovered.emit(this.minRecovered);
   }
 
-  filterByMaxRecovered = (value: number) => {
-    this.filterService.filterMaxRecovered.emit(value);
+  filterByMaxRecovered = () => {
+    this.filterService.filterMaxRecovered.emit(this.maxRecovered);
   }
 
-  filterByMinDeaths = (value: number) => {
-    this.filterService.filterMinDeaths.emit(value);
+  filterByMinDeaths = () => {
+    this.filterService.filterMinDeaths.emit(this.minDeaths);
   }
 
-  filterByMaxDeaths = (value: number) => {
-    this.filterService.filterMaxDeaths.emit(value);
+  filterByMaxDeaths = () => {
+    this.filterService.filterMaxDeaths.emit(this.maxDeaths);
   }
 
   @HostListener('window:resize', ['$event'])
