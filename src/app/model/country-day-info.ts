@@ -9,5 +9,5 @@ export class CountryDayInfo {
   Deaths: number;
   Recovered: number;
   Active: number;
-  Date: string;
+  Date: Date;
 }

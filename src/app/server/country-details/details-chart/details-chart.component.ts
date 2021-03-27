@@ -9,7 +9,7 @@ import {CountryDayInfo} from "../../../model/country-day-info";
 export class DetailsChartComponent implements OnInit {
 
   @Input() statistics: CountryDayInfo[] = [];
-  @Input() size: number[];
+  @Input() dates: string[];
 
   totalOn: boolean = true;
   deathsOn: boolean = false;
@@ -18,7 +18,7 @@ export class DetailsChartComponent implements OnInit {
 
   chartDatasets: Array<any>;
   chartType: string = 'line';
-  chartLabels: number[];
+  chartLabels: string[];
   chartColors: Array<any> = [
     {
       backgroundColor: 'rgba(255, 0, 0, .2)',
@@ -37,7 +37,7 @@ export class DetailsChartComponent implements OnInit {
     this.chartDatasets = [
       { data: this.getTotal(this.statistics), label: 'Total confirmed'}
     ];
-    this.chartLabels = this.size;
+    this.chartLabels = this.dates;
   }
 
   toggleTotal = () => {

@@ -19,13 +19,4 @@ export class CountryDetailsService {
     let params = new HttpParams();
     return this.client.get<CountryDayInfo[]>(this.url + country, {params}).pipe();
   }
-
-  getCountryNotTrustedDetails(countryCode: string): Observable<any[]> {
-    let params = new HttpParams();
-    return this.client.get<any[]>(this.url2 + countryCode, {params}).pipe();
-  }
-
-  trustedCountry = (country: string) => {
-    return !(country == 'China' || country == 'Australia' || country == 'Korea (South)');
-  }
 }

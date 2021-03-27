@@ -2,79 +2,79 @@
   <div class="row">
     <div class="col-xl-8 col-12">
       <div class="card text-white bg-light mb-3" *ngIf="countryStats && size" style="margin: 10px;">
-        <app-details-chart [statistics]="countryStats" [size]="getDays()"></app-details-chart>
+        <app-details-chart [statistics]="countryStats" [dates]="getDays()"></app-details-chart>
       </div>
     </div>
-      <div id="data" *ngIf="countryStats && size && isFetched" class="col-xl-4 col-12">
-        <div class="card text-white bg-dark mb-3" style="font-size: 24px; margin: 20px; padding: 20px;">
-          <div class="row" style="justify-content: center; margin-bottom: 20px;">
-            <h3 style="font-weight: bold">{{countryName}}</h3>
+    <div id="data" *ngIf="countryStats && size && isFetched" class="col-xl-4 col-12">
+      <div class="card text-white bg-dark mb-3" style="font-size: 24px; margin: 20px; padding: 20px;">
+        <div class="row" style="justify-content: center; margin-bottom: 20px;">
+          <h3 style="font-weight: bold">{{countryName}}</h3>
+        </div>
+        <div class="row">
+          <div class="col-8">
+            Date:
           </div>
-          <div class="row">
-            <div class="col-8">
-              Date:
-            </div>
-            <div class="col-4" style="color: white; padding-bottom: 20px;">
-              {{getDateAndCheckData()}}
-            </div>
+          <div class="col-4" style="color: white; padding-bottom: 20px;">
+            {{getDateAndCheckData()}}
           </div>
-          <div class="row">
-            <div class="col-8">
-              Total confirmed:
-            </div>
-            <div class="col-4" style="color: red;">
-              {{countryStats[size-1].Confirmed.toLocaleString()}}
-            </div>
+        </div>
+        <div class="row">
+          <div class="col-8">
+            Total confirmed:
           </div>
-          <div class="row">
-            <div class="col-8">
-              Total deaths:
-            </div>
-            <div class="col-4" style="color: black;">
-              {{countryStats[size-1].Deaths.toLocaleString()}}
-            </div>
+          <div class="col-4" style="color: red;">
+            {{countryStats[size-1].Confirmed.toLocaleString()}}
           </div>
-          <div class="row">
-            <div class="col-8">
-              Total recovered:
-            </div>
-            <div class="col-4" style="color: green;">
-              {{countryStats[size-1].Recovered.toLocaleString()}}
-            </div>
+        </div>
+        <div class="row">
+          <div class="col-8">
+            Total deaths:
           </div>
-          <div class="row">
-            <div class="col-8">
-              Active cases:
-            </div>
-            <div class="col-4" style="color: orange;">
-              {{countryStats[size-1].Active.toLocaleString()}}
-            </div>
+          <div class="col-4" style="color: black;">
+            {{countryStats[size-1].Deaths.toLocaleString()}}
           </div>
-          <div class="row">
-            <div class="col-8" style="margin-top: 20px;">
-              New confirmed:
-            </div>
-            <div *ngIf="country" class="col-4" style="color: red; margin-top: 20px;">
-              {{country.NewConfirmed.toLocaleString()}}
-            </div>
+        </div>
+        <div class="row">
+          <div class="col-8">
+            Total recovered:
           </div>
-          <div class="row">
-            <div class="col-8">
-              New deaths:
-            </div>
-            <div *ngIf="country" class="col-4" style="color: black;">
-              {{country.NewDeaths.toLocaleString()}}
-            </div>
+          <div class="col-4" style="color: green;">
+            {{countryStats[size-1].Recovered.toLocaleString()}}
           </div>
-          <div class="row">
-            <div class="col-8">
-              New recovered:
-            </div>
-            <div *ngIf="country" class="col-4" style="color: green;">
-              {{country.NewRecovered.toLocaleString()}}
-            </div>
+        </div>
+        <div class="row">
+          <div class="col-8">
+            Active cases:
+          </div>
+          <div class="col-4" style="color: orange;">
+            {{countryStats[size-1].Active.toLocaleString()}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-8" style="margin-top: 20px;">
+            New confirmed:
+          </div>
+          <div *ngIf="country" class="col-4" style="color: red; margin-top: 20px;">
+            {{country.NewConfirmed.toLocaleString()}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-8">
+            New deaths:
+          </div>
+          <div *ngIf="country" class="col-4" style="color: black;">
+            {{country.NewDeaths.toLocaleString()}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-8">
+            New recovered:
+          </div>
+          <div *ngIf="country" class="col-4" style="color: green;">
+            {{country.NewRecovered.toLocaleString()}}
           </div>
         </div>
       </div>
+    </div>
   </div>
 </div>
