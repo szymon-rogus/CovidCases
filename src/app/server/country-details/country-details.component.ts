@@ -40,17 +40,17 @@ export class CountryDetailsComponent implements OnInit {
       })
   }
 
+  getDateAndCheckData = () => {
+    this.checkForData();
+    return new Date(this.countryStats[this.size-1].Date).toLocaleDateString();
+  }
+
   private checkForData = () => {
     if(!this.country.NewConfirmed) {
       this.country.NewConfirmed = this.countryStats[this.size - 1].Confirmed - this.countryStats[this.size - 2].Confirmed;
       this.country.NewDeaths = this.countryStats[this.size - 1].Deaths - this.countryStats[this.size - 2].Deaths;
       this.country.NewRecovered = this.countryStats[this.size - 1].Recovered - this.countryStats[this.size - 2].Recovered;
     }
-  }
-
-  getDateAndCheckData = () => {
-    this.checkForData();
-    return new Date(this.countryStats[this.size-1].Date).toLocaleDateString();
   }
 
   getDays = () => {
