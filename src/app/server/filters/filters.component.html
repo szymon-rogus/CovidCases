@@ -8,7 +8,7 @@
         <a>By name:</a>
       </div>
       <div class="col-8">
-        <input (ngModelChange)="filterByName(name)" [(ngModel)]="name" class="text w-75">
+        <input class="text w-75" [(ngModel)]="name" (ngModelChange)="filterByName()">
       </div>
     </div>
     <div class="row">
@@ -17,11 +17,11 @@
       </div>
       <div [ngClass]="{'col-5': resize, noResized: !resize}">
         <a>from</a>
-        <input class="text w-75" [(ngModel)]="minTotal" (ngModelChange)="filerByMinTotal(minTotal)">
+        <input class="text w-75" [(ngModel)]="minTotal" (ngModelChange)="filerByMinTotal()">
       </div>
       <div [ngClass]="{'col-4': resize, noResized: !resize}">
         <a>to</a>
-        <input class="text w-75" [(ngModel)]="maxTotal" (ngModelChange)="filerByMaxTotal(maxTotal)">
+        <input class="text w-75" [(ngModel)]="maxTotal" (ngModelChange)="filerByMaxTotal()">
       </div>
     </div>
     <div class="row">
@@ -30,11 +30,11 @@
       </div>
       <div [ngClass]="{'col-5': resize, noResized: !resize}">
         <a>from</a>
-        <input class="text w-75" [(ngModel)]="minDeaths" (ngModelChange)="filterByMinDeaths(minDeaths)">
+        <input class="text w-75" [(ngModel)]="minDeaths" (ngModelChange)="filterByMinDeaths()">
       </div>
       <div [ngClass]="{'col-4': resize, noResized: !resize}">
         <a>to</a>
-        <input class="text w-75" [(ngModel)]="maxDeaths" (ngModelChange)="filterByMaxDeaths(maxDeaths)">
+        <input class="text w-75" [(ngModel)]="maxDeaths" (ngModelChange)="filterByMaxDeaths()">
       </div>
     </div>
     <div class="row">
@@ -43,11 +43,11 @@
       </div>
       <div [ngClass]="{'col-5': resize, noResized: !resize}">
         <a>from</a>
-        <input class="text w-75" [(ngModel)]="minRecovered" (ngModelChange)="filterByMinRecovered(minRecovered)">
+        <input class="text w-75" [(ngModel)]="minRecovered" (ngModelChange)="filterByMinRecovered()">
       </div>
       <div [ngClass]="{'col-4': resize, noResized: !resize}">
         <a>to</a>
-        <input class="text w-75" [(ngModel)]="maxRecovered" (ngModelChange)="filterByMaxRecovered(maxRecovered)">
+        <input class="text w-75" [(ngModel)]="maxRecovered" (ngModelChange)="filterByMaxRecovered()">
       </div>
     </div>
   </div>

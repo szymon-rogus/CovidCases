@@ -25,13 +25,11 @@ export class CountryDetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if(this.countryDetailsService.trustedCountry(this.countryName)){
-      this.countryDetailsService.getCountryDetails(this.countryName)
-        .subscribe(data => {
-          this.countryStats = data;
-          this.size = data.length;
-        });
-    }
+    this.countryDetailsService.getCountryDetails(this.countryName)
+      .subscribe(data => {
+        this.countryStats = data;
+        this.size = data.length;
+      });
     if(!this.country) {
       this.country = new Country();
     }
@@ -42,6 +40,11 @@ export class CountryDetailsComponent implements OnInit {
       })
   }
 
+  getDateAndCheckData = () => {
+    this.checkForData();
+    return new Date(this.countryStats[this.size-1].Date).toLocaleDateString();
+  }
+
   private checkForData = () => {
     if(!this.country.NewConfirmed) {
       this.country.NewConfirmed = this.countryStats[this.size - 1].Confirmed - this.countryStats[this.size - 2].Confirmed;
@@ -50,16 +53,7 @@ export class CountryDetailsComponent implements OnInit {
     }
   }
 
-  getDateAndCheckData = () => {
-    this.checkForData();
-    return new Date(this.countryStats[this.size-1].Date).toLocaleDateString();
-  }
-
   getDays = () => {
-    let days = []
-    for(let i = 1; i <= this.size; i++) {
-      days.push(i);
-    }
-    return days;
+    return this.countryStats.map(day => new Date(day.Date).toLocaleDateString());
   }
 }

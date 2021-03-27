@@ -17,11 +17,9 @@ export class EnlargeChevronDirective implements OnInit{
 
   @HostListener('mouseenter') mouseover(eventData: Event) {
     this.classOf = this.sizeNormal + this.sizeLarge;
-    console.log(this.classOf);
   }
 
   @HostListener('mouseleave') mouseleave(eventData: Event) {
     this.classOf = this.sizeNormal + this.sizeNormal;
-    console.log(this.classOf);
   }
 }

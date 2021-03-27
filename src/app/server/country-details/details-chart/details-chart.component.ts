@@ -9,24 +9,17 @@ import {CountryDayInfo} from "../../../model/country-day-info";
 export class DetailsChartComponent implements OnInit {
 
   @Input() statistics: CountryDayInfo[] = [];
-  @Input() size: number[];
+  @Input() dates: string[];
 
   totalOn: boolean = true;
-  deathsOn: boolean = false;
-  recoveredOn: boolean = false;
-  activeOn: boolean = false;
+  deathsOn: boolean = true;
+  recoveredOn: boolean = true;
+  activeOn: boolean = true;
 
-  chartDatasets: Array<any>;
+  chartDatasets: Array<any> = [];
   chartType: string = 'line';
-  chartLabels: number[];
-  chartColors: Array<any> = [
-    {
-      backgroundColor: 'rgba(255, 0, 0, .2)',
-      borderColor: 'rgba(255, 0, 0, .7)',
-      borderWidth: 2,
-      id: 'red',
-    }
-  ];
+  chartLabels: string[];
+  chartColors: Array<any> = [];
   chartOptions: any = {
     responsive: true
   };
@@ -34,10 +27,37 @@ export class DetailsChartComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.chartDatasets = [
-      { data: this.getTotal(this.statistics), label: 'Total confirmed'}
-    ];
-    this.chartLabels = this.size;
+    this.chartDatasets.push(
+      { data: this.getTotal(this.statistics), label: 'Total confirmed'},
+      { data: this.getDeaths(this.statistics), label: 'Total deaths'},
+      { data: this.getRecovered(this.statistics), label: 'Total recovered'},
+      { data: this.getActive(this.statistics), label: 'Active cases'}
+    );
+
+    this.chartColors.push(
+      {
+        backgroundColor: 'rgba(255, 0, 0, .2)',
+        borderColor: 'rgba(255, 0, 0, .7)',
+        borderWidth: 2,
+        id: 'red',
+      },
+      {backgroundColor: 'rgba(0, 0, 0, .2)',
+        borderColor: 'rgba(0, 0, 0, .7)',
+        borderWidth: 2,
+        id: 'black',
+      },
+      {backgroundColor: 'rgba(0, 255, 0, .2)',
+        borderColor: 'rgba(0, 255, 0, .7)',
+        borderWidth: 2,
+        id: 'green',
+      },
+      {backgroundColor: 'rgba(255, 165, 0, .2)',
+        borderColor: 'rgba(255, 165, 0, .7)',
+        borderWidth: 2,
+        id: 'yellow',
+      }
+    );
+    this.chartLabels = this.dates;
   }
 
   toggleTotal = () => {
@@ -48,7 +68,6 @@ export class DetailsChartComponent implements OnInit {
       this.chartColors = this.chartColors.filter(value => {
         return value.id != 'red';
       });
-      this.chartColors.entries();
     }
     else {
       this.chartColors.push({backgroundColor: 'rgba(255, 0, 0, .2)',
@@ -122,35 +141,19 @@ export class DetailsChartComponent implements OnInit {
   }
 
   private getTotal = (data: CountryDayInfo[]) => {
-    let newData = [];
-    data.forEach(value => {
-      newData.push(value.Confirmed);
-    });
-    return newData;
+    return data.map(day => day.Confirmed);
   }
 
   private getDeaths = (data: CountryDayInfo[]) => {
-    let newData = [];
-    data.forEach(value => {
-      newData.push(value.Deaths);
-    });
-    return newData;
+    return data.map(day => day.Deaths);
   }
 
   private getRecovered = (data: CountryDayInfo[]) => {
-    let newData = [];
-    data.forEach(value => {
-      newData.push(value.Recovered);
-    });
-    return newData;
+    return data.map(day => day.Recovered);
   }
 
   getActive = (data: CountryDayInfo[]) => {
-    let newData = [];
-    data.forEach(value => {
-      newData.push(value.Active);
-    });
-    return newData;
+    return data.map(day => day.Active);
   }
 
   public chartClicked(e: any): void { }

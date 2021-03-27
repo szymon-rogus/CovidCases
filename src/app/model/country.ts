@@ -8,5 +8,5 @@ export class Country {
     TotalDeaths: number
     NewRecovered: number
     TotalRecovered: number
-    Date: string 
+    Date: Date
 }
