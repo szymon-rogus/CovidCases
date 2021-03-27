@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Country} from "../../model/country";
 import {FilterService} from "../../services/filter.service";
+import {SorterService} from "../../services/sorter.service";
 
 @Component({
   selector: 'app-country-list',
@@ -11,8 +12,8 @@ export class CountryListComponent implements OnInit {
 
   @Input() countryList : any[] = [];
   @Input() expandAll: boolean = false;
-  @Input() sortBy: any = 'Country';
-  @Input() reverse: boolean = false;
+  @Input() sortBy: string = 'Country';
+  reverse: boolean = false;
   filterName: string = '';
   filterMinTotal: number = 0;
   filterMaxTotal: number;
@@ -24,7 +25,7 @@ export class CountryListComponent implements OnInit {
   page: number;
   pageItems: number;
 
-  constructor(private filterService: FilterService) {
+  constructor(private filterService: FilterService, private sorterService: SorterService) {
     this.page = 1;
     this.pageItems = 14;
   }
@@ -57,6 +58,15 @@ export class CountryListComponent implements OnInit {
     this.filterService.filterMaxDeaths
       .subscribe((value: number) => {
         this.filterMaxDeaths = value;
+      });
+
+    this.sorterService.sortBy
+      .subscribe((sortBy: string) => {
+        this.sortBy = sortBy;
+      });
+    this.sorterService.reverse
+      .subscribe((reverse: boolean) => {
+        this.reverse = reverse;
       });
   }
 
