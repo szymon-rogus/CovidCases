@@ -19,20 +19,15 @@ export class FilterPipe implements PipeTransform {
   }
 
   private startsWith = (name: string, regex: string) => {
-    let size = regex.length;
-    return name.substring(0, size).toLowerCase() == regex.toLowerCase();
+    return name.substring(0, regex.length).toLowerCase() == regex.toLowerCase();
   }
 
-  private minValue = (totalConfirmed: number, minTotal: number) => {
-    if(!minTotal)
-      return true;
-    return totalConfirmed >= minTotal;
+  private minValue = (total: number, minTotal: number) => {
+    return minTotal ? total >= minTotal : true;
   }
 
-  private maxValue = (totalConfirmed: number, maxTotal: number) => {
-    if(!maxTotal)
-      return true;
-    return totalConfirmed <= maxTotal;
+  private maxValue = (total: number, maxTotal: number) => {
+    return maxTotal ? total <= maxTotal : true;
   }
 
 }

@@ -10,8 +10,6 @@ export class CountryDetailsService {
 
   url = 'https://api.covid19api.com/total/dayone/country/';
 
-  url2 = 'https://api.thevirustracker.com/free-api?countryTimeline=';
-
   constructor(private client: HttpClient) {
   }
 
