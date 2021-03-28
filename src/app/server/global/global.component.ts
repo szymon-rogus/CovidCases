@@ -1,6 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
 import { GlobalData } from 'src/app/model/global';
-import {delay} from "rxjs/operators";
 
 @Component({
   selector: 'app-global',
@@ -19,4 +18,21 @@ export class GlobalComponent implements OnInit {
                       - this.globalData.TotalDeaths
                       - this.globalData.TotalRecovered;
   }
+
+  getTotalConfirmed = () => {
+    return this.globalData?.TotalConfirmed.toLocaleString();
+  }
+
+  getTotalDeaths = () => {
+    return this.globalData?.TotalDeaths.toLocaleString();
+  }
+
+  getTotalRecovered = () => {
+    return this.globalData?.TotalRecovered.toLocaleString();
+  }
+
+  getActiveCases = () => {
+    return this.activeCases?.toLocaleString();
+  }
+
 }

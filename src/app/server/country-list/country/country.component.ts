@@ -1,6 +1,5 @@
-import {Component, OnInit, Input, HostListener} from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 import { Country } from '../../../model/country';
-import {SorterService} from "../../../services/sorter.service";
 
 @Component({
   selector: 'app-country',
@@ -10,7 +9,7 @@ import {SorterService} from "../../../services/sorter.service";
 export class CountryComponent implements OnInit {
 
   @Input() country : Country;
-  @Input() expand: boolean = false;
+  @Input() expand: boolean;
   @Input() index: number;
   @Input() sortBy: string;
 
@@ -22,6 +21,34 @@ export class CountryComponent implements OnInit {
     this.activeCases = this.country.TotalConfirmed
                       - this.country.TotalDeaths
                       - this.country.TotalRecovered;
+  }
+
+  checkCountryOrTotalConfirmed = () => {
+    return !this.expand && (this.sortBy == 'TotalConfirmed' || this.sortBy == 'Country');
+  }
+
+  checkTotalDeaths = () => {
+    return !this.expand && this.sortBy == 'TotalDeaths';
+  }
+
+  checkTotalRecovered = () => {
+    return !this.expand && this.sortBy == 'TotalRecovered';
+  }
+
+  getTotalConfirmed = () => {
+    return this.country?.TotalConfirmed.toLocaleString();
+  }
+
+  getTotalDeaths = () => {
+    return this.country?.TotalDeaths.toLocaleString();
+  }
+
+  getTotalRecovered = () => {
+    return this.country?.TotalRecovered.toLocaleString();
+  }
+
+  getActiveCases = () => {
+    return this.activeCases?.toLocaleString();
   }
 
   expandCountry = () => {

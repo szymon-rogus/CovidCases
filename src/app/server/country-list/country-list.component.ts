@@ -11,8 +11,8 @@ import {SorterService} from "../../services/sorter.service";
 export class CountryListComponent implements OnInit {
 
   @Input() countryList : Country[];
-  @Input() expandAll: boolean;
-  @Input() sortBy: string;
+  expandAll: boolean;
+  sortBy: string;
   reverse: boolean;
   filterName: string;
   filterMinTotal: number;
@@ -76,11 +76,15 @@ export class CountryListComponent implements OnInit {
       });
   }
 
-  setPage($event: number) {
-    this.page = $event;
+  toggleExpandAll = () => {
+    this.expandAll = !this.expandAll;
   }
 
   getIndex = (index: number) => {
     return (index+1)+((this.page-1)*this.pageItems)
+  }
+
+  setPage($event: number) {
+    this.page = $event;
   }
 }
