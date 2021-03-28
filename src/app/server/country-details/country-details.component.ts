@@ -3,6 +3,7 @@ import {ActivatedRoute, Params, Router} from "@angular/router";
 import {CountryDetailsService} from "../../services/country-details.service";
 import {CountryDayInfo} from "../../model/country-day-info";
 import {Country} from "../../model/country";
+import {CountryListService} from "../../services/country-list.service";
 
 @Component({
   selector: 'app-country-details',
@@ -19,7 +20,8 @@ export class CountryDetailsComponent implements OnInit {
   isFetched: boolean = false;
 
   constructor(private router: Router, private route: ActivatedRoute,
-              private countryDetailsService: CountryDetailsService) {
+              private countryDetailsService: CountryDetailsService,
+              private countryListService : CountryListService ) {
     this.countryName = route.snapshot.params.country;
     this.country = this.router.getCurrentNavigation().extras.state as Country;
   }
@@ -30,18 +32,30 @@ export class CountryDetailsComponent implements OnInit {
         this.countryStats = data;
         this.size = data.length;
       });
-    if(!this.country) {
-      this.country = new Country();
-    }
     this.isFetched = true;
     this.route.params
       .subscribe((params: Params) => {
         this.countryName = params['country'];
       })
+
+    if (!this.country) {
+      this.countryListService.getCountryList()
+        .subscribe(data => {
+          this.country = data.Countries.find(country =>
+            country.Country === this.countryName
+          )
+        });
+    }
+  }
+
+  getDays = () => {
+    return this.countryStats.map(day => new Date(day.Date).toLocaleDateString());
   }
 
   getDateAndCheckData = () => {
-    this.checkForData();
+    if (this.country) {
+      this.checkForData();
+    }
     return new Date(this.countryStats[this.size-1].Date).toLocaleDateString();
   }
 
@@ -53,7 +67,31 @@ export class CountryDetailsComponent implements OnInit {
     }
   }
 
-  getDays = () => {
-    return this.countryStats.map(day => new Date(day.Date).toLocaleDateString());
+  getTotalConfirmed = () => {
+    return this.country?.TotalConfirmed.toLocaleString();
+  }
+
+  getTotalDeaths = () => {
+    return this.country?.TotalDeaths.toLocaleString();
+  }
+
+  getTotalRecovered = () => {
+    return this.country?.TotalRecovered.toLocaleString();
+  }
+
+  getActiveCases = () => {
+    return this.countryStats[this.size-1]?.Active.toLocaleString();
+  }
+
+  getNewConfirmed = () => {
+    return this.country?.NewConfirmed.toLocaleString();
+  }
+
+  getNewDeaths = () => {
+    return this.country?.NewDeaths.toLocaleString();
+  }
+
+  getNewRecovered = () => {
+    return this.country?.NewRecovered.toLocaleString();
   }
 }
