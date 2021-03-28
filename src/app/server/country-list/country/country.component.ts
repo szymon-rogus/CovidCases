@@ -1,5 +1,6 @@
 import {Component, OnInit, Input, HostListener} from '@angular/core';
 import { Country } from '../../../model/country';
+import {SorterService} from "../../../services/sorter.service";
 
 @Component({
   selector: 'app-country',
@@ -7,10 +8,11 @@ import { Country } from '../../../model/country';
   styleUrls: ['./country.component.css'],
 })
 export class CountryComponent implements OnInit {
+
   @Input() country : Country;
-  @Input() sortBy: string;
   @Input() expand: boolean = false;
   @Input() index: number;
+  @Input() sortBy: string;
 
   activeCases: number;
 

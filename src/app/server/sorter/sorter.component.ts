@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ServerComponent} from "../server.component";
+import {SorterService} from "../../services/sorter.service";
 
 @Component({
   selector: 'app-sorter',
@@ -13,14 +13,32 @@ export class SorterComponent implements OnInit {
   upDeaths: boolean = true;
   upRecovered: boolean = true;
 
-  constructor(private countries : ServerComponent) { }
+  constructor(private sorterService : SorterService) { }
 
   ngOnInit(): void {
   }
 
-  setSorter = (value: any, reverse: boolean) => {
-    this.countries.sortBy = value;
-    this.countries.reverse = reverse
+  setSorter = (value: string, reverse: boolean) => {
+    this.sorterService.sortBy.emit(value);
+    this.sorterService.reverse.emit(reverse);
+
+    this.changeDirection(value);
   }
 
+  private changeDirection = (value: string) => {
+    switch (value) {
+      case 'TotalConfirmed':
+        this.upConfirmed = !this.upConfirmed;
+        break;
+      case 'TotalDeaths':
+        this.upDeaths = !this.upDeaths;
+        break;
+      case 'TotalRecovered':
+        this.upRecovered = !this.upRecovered;
+        break;
+      default:
+        this.upName = !this.upName;
+        break;
+    }
+  }
 }

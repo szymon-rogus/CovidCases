@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Country} from "../../model/country";
 import {FilterService} from "../../services/filter.service";
+import {SorterService} from "../../services/sorter.service";
 
 @Component({
   selector: 'app-country-list',
@@ -9,22 +10,28 @@ import {FilterService} from "../../services/filter.service";
 })
 export class CountryListComponent implements OnInit {
 
-  @Input() countryList : any[] = [];
-  @Input() expandAll: boolean = false;
-  @Input() sortBy: any = 'Country';
-  @Input() reverse: boolean = false;
-  filterName: string = '';
-  filterMinTotal: number = 0;
+  @Input() countryList : Country[];
+  @Input() expandAll: boolean;
+  @Input() sortBy: string;
+  reverse: boolean;
+  filterName: string;
+  filterMinTotal: number;
   filterMaxTotal: number;
-  filterMinRecovered: number = 0;
+  filterMinRecovered: number;
   filterMaxRecovered: number;
-  filterMinDeaths: number = 0;
+  filterMinDeaths: number;
   filterMaxDeaths: number;
-
   page: number;
   pageItems: number;
 
-  constructor(private filterService: FilterService) {
+  constructor(private filterService: FilterService, private sorterService: SorterService) {
+    this.expandAll = false;
+    this.sortBy = "Country";
+    this.reverse = false;
+    this.filterName = '';
+    this.filterMinTotal = 0;
+    this.filterMinRecovered = 0;
+    this.filterMinDeaths = 0;
     this.page = 1;
     this.pageItems = 14;
   }
@@ -57,6 +64,15 @@ export class CountryListComponent implements OnInit {
     this.filterService.filterMaxDeaths
       .subscribe((value: number) => {
         this.filterMaxDeaths = value;
+      });
+
+    this.sorterService.sortBy
+      .subscribe((sortBy: string) => {
+        this.sortBy = sortBy;
+      });
+    this.sorterService.reverse
+      .subscribe((reverse: boolean) => {
+        this.reverse = reverse;
       });
   }
 
