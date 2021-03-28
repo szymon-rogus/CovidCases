@@ -10,22 +10,28 @@ import {SorterService} from "../../services/sorter.service";
 })
 export class CountryListComponent implements OnInit {
 
-  @Input() countryList : any[] = [];
-  @Input() expandAll: boolean = false;
-  @Input() sortBy: string = 'Country';
-  reverse: boolean = false;
-  filterName: string = '';
-  filterMinTotal: number = 0;
+  @Input() countryList : Country[];
+  @Input() expandAll: boolean;
+  @Input() sortBy: string;
+  reverse: boolean;
+  filterName: string;
+  filterMinTotal: number;
   filterMaxTotal: number;
-  filterMinRecovered: number = 0;
+  filterMinRecovered: number;
   filterMaxRecovered: number;
-  filterMinDeaths: number = 0;
+  filterMinDeaths: number;
   filterMaxDeaths: number;
-
   page: number;
   pageItems: number;
 
   constructor(private filterService: FilterService, private sorterService: SorterService) {
+    this.expandAll = false;
+    this.sortBy = "Country";
+    this.reverse = false;
+    this.filterName = '';
+    this.filterMinTotal = 0;
+    this.filterMinRecovered = 0;
+    this.filterMinDeaths = 0;
     this.page = 1;
     this.pageItems = 14;
   }

@@ -12,7 +12,6 @@ export class ServerComponent implements OnInit {
 
   countryList : Country[] = [];
   globalData: GlobalData;
-  expandAll: boolean = false;
 
   constructor(private countryListService : CountryListService) {
   }
