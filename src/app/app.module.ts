@@ -20,6 +20,8 @@ import { CountryListComponent } from './main/country-list/country-list.component
 import { EnlargeChevronDirective } from './main/country-list/enlarge-chevron/enlarge-chevron.directive';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { PaginationComponent } from './main/country-list/pagination/pagination.component';
+import { UnavailableComponent } from './main/error/unavailable/unavailable.component';
+import { HighlightDirective } from './main/sorter/hightlight/highlight.directive';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { PaginationComponent } from './main/country-list/pagination/pagination.c
     DetailsChartComponent,
     CountryListComponent,
     EnlargeChevronDirective,
-    PaginationComponent
+    PaginationComponent,
+    UnavailableComponent,
+    HighlightDirective
   ],
     imports: [
         BrowserModule,

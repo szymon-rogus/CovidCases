@@ -76,8 +76,8 @@ export class CountryListComponent implements OnInit {
       });
   }
 
-  toggleExpandAll = () => {
-    this.expandAll = !this.expandAll;
+  toggleExpandAll = ($event: boolean) => {
+    this.expandAll = $event;
   }
 
   getIndex = (index: number) => {

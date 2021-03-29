@@ -6,7 +6,7 @@ import {EventEmitter, Injectable} from '@angular/core';
 export class SorterService {
 
   sortBy = new EventEmitter<string>();
-  reverse = new EventEmitter<boolean>();
+  reverse = new EventEmitter<number>();
 
   constructor() { }
 }

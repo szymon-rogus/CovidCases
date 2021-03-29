@@ -1,22 +1,23 @@
 <div class="container-fluid w-100">
-    <div class="card text-white bg-dark mb-3" style="padding: 10px; margin: 20px;">
+    <div class="card text-white bg-dark mb-3" style="padding: 10px; margin: 10px;">
         <div class="row">
-          <div class="col-lg-6 col-md-9">
+          <div class="col-xl-3 col-lg-9 col-md-8 col-sm-7">
             {{index}}. {{country.Country}}
             <img [src]="countryFlag" alt="Country flag"/>
           </div>
-          <div *ngIf="checkCountryOrTotalConfirmed()" class="col-4" style="color: red">
+          <div *ngIf="!expand" class="col-2 d-none d-xl-block" style="color: red">
             {{getTotalConfirmed()}}
           </div>
-          <div *ngIf="checkTotalDeaths()" class="col-4" style="color: black; font-weight: bold;">
+          <div *ngIf="!expand" class="col-2 d-none d-xl-block" style="color: black; font-weight: bold;">
             {{getTotalDeaths()}}
           </div>
-          <div *ngIf="checkTotalRecovered()" class="col-4" style="color: rgb(16, 170, 16);">
+          <div *ngIf="!expand" class="col-2 d-none d-xl-block" style="color: rgb(16, 170, 16);">
             {{getTotalRecovered()}}
           </div>
-          <div *ngIf="expand" class="col-4">
+          <div  *ngIf="!expand" class="col-2 d-none d-xl-block" style="color: yellow">
+            {{getActiveCases()}}
           </div>
-          <div class="col-lg-2 col-md-3" (click)="expandCountry()">
+          <div class="col-lg-3 col-md-4 col-sm-5 d-xl-none" (click)="expandCountry()">
             <i *ngIf="!expand; else collapse" appEnlargeChevron [sizeNormal]="' fa'" [sizeLarge]="' fa-lg'" class="fa fa-chevron-down" aria-hidden="true"></i>
             <ng-template #collapse>
               <i appEnlargeChevron [sizeNormal]="' fa'" [sizeLarge]="' fa-lg'" class="fa fa-chevron-up" aria-hidden="true"></i>

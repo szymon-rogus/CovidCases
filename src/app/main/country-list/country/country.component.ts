@@ -27,18 +27,6 @@ export class CountryComponent implements OnInit {
     this.countryFlag = this.countryFlagService.getCountryFlag(this.country.CountryCode, 32);
   }
 
-  checkCountryOrTotalConfirmed = () => {
-    return !this.expand && (this.sortBy == 'TotalConfirmed' || this.sortBy == 'Country');
-  }
-
-  checkTotalDeaths = () => {
-    return !this.expand && this.sortBy == 'TotalDeaths';
-  }
-
-  checkTotalRecovered = () => {
-    return !this.expand && this.sortBy == 'TotalRecovered';
-  }
-
   getTotalConfirmed = () => {
     return this.country?.TotalConfirmed.toLocaleString();
   }

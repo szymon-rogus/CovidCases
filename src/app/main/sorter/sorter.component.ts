@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {SorterService} from "../../services/sorter.service";
+import {Direction} from "./Direction";
 
 @Component({
   selector: 'app-sorter',
@@ -8,37 +9,54 @@ import {SorterService} from "../../services/sorter.service";
 })
 export class SorterComponent implements OnInit {
 
-  upName: boolean = true;
-  upConfirmed: boolean = true;
-  upDeaths: boolean = true;
-  upRecovered: boolean = true;
+  upName: Direction = Direction.ASC;
+  upConfirmed: Direction = Direction.DEFAULT;
+  upDeaths: Direction = Direction.DEFAULT;
+  upRecovered: Direction = Direction.DEFAULT;
+  @Input() expandAll: boolean;
+  @Output() expandAllChange = new EventEmitter<boolean>();
 
   constructor(private sorterService : SorterService) { }
 
   ngOnInit(): void {
   }
 
-  setSorter = (value: string, reverse: boolean) => {
+  updateExpandAll = () => {
+    this.expandAll = !this.expandAll;
+    this.expandAllChange.emit(this.expandAll);
+  }
+
+  setSorter = (value: string, reverse: Direction) => {
     this.sorterService.sortBy.emit(value);
     this.sorterService.reverse.emit(reverse);
 
-    this.changeDirection(value);
+    this.updateSorter(value);
   }
 
-  private changeDirection = (value: string) => {
-    switch (value) {
-      case 'TotalConfirmed':
-        this.upConfirmed = !this.upConfirmed;
-        break;
-      case 'TotalDeaths':
-        this.upDeaths = !this.upDeaths;
-        break;
-      case 'TotalRecovered':
-        this.upRecovered = !this.upRecovered;
-        break;
-      default:
-        this.upName = !this.upName;
-        break;
+  private updateSorter = (value: string) => {
+    if (value !== 'Country') {
+      this.upName = Direction.DEFAULT;
     }
+    if (value !== 'TotalConfirmed') {
+      this.upConfirmed = Direction.DEFAULT;
+    }
+    if (value !== 'TotalDeaths') {
+      this.upDeaths = Direction.DEFAULT;
+    }
+    if (value !== 'TotalRecovered') {
+      this.upRecovered = Direction.DEFAULT;
+    }
+  }
+
+  getNext = (sorter: Direction) => {
+    return sorter === Direction.ASC ? Direction.DESC : Direction.ASC;
+  }
+
+  checkIfAsc = (sorter: Direction) => {
+    return sorter === Direction.ASC;
+  }
+
+  checkIfDesc = (sorter: Direction) => {
+    return sorter === Direction.DESC;
   }
 }

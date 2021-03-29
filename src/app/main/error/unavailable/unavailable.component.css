@@ -1,0 +1,25 @@
+.container-fluid {
+  display: table;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.row {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.col-12-lg {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.h1 {
+  color: white;
+  font-weight: bold;
+  font-size: 64px;
+}
