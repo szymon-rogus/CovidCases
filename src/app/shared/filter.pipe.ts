@@ -8,7 +8,7 @@ export class FilterPipe implements PipeTransform {
 
   transform(countries: Country[], name: string, minTotal?: number, maxTotal?: number,
             minRecovered?: number, maxRecovered?: number,
-            minDeaths?: number, maxDeaths?: number): unknown {
+            minDeaths?: number, maxDeaths?: number): Country[] {
     return countries.filter(country => this.startsWith(country.Country, name))
                     .filter(country => this.minValue(country.TotalConfirmed, minTotal))
                     .filter(country => this.maxValue(country.TotalConfirmed, maxTotal))

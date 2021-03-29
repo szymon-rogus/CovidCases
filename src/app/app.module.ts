@@ -22,6 +22,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { PaginationComponent } from './main/country-list/pagination/pagination.component';
 import { UnavailableComponent } from './main/error/unavailable/unavailable.component';
 import { HighlightDirective } from './main/sorter/hightlight/highlight.directive';
+import { SortPipe } from './shared/sort.pipe';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { HighlightDirective } from './main/sorter/hightlight/highlight.directive
     EnlargeChevronDirective,
     PaginationComponent,
     UnavailableComponent,
-    HighlightDirective
+    HighlightDirective,
+    SortPipe
   ],
     imports: [
         BrowserModule,

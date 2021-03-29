@@ -13,6 +13,7 @@ export class SorterComponent implements OnInit {
   upConfirmed: Direction = Direction.DEFAULT;
   upDeaths: Direction = Direction.DEFAULT;
   upRecovered: Direction = Direction.DEFAULT;
+  upActive: Direction = Direction.DEFAULT;
   @Input() expandAll: boolean;
   @Output() expandAllChange = new EventEmitter<boolean>();
 
@@ -28,9 +29,13 @@ export class SorterComponent implements OnInit {
 
   setSorter = (value: string, reverse: Direction) => {
     this.sorterService.sortBy.emit(value);
-    this.sorterService.reverse.emit(reverse);
+    this.sorterService.reverse.emit(this.getReverse(reverse));
 
     this.updateSorter(value);
+  }
+
+  private getReverse = (sorter: Direction) => {
+    return sorter === Direction.DESC;
   }
 
   private updateSorter = (value: string) => {
@@ -45,6 +50,9 @@ export class SorterComponent implements OnInit {
     }
     if (value !== 'TotalRecovered') {
       this.upRecovered = Direction.DEFAULT;
+    }
+    if (value !== 'Active') {
+      this.upActive = Direction.DEFAULT;
     }
   }
 

@@ -3,7 +3,7 @@
 </div>
 <app-country *ngFor="let country of countryList
               | filter:filterName:filterMinTotal:filterMaxTotal:filterMinRecovered:filterMaxRecovered:filterMinDeaths:filterMaxDeaths
-              | orderBy: sortBy:reverse
+              | sortBy: sortBy:reverse
               | paginate: {itemsPerPage:pageItems,
               currentPage:page}; let i = index" [country]="country" [sortBy]="sortBy" [expand]="expandAll" [index]="getIndex(i)">
 </app-country>
