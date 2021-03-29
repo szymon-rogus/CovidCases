@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {CountryDetailsComponent} from "./server/country-details/country-details.component";
-import {ServerComponent} from "./server/server.component";
+import {CountryDetailsComponent} from "./main/country-details/country-details.component";
+import {MainPageComponent} from "./main/main-page.component";
 
 
 const routes: Routes = [
-  { path: '', component: ServerComponent},
+  { path: '', component: MainPageComponent},
   { path: ':country', component: CountryDetailsComponent}
 ];
 

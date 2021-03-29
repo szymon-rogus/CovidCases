@@ -5,10 +5,10 @@ import {Country} from "../model/country";
 
 @Component({
   selector: 'app-server',
-  templateUrl: './server.component.html',
-  styleUrls: ['./server.component.css']
+  templateUrl: './main-page.component.html',
+  styleUrls: ['./main-page.component.css']
 })
-export class ServerComponent implements OnInit {
+export class MainPageComponent implements OnInit {
 
   countryList : Country[] = [];
   globalData: GlobalData;
