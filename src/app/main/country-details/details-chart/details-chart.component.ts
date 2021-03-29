@@ -12,9 +12,9 @@ export class DetailsChartComponent implements OnInit {
   @Input() dates: string[];
 
   totalOn: boolean = true;
-  deathsOn: boolean = true;
-  recoveredOn: boolean = true;
-  activeOn: boolean = true;
+  deathsOn: boolean = false;
+  recoveredOn: boolean = false;
+  activeOn: boolean = false;
 
   chartDatasets: Array<any> = [];
   chartType: string = 'line';
@@ -29,9 +29,6 @@ export class DetailsChartComponent implements OnInit {
   ngOnInit(): void {
     this.chartDatasets.push(
       { data: this.getTotal(this.statistics), label: 'Total confirmed'},
-      { data: this.getDeaths(this.statistics), label: 'Total deaths'},
-      { data: this.getRecovered(this.statistics), label: 'Total recovered'},
-      { data: this.getActive(this.statistics), label: 'Active cases'}
     );
 
     this.chartColors.push(
@@ -40,21 +37,6 @@ export class DetailsChartComponent implements OnInit {
         borderColor: 'rgba(255, 0, 0, .7)',
         borderWidth: 2,
         id: 'red',
-      },
-      {backgroundColor: 'rgba(0, 0, 0, .2)',
-        borderColor: 'rgba(0, 0, 0, .7)',
-        borderWidth: 2,
-        id: 'black',
-      },
-      {backgroundColor: 'rgba(0, 255, 0, .2)',
-        borderColor: 'rgba(0, 255, 0, .7)',
-        borderWidth: 2,
-        id: 'green',
-      },
-      {backgroundColor: 'rgba(255, 165, 0, .2)',
-        borderColor: 'rgba(255, 165, 0, .7)',
-        borderWidth: 2,
-        id: 'yellow',
       }
     );
     this.chartLabels = this.dates;

@@ -4,6 +4,7 @@ import {CountryDetailsService} from "../../services/country-details.service";
 import {CountryDayInfo} from "../../model/country-day-info";
 import {Country} from "../../model/country";
 import {CountryListService} from "../../services/country-list.service";
+import {CountryFlagService} from "../../services/country-flag.service";
 
 @Component({
   selector: 'app-country-details',
@@ -21,7 +22,8 @@ export class CountryDetailsComponent implements OnInit {
 
   constructor(private router: Router, private route: ActivatedRoute,
               private countryDetailsService: CountryDetailsService,
-              private countryListService : CountryListService ) {
+              private countryListService : CountryListService,
+              private countryFlagService: CountryFlagService) {
     this.countryName = route.snapshot.params.country;
     this.country = this.router.getCurrentNavigation().extras.state as Country;
   }
@@ -50,6 +52,10 @@ export class CountryDetailsComponent implements OnInit {
 
   getDays = () => {
     return this.countryStats.map(day => new Date(day.Date).toLocaleDateString());
+  }
+
+  getCountryFlag = () => {
+    return this.countryFlagService.getCountryFlag(this.country?.CountryCode, 64);
   }
 
   getDateAndCheckData = () => {

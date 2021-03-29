@@ -2,7 +2,8 @@
     <div class="card text-white bg-dark mb-3" style="padding: 10px; margin: 20px;">
         <div class="row">
           <div class="col-lg-6 col-md-9">
-                {{index}}. {{country.Country}}
+            {{index}}. {{country.Country}}
+            <img [src]="countryFlag" alt="Country flag"/>
           </div>
           <div *ngIf="checkCountryOrTotalConfirmed()" class="col-4" style="color: red">
             {{getTotalConfirmed()}}

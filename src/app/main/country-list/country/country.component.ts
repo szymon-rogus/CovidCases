@@ -1,5 +1,6 @@
 import {Component, OnInit, Input} from '@angular/core';
 import { Country } from '../../../model/country';
+import {CountryFlagService} from "../../../services/country-flag.service";
 
 @Component({
   selector: 'app-country',
@@ -12,15 +13,18 @@ export class CountryComponent implements OnInit {
   @Input() expand: boolean;
   @Input() index: number;
   @Input() sortBy: string;
+  countryFlag: string;
 
   activeCases: number;
 
-  constructor() { }
+  constructor(private countryFlagService: CountryFlagService) { }
 
   ngOnInit(): void {
     this.activeCases = this.country.TotalConfirmed
                       - this.country.TotalDeaths
                       - this.country.TotalRecovered;
+
+    this.countryFlag = this.countryFlagService.getCountryFlag(this.country.CountryCode, 32);
   }
 
   checkCountryOrTotalConfirmed = () => {
