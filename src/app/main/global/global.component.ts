@@ -14,9 +14,7 @@ export class GlobalComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.activeCases = this.globalData.TotalConfirmed
-                      - this.globalData.TotalDeaths
-                      - this.globalData.TotalRecovered;
+    this.activeCases = this.globalData.TotalConfirmed - this.globalData.TotalDeaths - this.globalData.TotalRecovered;
   }
 
   getTotalConfirmed = () => {
@@ -34,5 +32,4 @@ export class GlobalComponent implements OnInit {
   getActiveCases = () => {
     return this.activeCases?.toLocaleString();
   }
-
 }

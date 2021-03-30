@@ -30,6 +30,7 @@
     "font-awesome": "^4.7.0",
     "jw-paginate": "^1.0.4",
     "ng2-charts": "^2.3.2",
+    "ng2-tooltip-directive": "^2.9.22",
     "ng4-loading-spinner": "^1.2.3",
     "ngx-order-pipe": "^2.0.4",
     "ngx-pagination": "^5.0.0",

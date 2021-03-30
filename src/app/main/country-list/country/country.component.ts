@@ -24,10 +24,7 @@ export class CountryComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.activeCases = this.country.TotalConfirmed
-                      - this.country.TotalDeaths
-                      - this.country.TotalRecovered;
-
+    this.activeCases = this.country.TotalConfirmed - this.country.TotalDeaths - this.country.TotalRecovered;
     this.countryFlag = this.countryFlagService.getCountryFlag(this.country.CountryCode, 32);
   }
 

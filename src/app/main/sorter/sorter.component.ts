@@ -22,11 +22,6 @@ export class SorterComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  updateExpandAll = () => {
-    this.expandAll = !this.expandAll;
-    this.expandAllChange.emit(this.expandAll);
-  }
-
   setSorter = (value: string, reverse: Direction) => {
     this.sorterService.sortBy.emit(value);
     this.sorterService.reverse.emit(this.getReverse(reverse));
@@ -66,5 +61,10 @@ export class SorterComponent implements OnInit {
 
   checkIfDesc = (sorter: Direction) => {
     return sorter === Direction.DESC;
+  }
+
+  updateExpandAll = () => {
+    this.expandAll = !this.expandAll;
+    this.expandAllChange.emit(this.expandAll);
   }
 }
