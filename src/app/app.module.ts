@@ -11,19 +11,19 @@ import { GlobalComponent } from './main/global/global.component';
 import { CountryDetailsComponent } from './main/country-details/country-details.component';
 import { OrderModule } from "ngx-order-pipe";
 import { SorterComponent } from './main/sorter/sorter.component';
-import { FilterPipe } from './shared/filter.pipe';
+import { FilterPipe } from './shared/pipes/filter.pipe';
 import { FiltersComponent} from './main/filters/filters.component';
 import { FormsModule } from "@angular/forms";
 import { ChartsModule } from 'ng2-charts';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { DetailsChartComponent } from './main/country-details/details-chart/details-chart.component';
 import { CountryListComponent } from './main/country-list/country-list.component';
-import { EnlargeChevronDirective } from './main/country-list/enlarge-chevron/enlarge-chevron.directive';
+import { EnlargeChevronDirective } from './shared/directives/enlarge-chevron.directive';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { PaginationComponent } from './main/country-list/pagination/pagination.component';
 import { UnavailableComponent } from './main/error/unavailable/unavailable.component';
-import { HighlightDirective } from './main/sorter/hightlight/highlight.directive';
-import { SortPipe } from './shared/sort.pipe';
+import { HighlightDirective } from './shared/directives/highlight.directive';
+import { SortPipe } from './shared/pipes/sort.pipe';
 
 @NgModule({
   declarations: [
