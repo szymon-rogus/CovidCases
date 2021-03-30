@@ -1,12 +1,12 @@
 <div class="container-fluid" style="background-color: black; min-height: 970px">
   <div class="row">
-    <div class="col-md-8">
+    <div class="col-xl-8 col-lg-6 col-md-5">
       <div *ngIf="countryList.length > 0">
         <app-country-list [countryList]="countryList">
         </app-country-list>
       </div>
   </div>
-  <div class="col-md-4">
+  <div class="col-xl-4 col-lg-6 col-md-7">
     <app-global *ngIf="globalData" [globalData]="globalData">
     </app-global>
         <app-filters></app-filters>

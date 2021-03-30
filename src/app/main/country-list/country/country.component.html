@@ -1,69 +1,63 @@
 <div class="container-fluid w-100">
-    <div class="card text-white bg-dark mb-3" style="padding: 10px; margin: 10px;">
-        <div class="row">
-          <div class="col-xl-3 col-lg-9 col-md-8 col-sm-7">
-            {{index}}. {{country.Country}}
-            <img [src]="countryFlag" alt="Country flag"/>
-          </div>
-          <div *ngIf="!expand" class="col-2 d-none d-xl-block" style="color: red">
-            {{getTotalConfirmed()}}
-          </div>
-          <div *ngIf="!expand" class="col-2 d-none d-xl-block" style="color: black; font-weight: bold;">
-            {{getTotalDeaths()}}
-          </div>
-          <div *ngIf="!expand" class="col-2 d-none d-xl-block" style="color: rgb(16, 170, 16);">
-            {{getTotalRecovered()}}
-          </div>
-          <div  *ngIf="!expand" class="col-2 d-none d-xl-block" style="color: yellow">
-            {{getActiveCases()}}
-          </div>
-          <div class="col-lg-3 col-md-4 col-sm-5 d-xl-none" (click)="expandCountry()">
-            <i *ngIf="!expand; else collapse" appEnlargeChevron [sizeNormal]="' fa'" [sizeLarge]="' fa-lg'" class="fa fa-chevron-down" aria-hidden="true"></i>
-            <ng-template #collapse>
-              <i appEnlargeChevron [sizeNormal]="' fa'" [sizeLarge]="' fa-lg'" class="fa fa-chevron-up" aria-hidden="true"></i>
-            </ng-template>
-          </div>
-        </div>
-        <div class="card text-white bg-dark mb-3" *ngIf="expand">
-            <hr style="margin: 20px; border: 1px solid;">
-            <div class="row" style="padding-top: 10px;">
-                <div class="col-6">
-                    Total confirmed cases:
-                </div>
-                <div class="col-6" style="color: red;">
-                    {{getTotalConfirmed()}}
-                </div>
-            </div>
-            <div class="row" style="padding-top: 10px;">
-                <div class="col-6">
-                    Total confirmed deaths:
-                </div>
-                <div class="col-6" style="color: black; font-weight: bold;">
-                    {{getTotalDeaths()}}
-                </div>
-            </div>
-            <div class="row" style="padding-top: 10px;">
-                <div class="col-6">
-                    Total recovered:
-                </div>
-                <div class="col-6" style="color: rgb(16, 170, 16);">
-                    {{getTotalRecovered()}}
-                </div>
-            </div>
-            <div class="row" style="padding-top: 10px;">
-                <div class="col-6">
-                    Active cases:
-                </div>
-                <div class="col-6" style="color: yellow;">
-                    {{getActiveCases()}}
-                </div>
-            </div>
-          <div class="row" style="padding-top: 20px;">
-            <div class="col-6">
-              <button *ngIf="country" class="btn btn-light" [routerLink]="['/', country.Country]"
-                      [state]="country">Details</button>
-            </div>
-          </div>
-        </div>
+  <div class="card text-white bg-dark mb-3" style="padding: 10px; margin: 10px;">
+    <div class="row">
+      <div class="col-xl-3 col-lg-9 col-md-8 col-sm-7 col-xs-8">
+        <em appHighlight (click)="routeToDetails()" style="width: 60%"> {{index}}. {{country.Country}} </em>
+        <img [src]="countryFlag" alt="Country flag"/>
+      </div>
+      <div *ngIf="!expand" class="col-2 d-none d-xl-block" style="color: red">
+        {{getTotalConfirmed()}}
+      </div>
+      <div *ngIf="!expand" class="col-2 d-none d-xl-block" style="color: black; font-weight: bold;">
+        {{getTotalDeaths()}}
+      </div>
+      <div *ngIf="!expand" class="col-2 d-none d-xl-block" style="color: rgb(16, 170, 16);">
+        {{getTotalRecovered()}}
+      </div>
+      <div  *ngIf="!expand" class="col-2 d-none d-xl-block" style="color: yellow">
+        {{getActiveCases()}}
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-5 col-xs-4 d-xl-none" (click)="expandCountry()">
+        <i *ngIf="!expand; else collapse" appEnlargeChevron [sizeNormal]="' fa'" [sizeLarge]="' fa-lg'" class="fa fa-chevron-down" aria-hidden="true"></i>
+        <ng-template #collapse>
+          <i appEnlargeChevron [sizeNormal]="' fa'" [sizeLarge]="' fa-lg'" class="fa fa-chevron-up" aria-hidden="true"></i>
+        </ng-template>
+      </div>
     </div>
+    <div class="card text-white bg-dark mb-3" *ngIf="expand">
+      <hr style="margin: 20px; border: 1px solid;">
+      <div class="row" style="padding-top: 10px;">
+        <div class="col-6">
+          Total confirmed cases:
+        </div>
+        <div class="col-6" style="color: red;">
+          {{getTotalConfirmed()}}
+        </div>
+      </div>
+      <div class="row" style="padding-top: 10px;">
+        <div class="col-6">
+          Total confirmed deaths:
+        </div>
+        <div class="col-6" style="color: black; font-weight: bold;">
+          {{getTotalDeaths()}}
+        </div>
+      </div>
+      <div class="row" style="padding-top: 10px;">
+        <div class="col-6">
+          Total recovered:
+        </div>
+        <div class="col-6" style="color: rgb(16, 170, 16);">
+          {{getTotalRecovered()}}
+        </div>
+      </div>
+      <div class="row" style="padding-top: 10px;">
+        <div class="col-6">
+          Active cases:
+        </div>
+        <div class="col-6" style="color: yellow;">
+          {{getActiveCases()}}
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

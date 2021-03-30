@@ -1,6 +1,7 @@
 import {Component, OnInit, Input} from '@angular/core';
 import { Country } from '../../../model/country';
 import {CountryFlagService} from "../../../services/country-flag.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-country',
@@ -17,7 +18,10 @@ export class CountryComponent implements OnInit {
 
   activeCases: number;
 
-  constructor(private countryFlagService: CountryFlagService) { }
+  constructor(private countryFlagService: CountryFlagService,
+              private router: Router) {
+
+  }
 
   ngOnInit(): void {
     this.activeCases = this.country.TotalConfirmed
@@ -25,6 +29,13 @@ export class CountryComponent implements OnInit {
                       - this.country.TotalRecovered;
 
     this.countryFlag = this.countryFlagService.getCountryFlag(this.country.CountryCode, 32);
+  }
+
+  routeToDetails = () => {
+    this.router.navigate([this.country.Country], {state: this.country})
+      .then(() => {
+        window.location.reload();
+      });
   }
 
   getTotalConfirmed = () => {

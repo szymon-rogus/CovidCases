@@ -1,8 +1,8 @@
 <div class="container-fluid w-100">
-  <div class="card text-white bg-dark mb-3" style="padding: 10px; margin-top: 30px; margin-left: 10px; margin-right: 10px;">
+  <div class="card text-white bg-dark mb-3" style="margin-top: 30px; margin-left: 10px; margin-right: 10px;">
     <div class="row">
-      <div class="col-xl-3 col-lg-9 col-md-8 col-xs-7" style="padding-left: 50px;">
-        <div class="row">
+      <div class="col-xl-3 col-lg-8 col-md-7 col-xs-6">
+        <div class="row" style="padding-left: 50px;">
           <h3 (click)="setSorter('Country', upName = getNext(upName))" appHighlight>
             Country
             <i *ngIf="checkIfAsc(upName)" class="fa fa-sort-asc" aria-hidden="true"></i>
@@ -10,7 +10,7 @@
           </h3>
         </div>
       </div>
-      <div class="col-2 d-none d-xl-block">
+      <div class="col-2 d-none d-xl-block" style="padding-left: 50px;">
         <div class="row">
           <h4 (click)="setSorter('TotalConfirmed', upConfirmed = getNext(upConfirmed))" appHighlight>
             Total
@@ -20,7 +20,7 @@
         </div>
       </div>
       <div class="col-2 d-none d-xl-block">
-        <div class="row">
+        <div class="row" style="padding-left: 20px;">
           <h4 (click)="setSorter('TotalDeaths', upDeaths = getNext(upDeaths))" appHighlight>
             Deaths
             <i *ngIf="checkIfAsc(upDeaths)" class="fa fa-sort-asc" aria-hidden="true"></i>
