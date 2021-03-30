@@ -4,6 +4,12 @@
   justify-content: center;
 }
 
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 i {
   cursor: pointer;
 }

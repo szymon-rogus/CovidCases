@@ -1,55 +1,57 @@
-<div class="card text-white bg-dark mb-3" style="padding: 10px; margin-top: 30px; margin-left: 10px; margin-right: 10px;">
-  <div class="row">
-    <div class="col-xl-3 col-lg-9 col-md-8 col-xs-7" style="padding-left: 30px;">
-      <div class="row">
-        <h3 (click)="setSorter('Country', upName = getNext(upName))" appHighlight>
-          Country
-        </h3>
-        <i *ngIf="checkIfAsc(upName)" class="fa fa-sort-asc" aria-hidden="true"></i>
-        <i *ngIf="checkIfDesc(upName)" class="fa fa-sort-desc" aria-hidden="true"></i>
+<div class="container-fluid w-100">
+  <div class="card text-white bg-dark mb-3" style="padding: 10px; margin-top: 30px; margin-left: 10px; margin-right: 10px;">
+    <div class="row">
+      <div class="col-xl-3 col-lg-9 col-md-8 col-xs-7" style="padding-left: 50px;">
+        <div class="row">
+          <h3 (click)="setSorter('Country', upName = getNext(upName))" appHighlight>
+            Country
+            <i *ngIf="checkIfAsc(upName)" class="fa fa-sort-asc" aria-hidden="true"></i>
+            <i *ngIf="checkIfDesc(upName)" class="fa fa-sort-desc" aria-hidden="true"></i>
+          </h3>
+        </div>
       </div>
-    </div>
-    <div class="col-2 d-none d-xl-block">
-      <div class="row">
-        <h4 (click)="setSorter('TotalConfirmed', upConfirmed = getNext(upConfirmed))" appHighlight>
-          Total
-        </h4>
-        <i *ngIf="checkIfAsc(upConfirmed)" class="fa fa-sort-asc" aria-hidden="true"></i>
-        <i *ngIf="checkIfDesc(upConfirmed)" class="fa fa-sort-desc" aria-hidden="true"></i>
+      <div class="col-2 d-none d-xl-block">
+        <div class="row">
+          <h4 (click)="setSorter('TotalConfirmed', upConfirmed = getNext(upConfirmed))" appHighlight>
+            Total
+            <i *ngIf="checkIfAsc(upConfirmed)" class="fa fa-sort-asc" aria-hidden="true"></i>
+            <i *ngIf="checkIfDesc(upConfirmed)" class="fa fa-sort-desc" aria-hidden="true"></i>
+          </h4>
+        </div>
       </div>
-    </div>
-    <div class="col-2 d-none d-xl-block">
-      <div class="row">
-        <h4 (click)="setSorter('TotalDeaths', upDeaths = getNext(upDeaths))" appHighlight>
-          Deaths
-        </h4>
-        <i *ngIf="checkIfAsc(upDeaths)" class="fa fa-sort-asc" aria-hidden="true"></i>
-        <i *ngIf="checkIfDesc(upDeaths)" class="fa fa-sort-desc" aria-hidden="true"></i>
+      <div class="col-2 d-none d-xl-block">
+        <div class="row">
+          <h4 (click)="setSorter('TotalDeaths', upDeaths = getNext(upDeaths))" appHighlight>
+            Deaths
+            <i *ngIf="checkIfAsc(upDeaths)" class="fa fa-sort-asc" aria-hidden="true"></i>
+            <i *ngIf="checkIfDesc(upDeaths)" class="fa fa-sort-desc" aria-hidden="true"></i>
+          </h4>
+        </div>
       </div>
-    </div>
-    <div class="col-2 d-none d-xl-block">
-      <div class="row" >
-        <h4 (click)="setSorter('TotalRecovered', upRecovered = getNext(upRecovered))" appHighlight>
-          Recovered
-        </h4>
-        <i *ngIf="checkIfAsc(upRecovered)" class="fa fa-sort-asc" aria-hidden="true"></i>
-        <i *ngIf="checkIfDesc(upRecovered)" class="fa fa-sort-desc" aria-hidden="true"></i>
+      <div class="col-2 d-none d-xl-block">
+        <div class="row" >
+          <h4 (click)="setSorter('TotalRecovered', upRecovered = getNext(upRecovered))" appHighlight>
+            Recovered
+            <i *ngIf="checkIfAsc(upRecovered)" class="fa fa-sort-asc" aria-hidden="true"></i>
+            <i *ngIf="checkIfDesc(upRecovered)" class="fa fa-sort-desc" aria-hidden="true"></i>
+          </h4>
+        </div>
       </div>
-    </div>
-    <div class="col-2 d-none d-xl-block">
-      <div class="row">
-        <h4 (click)="setSorter('Active', upActive = getNext(upActive))" appHighlight>
-          Active
-        </h4>
-        <i *ngIf="checkIfAsc(upActive)" class="fa fa-sort-asc" aria-hidden="true"></i>
-        <i *ngIf="checkIfDesc(upActive)" class="fa fa-sort-desc" aria-hidden="true"></i>
+      <div class="col-2 d-none d-xl-block">
+        <div class="row">
+          <h4 (click)="setSorter('Active', upActive = getNext(upActive))" appHighlight>
+            Active
+            <i *ngIf="checkIfAsc(upActive)" class="fa fa-sort-asc" aria-hidden="true"></i>
+            <i *ngIf="checkIfDesc(upActive)" class="fa fa-sort-desc" aria-hidden="true"></i>
+          </h4>
+        </div>
       </div>
-    </div>
-    <div class="col-lg-3 col-md-4 col-xs-5 d-xl-none" style="align-items: flex-end; justify-content: flex-end" (click)="updateExpandAll()">
-      <i *ngIf="!expandAll; else collapseAll" appEnlargeChevron [sizeNormal]="' fa-lg'" [sizeLarge]="' fa-2x'" class="fa fa-eye fa-lg" aria-hidden="true"></i>
-      <ng-template #collapseAll>
-        <i appEnlargeChevron [sizeNormal]="' fa-lg'" [sizeLarge]="' fa-2x'" class="fa fa-eye-slash fa-lg" aria-hidden="true"></i>
-      </ng-template>
+      <div class="col-lg-3 col-md-4 col-xs-5 d-xl-none" style="align-items: flex-end; justify-content: flex-end" (click)="updateExpandAll()">
+        <i *ngIf="!expandAll; else collapseAll" appEnlargeChevron [sizeNormal]="' fa-lg'" [sizeLarge]="' fa-2x'" class="fa fa-eye fa-lg" aria-hidden="true"></i>
+        <ng-template #collapseAll>
+          <i appEnlargeChevron [sizeNormal]="' fa-lg'" [sizeLarge]="' fa-2x'" class="fa fa-eye-slash fa-lg" aria-hidden="true"></i>
+        </ng-template>
+      </div>
     </div>
   </div>
 </div>

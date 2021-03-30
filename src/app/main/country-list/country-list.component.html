@@ -1,9 +1,7 @@
-<div class="container-fluid w-100">
-  <app-sorter (expandAllChange)="toggleExpandAll($event)" [expandAll]="expandAll"></app-sorter>
-</div>
+<app-sorter (expandAllChange)="toggleExpandAll($event)" [expandAll]="expandAll"></app-sorter>
 <app-country *ngFor="let country of countryList
               | filter:filterName:filterMinTotal:filterMaxTotal:filterMinRecovered:filterMaxRecovered:filterMinDeaths:filterMaxDeaths
-              | sortBy: sortBy:reverse
+              | sort: sortBy:reverse
               | paginate: {itemsPerPage:pageItems,
               currentPage:page}; let i = index" [country]="country" [sortBy]="sortBy" [expand]="expandAll" [index]="getIndex(i)">
 </app-country>
