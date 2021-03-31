@@ -2,8 +2,8 @@
   <div class="card text-white bg-dark mb-3" style="padding: 10px; margin: 10px;">
     <div class="row">
       <div class="col-xl-3 col-lg-9 col-md-8 col-sm-7 col-xs-8">
-        <em tooltip="{{country.Country}} details" placement="top" show-delay="100" hide-delay="100" appHighlight
-            (click)="routeToDetails()" style="width: 60%"> {{index}}. {{country.Country}} </em>
+        <em tooltip="{{country.Country}} details" placement="top" show-delay="100" hide-delay="100" theme="light"
+            appHighlight (click)="routeToDetails()" style="width: 60%"> {{index}}. {{country.Country}} </em>
         <img [src]="countryFlag" alt="Country flag"/>
       </div>
       <div *ngIf="!expand" class="col-2 d-none d-xl-block" style="color: red">

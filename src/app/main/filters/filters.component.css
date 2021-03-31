@@ -1,23 +1,10 @@
 .card {
-  padding: 10px;
+  padding: 20px;
   margin: 20px;
 }
 
-.row {
-  padding-bottom: 20px;
-}
-
-a {
-  margin-right: 5px;
-}
-
-.noResized {
-  padding-left: 20px;
-}
-
 #filter {
-  padding-top: 5px;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
 }

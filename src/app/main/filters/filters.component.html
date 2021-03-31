@@ -1,53 +1,11 @@
 <div (window:resize)="onResize($event)" class="container-fluid w-100">
   <div class="card text-white bg-dark mb-3">
-    <div class="row" id="filter">
-      <h3> Filter countries: </h3>
-    </div>
     <div class="row">
-      <div class="col-4">
-        <a>By name:</a>
+      <div class="col-5">
+        <h4>Country</h4>
       </div>
-      <div class="col-8">
+      <div class="col-7">
         <input class="text w-75" [(ngModel)]="name" (ngModelChange)="filterByName()">
-      </div>
-    </div>
-    <div class="row">
-      <div [ngClass]="{'col-3': resize, noResized: !resize}">
-        <a>By confirmed:</a>
-      </div>
-      <div [ngClass]="{'col-5': resize, noResized: !resize}">
-        <a>from</a>
-        <input class="text w-75" [(ngModel)]="minTotal" (ngModelChange)="filerByMinTotal()">
-      </div>
-      <div [ngClass]="{'col-4': resize, noResized: !resize}">
-        <a>to</a>
-        <input class="text w-75" [(ngModel)]="maxTotal" (ngModelChange)="filerByMaxTotal()">
-      </div>
-    </div>
-    <div class="row">
-      <div [ngClass]="{'col-3': resize, noResized: !resize}">
-        <a>By deaths:</a>
-      </div>
-      <div [ngClass]="{'col-5': resize, noResized: !resize}">
-        <a>from</a>
-        <input class="text w-75" [(ngModel)]="minDeaths" (ngModelChange)="filterByMinDeaths()">
-      </div>
-      <div [ngClass]="{'col-4': resize, noResized: !resize}">
-        <a>to</a>
-        <input class="text w-75" [(ngModel)]="maxDeaths" (ngModelChange)="filterByMaxDeaths()">
-      </div>
-    </div>
-    <div class="row">
-      <div [ngClass]="{'col-3': resize, noResized: !resize}">
-        <a>By recovered:</a>
-      </div>
-      <div [ngClass]="{'col-5': resize, noResized: !resize}">
-        <a>from</a>
-        <input class="text w-75" [(ngModel)]="minRecovered" (ngModelChange)="filterByMinRecovered()">
-      </div>
-      <div [ngClass]="{'col-4': resize, noResized: !resize}">
-        <a>to</a>
-        <input class="text w-75" [(ngModel)]="maxRecovered" (ngModelChange)="filterByMaxRecovered()">
       </div>
     </div>
   </div>

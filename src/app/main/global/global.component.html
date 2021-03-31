@@ -1,8 +1,9 @@
 <div class="container-fluid w-100">
-  <div class="card text-white bg-dark mb-3">
+  <div class="card text-white bg-dark mb-3" tooltip="Global data" show-delay="100" hide-delay="100"
+       placement="left" theme="light">
     <div class="row">
       <div class="col-7">
-        Total confirmed cases:
+        Total confirmed:
       </div>
       <div class="col-5" style="color: red;">
         {{getTotalConfirmed()}}
@@ -10,7 +11,7 @@
     </div>
     <div class="row">
       <div class="col-7">
-        Total confirmed deaths:
+        Total deaths:
       </div>
       <div class="col-5" style="color: black;">
         {{getTotalDeaths()}}

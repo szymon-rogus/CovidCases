@@ -9,45 +9,16 @@ import {FilterService} from "../../services/filter.service";
 export class FiltersComponent implements OnInit{
 
   name: string;
-  minTotal: number;
-  maxTotal: number;
-  minDeaths: number;
-  maxDeaths: number;
-  minRecovered: number;
-  maxRecovered: number;
   resize: boolean = true;
 
-  constructor(private filterService: FilterService) { }
+  constructor(private filterService: FilterService) {
+  }
 
   ngOnInit(): void {
   }
 
   filterByName = () => {
     this.filterService.filterName.emit(this.name);
-  }
-
-  filerByMinTotal = () => {
-    this.filterService.filterMinTotal.emit(this.minTotal);
-  }
-
-  filerByMaxTotal = () => {
-    this.filterService.filterMaxTotal.emit(this.maxTotal);
-  }
-
-  filterByMinRecovered = () => {
-    this.filterService.filterMinRecovered.emit(this.minRecovered);
-  }
-
-  filterByMaxRecovered = () => {
-    this.filterService.filterMaxRecovered.emit(this.maxRecovered);
-  }
-
-  filterByMinDeaths = () => {
-    this.filterService.filterMinDeaths.emit(this.minDeaths);
-  }
-
-  filterByMaxDeaths = () => {
-    this.filterService.filterMaxDeaths.emit(this.maxDeaths);
   }
 
   @HostListener('window:resize', ['$event'])

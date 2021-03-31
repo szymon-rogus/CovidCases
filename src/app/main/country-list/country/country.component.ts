@@ -29,10 +29,7 @@ export class CountryComponent implements OnInit {
   }
 
   routeToDetails = () => {
-    this.router.navigate([this.country.Country], {state: this.country})
-      .then(() => {
-        window.location.reload();
-      });
+    this.router.navigate([this.country.Country], {state: this.country});
   }
 
   getTotalConfirmed = () => {

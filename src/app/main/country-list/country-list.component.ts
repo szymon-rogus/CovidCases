@@ -41,30 +41,6 @@ export class CountryListComponent implements OnInit {
       .subscribe((name: string) => {
         this.filterName = name;
       });
-    this.filterService.filterMinTotal
-      .subscribe((value: number) => {
-        this.filterMinTotal = value;
-      });
-    this.filterService.filterMaxTotal
-      .subscribe((value: number) => {
-        this.filterMaxTotal = value;
-      });
-    this.filterService.filterMinRecovered
-      .subscribe((value: number) => {
-        this.filterMinRecovered = value;
-      });
-    this.filterService.filterMaxRecovered
-      .subscribe((value: number) => {
-        this.filterMaxRecovered = value;
-      });
-    this.filterService.filterMinDeaths
-      .subscribe((value: number) => {
-        this.filterMinDeaths = value;
-      });
-    this.filterService.filterMaxDeaths
-      .subscribe((value: number) => {
-        this.filterMaxDeaths = value;
-      });
 
     this.sorterService.sortBy
       .subscribe((sortBy: string) => {

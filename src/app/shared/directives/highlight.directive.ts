@@ -6,7 +6,6 @@ import {Directive, ElementRef, HostListener, OnInit} from '@angular/core';
 export class HighlightDirective implements OnInit{
 
   constructor(private element : ElementRef) {
-    element.nativeElement.style.color = 'white';
   }
 
   ngOnInit(): void {
