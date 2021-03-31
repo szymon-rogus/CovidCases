@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { TooltipModule } from 'ng2-tooltip-directive';
-import { NgxSliderModule } from '@angular-slider/ngx-slider';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -53,8 +52,7 @@ import { SortPipe } from './shared/pipes/sort.pipe';
         BrowserAnimationsModule,
         ChartsModule,
         NgxPaginationModule,
-        TooltipModule,
-        NgxSliderModule
+        TooltipModule
     ],
   providers: [
     CountryComponent,
