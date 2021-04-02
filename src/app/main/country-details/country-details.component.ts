@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Params, Router} from "@angular/router";
-import {CountryDetailsService} from "../../services/country-details.service";
-import {CountryDayInfo} from "../../model/country-day-info";
-import {Country} from "../../model/country";
-import {CountryListService} from "../../services/country-list.service";
-import {CountryFlagService} from "../../services/country-flag.service";
+import {ActivatedRoute, Params, Router} from '@angular/router';
+import {CountryDetailsService} from '../../services/country-details.service';
+import {CountryDayInfo} from '../../model/country-day-info';
+import {Country} from '../../model/country';
+import {CountryListService} from '../../services/country-list.service';
+import {CountryFlagService} from '../../services/country-flag.service';
 
 @Component({
   selector: 'app-country-details',
@@ -18,11 +18,11 @@ export class CountryDetailsComponent implements OnInit {
   size: number;
   countryStats: CountryDayInfo[] = [];
   date: Date;
-  isFetched: boolean = false;
+  isFetched = false;
 
   constructor(private router: Router, private route: ActivatedRoute,
               private countryDetailsService: CountryDetailsService,
-              private countryListService : CountryListService,
+              private countryListService: CountryListService,
               private countryFlagService: CountryFlagService) {
     this.countryName = route.snapshot.params.country;
     this.country = this.router.getCurrentNavigation().extras.state as Country;
@@ -37,15 +37,15 @@ export class CountryDetailsComponent implements OnInit {
     this.isFetched = true;
     this.route.params
       .subscribe((params: Params) => {
-        this.countryName = params['country'];
-      })
+        this.countryName = params.country;
+      });
 
     if (!this.country) {
       this.countryListService.getCountryList()
         .subscribe(data => {
           this.country = data.Countries.find(country =>
             country.Country === this.countryName
-          )
+          );
         });
     }
   }
@@ -62,11 +62,11 @@ export class CountryDetailsComponent implements OnInit {
     if (this.country) {
       this.checkForData();
     }
-    return new Date(this.countryStats[this.size-1].Date).toLocaleDateString();
+    return new Date(this.countryStats[this.size - 1].Date).toLocaleDateString();
   }
 
   private checkForData = () => {
-    if(!this.country.NewConfirmed) {
+    if (!this.country.NewConfirmed) {
       this.country.NewConfirmed = this.countryStats[this.size - 1].Confirmed - this.countryStats[this.size - 2].Confirmed;
       this.country.NewDeaths = this.countryStats[this.size - 1].Deaths - this.countryStats[this.size - 2].Deaths;
       this.country.NewRecovered = this.countryStats[this.size - 1].Recovered - this.countryStats[this.size - 2].Recovered;
@@ -86,7 +86,7 @@ export class CountryDetailsComponent implements OnInit {
   }
 
   getActiveCases = () => {
-    return this.countryStats[this.size-1]?.Active.toLocaleString();
+    return this.countryStats[this.size - 1]?.Active.toLocaleString();
   }
 
   getNewConfirmed = () => {

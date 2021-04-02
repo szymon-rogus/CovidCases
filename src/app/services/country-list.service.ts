@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import {CountryList} from "../model/country-list";
-import {Country} from "../model/country";
+import {CountryList} from '../model/country-list';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +14,7 @@ export class CountryListService {
   }
 
   getCountryList(): Observable<CountryList> {
-    let params = new HttpParams();
+    const params = new HttpParams();
     return this.client.get<CountryList>(this.url, {params}).pipe();
   }
 }

@@ -1,5 +1,5 @@
 import {Component, HostListener, OnInit} from '@angular/core';
-import {FilterService} from "../../services/filter.service";
+import {FilterService} from '../../services/filter.service';
 
 @Component({
   selector: 'app-filters',
@@ -9,7 +9,7 @@ import {FilterService} from "../../services/filter.service";
 export class FiltersComponent implements OnInit{
 
   name: string;
-  resize: boolean = true;
+  resize = true;
 
   constructor(private filterService: FilterService) {
   }

@@ -8,7 +8,7 @@ import { GlobalData } from 'src/app/model/global';
 })
 export class GlobalComponent implements OnInit {
 
-  @Input() globalData : GlobalData;
+  @Input() globalData: GlobalData;
   activeCases: number;
 
   constructor() { }

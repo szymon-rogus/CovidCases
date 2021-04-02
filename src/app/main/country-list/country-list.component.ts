@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Country} from "../../model/country";
-import {FilterService} from "../../services/filter.service";
-import {SorterService} from "../../services/sorter.service";
+import {Country} from '../../model/country';
+import {FilterService} from '../../services/filter.service';
+import {SorterService} from '../../services/sorter.service';
 
 @Component({
   selector: 'app-country-list',
@@ -10,7 +10,7 @@ import {SorterService} from "../../services/sorter.service";
 })
 export class CountryListComponent implements OnInit {
 
-  @Input() countryList : Country[];
+  @Input() countryList: Country[];
   expandAll: boolean;
   sortBy: string;
   reverse: boolean;
@@ -26,7 +26,7 @@ export class CountryListComponent implements OnInit {
 
   constructor(private filterService: FilterService, private sorterService: SorterService) {
     this.expandAll = false;
-    this.sortBy = "Country";
+    this.sortBy = 'Country';
     this.reverse = false;
     this.filterName = '';
     this.filterMinTotal = 0;
@@ -57,7 +57,7 @@ export class CountryListComponent implements OnInit {
   }
 
   getIndex = (index: number) => {
-    return (index+1)+((this.page-1)*this.pageItems)
+    return (index + 1) + ((this.page - 1) * this.pageItems);
   }
 
   setPage($event: number) {

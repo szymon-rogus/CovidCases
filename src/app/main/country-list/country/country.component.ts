@@ -1,7 +1,7 @@
 import {Component, OnInit, Input} from '@angular/core';
 import { Country } from '../../../model/country';
-import {CountryFlagService} from "../../../services/country-flag.service";
-import {Router} from "@angular/router";
+import {CountryFlagService} from '../../../services/country-flag.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-country',
@@ -10,7 +10,7 @@ import {Router} from "@angular/router";
 })
 export class CountryComponent implements OnInit {
 
-  @Input() country : Country;
+  @Input() country: Country;
   @Input() expand: boolean;
   @Input() index: number;
   @Input() sortBy: string;

@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {CountryDetailsComponent} from "./main/country-details/country-details.component";
-import {MainPageComponent} from "./main/main-page.component";
-import {UnavailableComponent} from "./main/error/unavailable/unavailable.component";
+import {CountryDetailsComponent} from './main/country-details/country-details.component';
+import {MainPageComponent} from './main/main-page.component';
+import {UnavailableComponent} from './main/error/unavailable/unavailable.component';
 
 
 const routes: Routes = [
@@ -12,7 +12,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { onSameUrlNavigation: "reload", relativeLinkResolution: 'legacy' })],
+  imports: [RouterModule.forRoot(routes, { onSameUrlNavigation: 'reload', relativeLinkResolution: 'legacy' })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

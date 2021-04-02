@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import {Country} from "../../model/country";
+import {Country} from '../../model/country';
 
 @Pipe({
   name: 'sort'
@@ -7,7 +7,7 @@ import {Country} from "../../model/country";
 export class SortPipe implements PipeTransform {
 
   transform(countries: Country[], sortBy: string, reverse: boolean): Country[] {
-    let sortedCountries : Country[] = [];
+    let sortedCountries: Country[] = [];
     if (sortBy === 'Country') {
       sortedCountries = countries.sort((a, b) => {
         return a.Country.localeCompare(b.Country);
@@ -40,5 +40,4 @@ export class SortPipe implements PipeTransform {
   private getActive = (country: Country): number => {
     return country.TotalConfirmed - country.TotalDeaths - country.TotalRecovered;
   }
-
 }

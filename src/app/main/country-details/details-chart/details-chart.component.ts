@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {CountryDayInfo} from "../../../model/country-day-info";
+import {CountryDayInfo} from '../../../model/country-day-info';
 
 @Component({
   selector: 'app-details-chart',
@@ -11,13 +11,13 @@ export class DetailsChartComponent implements OnInit {
   @Input() statistics: CountryDayInfo[] = [];
   @Input() dates: string[];
 
-  totalOn: boolean = true;
-  deathsOn: boolean = false;
-  recoveredOn: boolean = false;
-  activeOn: boolean = false;
+  totalOn = true;
+  deathsOn = false;
+  recoveredOn = false;
+  activeOn = false;
 
   chartDatasets: Array<any> = [];
-  chartType: string = 'line';
+  chartType = 'line';
   chartLabels: string[];
   chartColors: Array<any> = [];
   chartOptions: any = {
@@ -43,12 +43,12 @@ export class DetailsChartComponent implements OnInit {
   }
 
   toggleTotal = () => {
-    if(this.totalOn){
+    if (this.totalOn){
       this.chartDatasets = this.chartDatasets.filter(value => {
-        return value.label != 'Total confirmed';
+        return value.label !== 'Total confirmed';
       });
       this.chartColors = this.chartColors.filter(value => {
-        return value.id != 'red';
+        return value.id !== 'red';
       });
     }
     else {
@@ -63,12 +63,12 @@ export class DetailsChartComponent implements OnInit {
   }
 
   toggleDeaths = () => {
-    if(this.deathsOn){
+    if (this.deathsOn){
       this.chartDatasets = this.chartDatasets.filter(value => {
-        return value.label != 'Total deaths';
+        return value.label !== 'Total deaths';
       });
       this.chartColors = this.chartColors.filter(value => {
-        return value.id != 'black';
+        return value.id !== 'black';
       });
     }
     else {
@@ -83,12 +83,12 @@ export class DetailsChartComponent implements OnInit {
   }
 
   toggleRecovered = () => {
-    if(this.recoveredOn){
+    if (this.recoveredOn){
       this.chartDatasets = this.chartDatasets.filter(value => {
-        return value.label != 'Total recovered';
+        return value.label !== 'Total recovered';
       });
       this.chartColors = this.chartColors.filter(value => {
-        return value.id != 'green';
+        return value.id !== 'green';
       });
     }
     else {
@@ -103,12 +103,12 @@ export class DetailsChartComponent implements OnInit {
   }
 
   toggleActive = () => {
-    if(this.activeOn){
+    if (this.activeOn){
       this.chartDatasets = this.chartDatasets.filter(value => {
-        return value.label != 'Active cases';
+        return value.label !== 'Active cases';
       });
       this.chartColors = this.chartColors.filter(value => {
-        return value.id != 'yellow';
+        return value.id !== 'yellow';
       });
     }
     else {
