@@ -1,10 +1,5 @@
 <div class="container-fluid" style="background-color: black; min-height: 970px;">
   <div class="row">
-    <div class="col-xl-8 col-12">
-      <div class="card text-white bg-light mb-3" *ngIf="countryStats && size" style="margin: 10px;">
-        <app-details-chart [statistics]="countryStats" [dates]="getDays()"></app-details-chart>
-      </div>
-    </div>
     <div id="data" *ngIf="countryStats && size && isFetched" class="col-xl-4 col-12">
       <div class="card text-white bg-dark mb-3" style="font-size: 24px; margin: 20px; padding: 20px;">
         <div class="row" style="justify-content: center; margin-bottom: 20px;">
@@ -76,6 +71,11 @@
             {{getNewRecovered()}}
           </div>
         </div>
+      </div>
+    </div>
+    <div class="col-xl-8 col-12">
+      <div class="card text-white bg-light mb-3" *ngIf="countryStats && size" style="margin: 10px;">
+        <app-details-chart [statistics]="countryStats" [dates]="getDays()"></app-details-chart>
       </div>
     </div>
   </div>

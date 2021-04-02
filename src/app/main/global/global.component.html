@@ -1,6 +1,15 @@
 <div class="container-fluid w-100">
   <div class="card text-white bg-dark mb-3" tooltip="Global data" show-delay="100" hide-delay="100"
-       placement="left" theme="light">
+       placement="left" theme="light" style="margin-top: 30px;">
+    <div class="row" style="margin-bottom: 20px;">
+      <div class="col-7">
+        Date:
+      </div>
+      <div class="col-5" style="color: white;">
+        {{getDate()}}
+      </div>
+    </div>
+    <hr style="border: 1px solid;">
     <div class="row">
       <div class="col-7">
         Total confirmed:
@@ -25,12 +34,37 @@
         {{getTotalRecovered()}}
       </div>
     </div>
-    <div class="row">
+    <div class="row" style="margin-bottom: 20px;">
       <div class="col-7">
         Active cases:
       </div>
       <div class="col-5" style="color: yellow;">
         {{getActiveCases()}}
+      </div>
+    </div>
+    <hr style="border: 1px solid;">
+    <div class="row">
+      <div class="col-7">
+        New Confirmed:
+      </div>
+      <div class="col-5" style="color: red;">
+        {{getNewConfirmed()}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-7">
+        New Deaths:
+      </div>
+      <div class="col-5" style="color: black;">
+        {{getNewDeaths()}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-7">
+        New Recovered
+      </div>
+      <div class="col-5" style="color: rgb(16, 170, 16)">
+        {{getNewRecovered()}}
       </div>
     </div>
   </div>

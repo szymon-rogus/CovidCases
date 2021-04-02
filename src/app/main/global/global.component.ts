@@ -10,11 +10,17 @@ export class GlobalComponent implements OnInit {
 
   @Input() globalData: GlobalData;
   activeCases: number;
+  date: string;
 
   constructor() { }
 
   ngOnInit(): void {
     this.activeCases = this.globalData.TotalConfirmed - this.globalData.TotalDeaths - this.globalData.TotalRecovered;
+    this.date = new Date(this.globalData?.Date).toLocaleDateString();
+  }
+
+  getDate = () => {
+    return this.date;
   }
 
   getTotalConfirmed = () => {
@@ -31,5 +37,17 @@ export class GlobalComponent implements OnInit {
 
   getActiveCases = () => {
     return this.activeCases?.toLocaleString();
+  }
+
+  getNewConfirmed = () => {
+    return this.globalData?.NewConfirmed.toLocaleString();
+  }
+
+  getNewDeaths = () => {
+    return this.globalData?.NewDeaths.toLocaleString();
+  }
+
+  getNewRecovered = () => {
+    return this.globalData?.NewRecovered.toLocaleString();
   }
 }
