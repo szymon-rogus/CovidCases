@@ -33,7 +33,7 @@ export class CountryListComponent implements OnInit {
     this.filterMinRecovered = 0;
     this.filterMinDeaths = 0;
     this.page = 1;
-    this.pageItems = 14;
+    this.pageItems = 10;
   }
 
   ngOnInit(): void {

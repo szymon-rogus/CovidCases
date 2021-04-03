@@ -1,4 +1,4 @@
-<div class="container-fluid" style="background-color: black; min-height: 970px">
+<div class="container-fluid" style="background-color: black; min-height: 900px">
   <div class="row">
     <div class="col-xl-8 col-lg-6 col-md-5">
       <div *ngIf="countryList.length > 0">
@@ -7,8 +7,11 @@
       </div>
   </div>
   <div class="col-xl-4 col-lg-6 col-md-7">
-    <app-global *ngIf="globalData" [globalData]="globalData"></app-global>
     <app-filters></app-filters>
+    <app-global *ngIf="globalData" [globalData]="globalData"></app-global>
+    <div style="position: absolute; bottom: 0; right: 0; padding-right: 50px; padding-bottom: 20px">
+      <a appHighlight href="https://api.covid19api.com" style="color: white">Source Api: https://api.covid19api.com</a>
+    </div>
     </div>
   </div>
 </div>

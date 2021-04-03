@@ -5,7 +5,12 @@ import {Directive, ElementRef, HostListener, OnInit} from '@angular/core';
 })
 export class HighlightDirective implements OnInit{
 
+  bgColor: string;
+  textColor: string;
+
   constructor(private element: ElementRef) {
+    this.bgColor = element.nativeElement.style.backgroundColor;
+    this.textColor = element.nativeElement.style.color;
   }
 
   ngOnInit(): void {
@@ -18,7 +23,7 @@ export class HighlightDirective implements OnInit{
   }
 
   @HostListener('mouseleave') mouseleave() {
-    this.element.nativeElement.style.color = 'white';
-    this.element.nativeElement.style.backgroundColor = '#343a40';
+    this.element.nativeElement.style.color = this.textColor;
+    this.element.nativeElement.style.backgroundColor = this.bgColor;
   }
 }
