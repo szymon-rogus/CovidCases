@@ -1,4 +1,7 @@
-<div class="container-fluid" style="background-color: black; height: 90vh">
+<div class="container-fluid" style="background-color: black; height: 100%; position:fixed; overflow-y: scroll;">
+  <h1 [routerLink]="['/']"
+      routerLinkActive="active">Covid cases</h1>
+  <hr style="border: 1px solid;">
   <div class="row">
     <div class="col-xl-8 col-12">
       <div class="card text-white bg-light mb-3" *ngIf="countryStats && size" style="margin: 10px;">
