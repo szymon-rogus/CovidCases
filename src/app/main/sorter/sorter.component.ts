@@ -55,12 +55,15 @@ export class SorterComponent implements OnInit {
     return sorter === Direction.ASC ? Direction.DESC : Direction.ASC;
   }
 
-  checkIfAsc = (sorter: Direction) => {
-    return sorter === Direction.ASC;
-  }
-
-  checkIfDesc = (sorter: Direction) => {
-    return sorter === Direction.DESC;
+  checkDirection = (sorter: Direction) => {
+    switch (sorter) {
+      case Direction.ASC:
+        return 'fa fa-sort-asc';
+      case Direction.DESC:
+        return 'fa fa-sort-desc';
+      default:
+        return 'fa fa-sort';
+    }
   }
 
   updateExpandAll = () => {

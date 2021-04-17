@@ -3,7 +3,7 @@ import {Directive, HostBinding, HostListener, Input, OnInit} from '@angular/core
 @Directive({
   selector: '[appEnlargeChevron]'
 })
-export class EnlargeChevronDirective implements OnInit{
+export class EnlargeChevronDirective implements OnInit {
 
   @Input() sizeNormal: string;
   @Input() sizeLarge: string;
