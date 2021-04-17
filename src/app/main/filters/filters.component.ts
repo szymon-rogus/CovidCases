@@ -9,7 +9,6 @@ import {FilterService} from '../../services/filter.service';
 export class FiltersComponent implements OnInit{
 
   name: string;
-  resize = true;
 
   constructor(private filterService: FilterService) {
   }
@@ -19,10 +18,5 @@ export class FiltersComponent implements OnInit{
 
   filterByName = () => {
     this.filterService.filterName.emit(this.name);
-  }
-
-  @HostListener('window:resize', ['$event'])
-  onResize = (event) => {
-    this.resize = !(event.target.innerWidth < 1800 && event.target.innerWidth >= 1200);
   }
 }

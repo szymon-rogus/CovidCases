@@ -1,0 +1,10 @@
+#chart {
+  display: block;
+  padding: 15px;
+}
+
+.container {
+  color: black;
+  float: left;
+  margin: 20px;
+}

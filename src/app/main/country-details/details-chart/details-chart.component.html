@@ -1,4 +1,4 @@
-<div style="display: block; padding: 15px;" >
+<div id="chart">
   <canvas baseChart
           [chartType]="chartType"
           [datasets]="chartDatasets"
@@ -9,7 +9,7 @@
           (chartHover)="chartHovered($event)"
           (chartClick)="chartClicked($event)">
   </canvas>
-  <div class="container" style="color: black; float: left; margin: 20px;">
+  <div class="container">
     <div class="form-check form-check">
       <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" checked="checked"
              (click)="toggleTotal()">

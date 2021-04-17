@@ -5,12 +5,19 @@
 }
 
 .row {
+  display: flex;
+  align-items: center;
   padding-bottom: 20px;
   padding-top: 20px;
 }
 
-.col, .col-xl-3{
+.col {
   text-align: center;
+}
+
+.col-xl-3 {
+  text-align: start;
+  padding-left: 5%;
 }
 
 #expandAll {

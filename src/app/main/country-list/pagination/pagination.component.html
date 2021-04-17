@@ -1,8 +1,9 @@
 <div class="container-fluid w-100">
-  <div class="card text-white bg-dark mb-3" style="margin: 20px;">
+  <div class="card text-white bg-dark mb-3">
     <div class="row">
       <div class="col-12">
-        <pagination-template #p="paginationApi" (pageChange)="changePage(page=$event)" (pageBoundsCorrection)="changePage(page=$event)">
+        <pagination-template #p="paginationApi" (pageChange)="changePage(page=$event)"
+                             (pageBoundsCorrection)="changePage(page=$event)">
           <div class="custom-pagination">
             <div class="pagination-previous" [class.disabled]="p.isFirstPage()">
               <span *ngIf="!p.isFirstPage()" (click)="p.previous()"> < </span>

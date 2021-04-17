@@ -1,4 +1,4 @@
-import {Component, OnInit, Input} from '@angular/core';
+import {Component, OnInit, Input, HostListener} from '@angular/core';
 import { Country } from '../../../model/Country';
 import {CountryFlagService} from '../../../services/country-flag.service';
 import {Router} from '@angular/router';
@@ -50,5 +50,12 @@ export class CountryComponent implements OnInit {
 
   expandCountry = () => {
     this.expand = !this.expand;
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize = (event) => {
+    if (event.target.innerWidth >= 1200) {
+      this.expand = false;
+    }
   }
 }

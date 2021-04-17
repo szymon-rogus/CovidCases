@@ -1,16 +1,16 @@
-<div class="container-fluid" style="background-color: black; height: 100%; position:fixed; overflow-y: scroll;">
+<div class="container-fluid">
   <app-header></app-header>
   <div class="row">
     <div class="col-xl-8 col-12">
-      <div class="card text-white bg-light mb-3" *ngIf="countryStats && size" style="margin: 10px;">
+      <div id="chart" class="card text-white bg-light mb-3" *ngIf="countryStats && size">
         <app-details-chart [statistics]="countryStats" [dates]="getDays()"></app-details-chart>
       </div>
     </div>
     <div id="data" *ngIf="countryStats && size && isFetched" class="col-xl-4 col-12">
-      <div class="card text-white bg-dark mb-3" tooltip="Extended data" show-delay="100" hide-delay="100"
-           placement="top" theme="light" style="font-size: 24px; margin: 20px; padding: 20px;">
-        <div class="row" style="justify-content: center; margin-bottom: 20px;">
-          <h3 style="font-weight: bold">{{countryName}}
+      <div id="extendedData" class="card text-white bg-dark mb-3" tooltip="Extended data" show-delay="100" hide-delay="100"
+           placement="top" theme="light">
+        <div id="country" class="row">
+          <h3>{{countryName}}
             <img [src]="getCountryFlag()" alt="Big country flag"/>
           </h3>
         </div>
@@ -18,15 +18,16 @@
           <div class="col-8">
             Date:
           </div>
-          <div class="col-4" style="color: white; padding-bottom: 20px;">
+          <div id="date" class="col-4">
             {{getDateAndCheckData()}}
           </div>
         </div>
+        <hr>
         <div class="row">
           <div class="col-8">
             Total confirmed:
           </div>
-          <div class="col-4" style="color: red;">
+          <div id="confirmed" class="col-4">
             {{getTotalConfirmed()}}
           </div>
         </div>
@@ -34,7 +35,7 @@
           <div class="col-8">
             Total deaths:
           </div>
-          <div class="col-4" style="color: black;">
+          <div id="deaths" class="col-4">
             {{getTotalDeaths()}}
           </div>
         </div>
@@ -42,7 +43,7 @@
           <div class="col-8">
             Total recovered:
           </div>
-          <div class="col-4" style="color: green;">
+          <div id="recovered" class="col-4">
             {{getTotalRecovered()}}
           </div>
         </div>
@@ -50,15 +51,16 @@
           <div class="col-8">
             Active cases:
           </div>
-          <div class="col-4" style="color: yellow;">
+          <div id="active" class="col-4">
             {{getActiveCases()}}
           </div>
         </div>
+        <hr>
         <div class="row">
-          <div class="col-8" style="margin-top: 20px;">
+          <div class="col-8">
             New confirmed:
           </div>
-          <div *ngIf="country" class="col-4" style="color: red; margin-top: 20px;">
+          <div id="newConfirmed" *ngIf="country" class="col-4">
             {{getNewConfirmed()}}
           </div>
         </div>
@@ -66,7 +68,7 @@
           <div class="col-8">
             New deaths:
           </div>
-          <div *ngIf="country" class="col-4" style="color: black;">
+          <div id="newDeaths" *ngIf="country" class="col-4">
             {{getNewDeaths()}}
           </div>
         </div>
@@ -74,7 +76,7 @@
           <div class="col-8">
             New recovered:
           </div>
-          <div *ngIf="country" class="col-4" style="color: green;">
+          <div id="newRecovered" *ngIf="country" class="col-4">
             {{getNewRecovered()}}
           </div>
         </div>

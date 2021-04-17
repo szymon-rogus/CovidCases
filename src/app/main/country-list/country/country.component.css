@@ -1,5 +1,46 @@
+.card {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin: 10px;
+}
+
 .row {
-    padding-left: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.col-xl-3 {
+  text-align: start;
+  padding-left: 5%;
+}
+
+.col {
+  text-align: end;
+}
+
+em {
+  width: 60%;
+}
+
+#confirmed {
+  padding-right: 6%;
+  color: red
+}
+
+#deaths {
+  padding-right: 8%;
+  color: black;
+  font-weight: bold;
+}
+
+#recovered {
+  padding-right: 7%;
+  color: rgb(16, 170, 16);
+}
+
+#active {
+  padding-right: 7%;
+  color: yellow
 }
 
 i {

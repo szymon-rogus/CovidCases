@@ -1,3 +1,7 @@
+.card {
+  margin: 10px;
+}
+
 .col-12 {
   display: flex;
   align-items: center;

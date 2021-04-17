@@ -1,3 +1,59 @@
-.col-4 {
+.container-fluid {
+  background-color: black;
+  height: 100%;
+  position: fixed;
+  overflow-y: scroll;
+}
+
+#chart {
+  margin-top: 20px;
+}
+
+#extendedData {
+  font-size: 24px;
+  margin: 20px;
+  padding: 20px;
+}
+
+#country {
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+h3 {
   font-weight: bold;
+}
+
+.row {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.col-4, .col-8 {
+  font-weight: bold;
+}
+
+hr {
+  border: 1px solid;
+}
+
+#date {
+  color: white;
+}
+
+#confirmed, #newConfirmed {
+  color: red;
+}
+
+#deaths, #newDeaths {
+  color: black;
+}
+
+#recovered, #newRecovered {
+  color: rgb(16, 170, 16);;
+}
+
+#active {
+  color: yellow;
+  padding-bottom: 10px;
 }
