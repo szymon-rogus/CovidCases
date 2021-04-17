@@ -1,5 +1,5 @@
 import {Component, OnInit, Input} from '@angular/core';
-import { Country } from '../../../model/country';
+import { Country } from '../../../model/Country';
 import {CountryFlagService} from '../../../services/country-flag.service';
 import {Router} from '@angular/router';
 

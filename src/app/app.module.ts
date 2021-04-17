@@ -24,6 +24,7 @@ import { PaginationComponent } from './main/country-list/pagination/pagination.c
 import { UnavailableComponent } from './main/error/unavailable/unavailable.component';
 import { HighlightDirective } from './shared/directives/highlight.directive';
 import { SortPipe } from './shared/pipes/sort.pipe';
+import { HeaderComponent } from './main/header/header.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { SortPipe } from './shared/pipes/sort.pipe';
     PaginationComponent,
     UnavailableComponent,
     HighlightDirective,
-    SortPipe
+    SortPipe,
+    HeaderComponent
   ],
     imports: [
         BrowserModule,

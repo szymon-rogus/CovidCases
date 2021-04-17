@@ -1,5 +1,5 @@
-import { Country } from './country';
-import { GlobalData } from './global';
+import { Country } from './Country';
+import { GlobalData } from './Global';
 
 export class CountryList {
   Global: GlobalData;

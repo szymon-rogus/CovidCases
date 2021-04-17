@@ -1,7 +1,5 @@
 <div class="container-fluid" style="background-color: black; height: 100%; position:fixed; overflow-y: scroll;">
-  <h1 [routerLink]="['/']"
-      routerLinkActive="active">Covid cases</h1>
-  <hr style="border: 1px solid;">
+  <app-header></app-header>
   <div class="row">
     <div class="col-xl-8 col-lg-6 col-md-5">
       <div *ngIf="countryList.length > 0">

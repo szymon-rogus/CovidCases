@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import { GlobalData } from 'src/app/model/global';
+import { GlobalData } from 'src/app/model/Global';
 
 @Component({
   selector: 'app-global',

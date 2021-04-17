@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 import {CountryDetailsService} from '../../services/country-details.service';
-import {CountryDayInfo} from '../../model/country-day-info';
-import {Country} from '../../model/country';
+import {CountryDayInfo} from '../../model/CountryDayInfo';
+import {Country} from '../../model/Country';
 import {CountryListService} from '../../services/country-list.service';
 import {CountryFlagService} from '../../services/country-flag.service';
 

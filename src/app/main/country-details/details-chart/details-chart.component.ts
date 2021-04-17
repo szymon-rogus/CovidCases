@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {CountryDayInfo} from '../../../model/country-day-info';
+import {CountryDayInfo} from '../../../model/CountryDayInfo';
 
 @Component({
   selector: 'app-details-chart',

@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {CountryListService} from '../services/country-list.service';
-import {GlobalData} from '../model/global';
-import {Country} from '../model/country';
+import {GlobalData} from '../model/Global';
+import {Country} from '../model/Country';
 import {Router} from '@angular/router';
 
 @Component({
