@@ -15,12 +15,6 @@ export class CountryListComponent implements OnInit {
   sortBy: string;
   reverse: boolean;
   filterName: string;
-  filterMinTotal: number;
-  filterMaxTotal: number;
-  filterMinRecovered: number;
-  filterMaxRecovered: number;
-  filterMinDeaths: number;
-  filterMaxDeaths: number;
   page: number;
   pageItems: number;
 
@@ -29,9 +23,6 @@ export class CountryListComponent implements OnInit {
     this.sortBy = 'Country';
     this.reverse = false;
     this.filterName = '';
-    this.filterMinTotal = 0;
-    this.filterMinRecovered = 0;
-    this.filterMinDeaths = 0;
     this.page = 1;
     this.pageItems = 9;
   }

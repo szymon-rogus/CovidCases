@@ -1,20 +1,20 @@
 <div class="container-fluid w-100">
   <div class="card text-white bg-dark mb-3" tooltip="Global data" show-delay="100" hide-delay="100"
-       placement="left" theme="light" style="margin-top: 30px;">
-    <div class="row" style="margin-bottom: 20px;">
+       placement="left" theme="light">
+    <div class="row">
       <div class="col-7">
         Date:
       </div>
-      <div class="col-5" style="color: white;">
+      <div id="date" class="col-5">
         {{getDate()}}
       </div>
     </div>
-    <hr style="border: 1px solid;">
+    <hr>
     <div class="row">
       <div class="col-7">
         Total confirmed:
       </div>
-      <div class="col-5" style="color: red;">
+      <div id="confirmed" class="col-5">
         {{getTotalConfirmed()}}
       </div>
     </div>
@@ -22,7 +22,7 @@
       <div class="col-7">
         Total deaths:
       </div>
-      <div class="col-5" style="color: black;">
+      <div id="deaths" class="col-5">
         {{getTotalDeaths()}}
       </div>
     </div>
@@ -30,24 +30,24 @@
       <div class="col-7">
         Total recovered:
       </div>
-      <div class="col-5" style="color: rgb(16, 170, 16);">
+      <div id="recovered" class="col-5">
         {{getTotalRecovered()}}
       </div>
     </div>
-    <div class="row" style="margin-bottom: 20px;">
+    <div class="row">
       <div class="col-7">
         Active cases:
       </div>
-      <div class="col-5" style="color: yellow;">
+      <div id="active" class="col-5">
         {{getActiveCases()}}
       </div>
     </div>
-    <hr style="border: 1px solid;">
+    <hr>
     <div class="row">
       <div class="col-7">
         New Confirmed:
       </div>
-      <div class="col-5" style="color: red;">
+      <div id="newConfirmed" class="col-5">
         {{getNewConfirmed()}}
       </div>
     </div>
@@ -55,7 +55,7 @@
       <div class="col-7">
         New Deaths:
       </div>
-      <div class="col-5" style="color: black;">
+      <div id="newDeaths" class="col-5">
         {{getNewDeaths()}}
       </div>
     </div>
@@ -63,7 +63,7 @@
       <div class="col-7">
         New Recovered
       </div>
-      <div class="col-5" style="color: rgb(16, 170, 16)">
+      <div id="newRecovered" class="col-5">
         {{getNewRecovered()}}
       </div>
     </div>

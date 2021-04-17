@@ -1,18 +1,41 @@
 .container-fluid {
-  font-size: 26px;
+  font-size: 24px;
 }
 
 .card {
-  padding-left: 20px;
-  padding-bottom: 20px;
-  padding-right: 20px;
-  margin: 20px;
+  padding: 20px;
+  margin: 20px 20px 20px;
 }
 
 .row {
-  padding-top: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .col-7, .col-5 {
   font-weight: bold;
+}
+
+hr {
+  border: 1px solid;
+}
+
+#date {
+  color: white;
+}
+
+#confirmed, #newConfirmed {
+  color: red;
+}
+
+#deaths, #newDeaths {
+  color: black;
+}
+
+#recovered, #newRecovered {
+  color: rgb(16, 170, 16);;
+}
+
+#active {
+  color: yellow;
 }
