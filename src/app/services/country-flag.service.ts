@@ -5,11 +5,11 @@ import { Injectable } from '@angular/core';
 })
 export class CountryFlagService {
 
-  url = 'https://www.countryflags.io/';
+  url = 'https://flagcdn.com/';
 
-  constructor() { }
+  constructor() {}
 
-  getCountryFlag(countryCode: string, size: number): string {
-    return this.url + countryCode + '/shiny/' + size + '.png';
+  getCountryFlag(countryCode: string, width: number, height: number): string {
+    return this.url + width + 'x' + height + '/' + countryCode.toLowerCase() + '.webp';
   }
 }

@@ -55,7 +55,7 @@ export class CountryDetailsComponent implements OnInit {
   }
 
   getCountryFlag = () => {
-    return this.countryFlagService.getCountryFlag(this.country?.CountryCode, 64);
+    return this.countryFlagService.getCountryFlag(this.country?.CountryCode, 72, 54);
   }
 
   getDateAndCheckData = () => {
