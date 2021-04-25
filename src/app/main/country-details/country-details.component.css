@@ -11,6 +11,7 @@
 
 #extendedData {
   font-size: 24px;
+  font-family: Arial, serif;
   margin: 20px;
   padding: 20px;
 }
@@ -29,8 +30,14 @@ h3 {
   padding-bottom: 5px;
 }
 
-.col-4, .col-8 {
+.col-5, .col-7 {
   font-weight: bold;
+}
+
+.col-5 {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 10%;
 }
 
 hr {

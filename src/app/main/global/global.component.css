@@ -5,6 +5,7 @@
 .card {
   padding: 20px;
   margin: 20px 20px 20px;
+  font-size: 24px;
 }
 
 .row {
@@ -12,12 +13,22 @@
   padding-bottom: 10px;
 }
 
+.col-12 {
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+}
+
 .col-7, .col-5 {
   font-weight: bold;
 }
 
+.col-5 {
+  padding-right: 8%;
+}
+
 hr {
-  border: 1px solid;
+  border: 2px solid;
 }
 
 #date {
@@ -26,16 +37,24 @@ hr {
 
 #confirmed, #newConfirmed {
   color: red;
+  display: flex;
+  justify-content: flex-end;
 }
 
 #deaths, #newDeaths {
   color: black;
+  display: flex;
+  justify-content: flex-end;
 }
 
 #recovered, #newRecovered {
-  color: rgb(16, 170, 16);;
+  color: rgb(16, 170, 16);
+  display: flex;
+  justify-content: flex-end;
 }
 
 #active {
   color: yellow;
+  display: flex;
+  justify-content: flex-end;
 }

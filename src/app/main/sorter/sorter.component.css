@@ -8,7 +8,7 @@
   display: flex;
   align-items: center;
   padding-bottom: 20px;
-  padding-top: 20px;
+  padding-top: 25px;
 }
 
 .col {
@@ -18,6 +18,11 @@
 .col-xl-3 {
   text-align: start;
   padding-left: 5%;
+}
+
+h4 {
+  font-size: 25px;
+  font-family: Arial, serif;
 }
 
 #expandAll {
