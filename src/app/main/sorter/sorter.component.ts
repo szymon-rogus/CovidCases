@@ -19,8 +19,7 @@ export class SorterComponent implements OnInit {
 
   constructor(private sorterService: SorterService) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   setSorter = (value: string, reverse: Direction) => {
     this.sorterService.sortBy.emit(value);

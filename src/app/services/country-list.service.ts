@@ -10,8 +10,7 @@ export class CountryListService {
 
   url = 'https://api.covid19api.com/summary';
 
-  constructor(private client: HttpClient) {
-  }
+  constructor(private client: HttpClient) {}
 
   getCountryList(): Observable<CountryList> {
     const params = new HttpParams();

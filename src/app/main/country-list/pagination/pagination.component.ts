@@ -10,10 +10,9 @@ export class PaginationComponent implements OnInit {
   page = 1;
   @Output() actualPage = new EventEmitter<number>();
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   changePage = (value: number) => {
     this.actualPage.emit(value);

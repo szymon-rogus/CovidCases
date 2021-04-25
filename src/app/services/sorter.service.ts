@@ -8,5 +8,5 @@ export class SorterService {
   sortBy = new EventEmitter<string>();
   reverse = new EventEmitter<boolean>();
 
-  constructor() { }
+  constructor() {}
 }

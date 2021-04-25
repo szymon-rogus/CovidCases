@@ -10,8 +10,7 @@ export class CountryDetailsService {
 
   url = 'https://api.covid19api.com/total/dayone/country/';
 
-  constructor(private client: HttpClient) {
-  }
+  constructor(private client: HttpClient) {}
 
   getCountryDetails(country: string): Observable<CountryDayInfo[]> {
     const params = new HttpParams();

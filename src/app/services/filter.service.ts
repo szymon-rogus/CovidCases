@@ -7,5 +7,5 @@ export class FilterService {
 
   filterName = new EventEmitter<string>();
 
-  constructor() { }
+  constructor() {}
 }

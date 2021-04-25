@@ -1,4 +1,4 @@
-import {Component, HostListener, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FilterService} from '../../services/filter.service';
 
 @Component({
@@ -13,8 +13,7 @@ export class FiltersComponent implements OnInit{
   constructor(private filterService: FilterService) {
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   filterByName = () => {
     this.filterService.filterName.emit(this.name);

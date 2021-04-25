@@ -13,8 +13,7 @@ export class HighlightDirective implements OnInit{
     this.textColor = element.nativeElement.style.color;
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   @HostListener('mouseenter') onMouseEnter(){
     this.element.nativeElement.style.color = '#343a40';

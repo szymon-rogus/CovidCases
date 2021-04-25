@@ -10,9 +10,8 @@ export class HeaderComponent implements OnInit {
 
   headerTitle = Constants.TITLE;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
 }

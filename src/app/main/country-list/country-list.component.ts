@@ -1,4 +1,4 @@
-import {Component, HostListener, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Country} from '../../model/Country';
 import {FilterService} from '../../services/filter.service';
 import {SorterService} from '../../services/sorter.service';
