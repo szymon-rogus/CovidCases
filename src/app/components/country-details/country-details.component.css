@@ -21,6 +21,10 @@
   margin-bottom: 20px;
 }
 
+em {
+  padding-top: 12%;
+}
+
 h3 {
   font-weight: bold;
 }

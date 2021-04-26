@@ -1,18 +1,21 @@
 <div class="container-fluid">
   <app-header></app-header>
   <div class="row">
-    <div class="col-xl-8 col-12">
-      <div id="chart" class="card text-white bg-light mb-3" *ngIf="countryStats && size">
-        <app-details-chart [statistics]="countryStats" [dates]="getDays()"></app-details-chart>
-      </div>
-    </div>
     <div id="data" *ngIf="countryStats && size && isFetched" class="col-xl-4 col-12">
       <div id="extendedData" class="card text-white bg-dark mb-3" tooltip="Extended data" show-delay="100" hide-delay="100"
            placement="top" theme="light">
         <div id="country" class="row">
-          <h3>{{countryName}}
-            <img [src]="getCountryFlag()" alt=""/>
-          </h3>
+          <div class="col-3">
+            <em appEnlargeChevron [sizeNormal]="' fa'" [sizeLarge]="' fa-lg'"
+                class="fa fa-arrow-left" [routerLink]="['/']"
+                routerLinkActive="active"
+                tooltip="Main page" placement="top" theme="light"></em>
+          </div>
+          <div class="col-9">
+            <h3>{{countryName}}
+              <img [src]="getCountryFlag()" alt=""/>
+            </h3>
+          </div>
         </div>
         <div class="row">
           <div class="col-7">
@@ -80,6 +83,11 @@
             {{getNewRecovered()}}
           </div>
         </div>
+      </div>
+    </div>
+    <div class="col-xl-8 col-12">
+      <div id="chart" class="card text-white bg-light mb-3" *ngIf="countryStats && size">
+        <app-details-chart [statistics]="countryStats" [dates]="getDays()"></app-details-chart>
       </div>
     </div>
   </div>
