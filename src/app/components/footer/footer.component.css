@@ -1,5 +1,5 @@
 .page-footer {
-  margin-top: 1.5%;
+  margin-top: 1%;
 }
 
 .footer-copyright {
@@ -12,4 +12,8 @@
 
 #copyright, #sourceText {
   color: gray;
+}
+
+.fa {
+  font-size: 24px;
 }
