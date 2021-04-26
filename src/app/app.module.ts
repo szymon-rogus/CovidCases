@@ -5,26 +5,27 @@ import { TooltipModule } from 'ng2-tooltip-directive';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MainPageComponent } from './main/main-page.component';
-import { CountryComponent } from './main/country-list/country/country.component';
-import { GlobalComponent } from './main/global/global.component';
-import { CountryDetailsComponent } from './main/country-details/country-details.component';
+import { MainPageComponent } from './components/main-page.component';
+import { CountryComponent } from './components/country-list/country/country.component';
+import { GlobalComponent } from './components/global/global.component';
+import { CountryDetailsComponent } from './components/country-details/country-details.component';
 import { OrderModule } from 'ngx-order-pipe';
-import { SorterComponent } from './main/sorter/sorter.component';
+import { SorterComponent } from './components/sorter/sorter.component';
 import { FilterPipe } from './shared/pipes/filter.pipe';
-import { FiltersComponent} from './main/filters/filters.component';
+import { FiltersComponent} from './components/filters/filters.component';
 import { FormsModule } from '@angular/forms';
 import { ChartsModule } from 'ng2-charts';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { DetailsChartComponent } from './main/country-details/details-chart/details-chart.component';
-import { CountryListComponent } from './main/country-list/country-list.component';
+import { DetailsChartComponent } from './components/country-details/details-chart/details-chart.component';
+import { CountryListComponent } from './components/country-list/country-list.component';
 import { EnlargeChevronDirective } from './shared/directives/enlarge-chevron.directive';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { PaginationComponent } from './main/country-list/pagination/pagination.component';
-import { UnavailableComponent } from './main/error/unavailable/unavailable.component';
+import { PaginationComponent } from './components/country-list/pagination/pagination.component';
+import { UnavailableComponent } from './components/error/unavailable/unavailable.component';
 import { HighlightDirective } from './shared/directives/highlight.directive';
 import { SortPipe } from './shared/pipes/sort.pipe';
-import { HeaderComponent } from './main/header/header.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { HeaderComponent } from './main/header/header.component';
     UnavailableComponent,
     HighlightDirective,
     SortPipe,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ],
     imports: [
         BrowserModule,

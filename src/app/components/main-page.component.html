@@ -1,0 +1,15 @@
+<div class="container-fluid">
+  <app-header></app-header>
+  <div class="row">
+    <div class="col-xl-8 col-lg-6 col-md-5">
+      <div *ngIf="countryList.length > 0">
+        <app-country-list [countryList]="countryList"></app-country-list>
+      </div>
+    </div>
+    <div class="col-xl-4 col-lg-6 col-md-7">
+      <app-filters></app-filters>
+      <app-global *ngIf="globalData" [globalData]="globalData"></app-global>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>

@@ -1,0 +1,15 @@
+.page-footer {
+  margin-top: 1.5%;
+}
+
+.footer-copyright {
+  color: white;
+}
+
+#source, #creator {
+  color: white;
+}
+
+#copyright, #sourceText {
+  color: gray;
+}

@@ -33,7 +33,7 @@ export class DetailsChartComponent implements OnInit {
         onLeave: () => {
           this.element.nativeElement.style.cursor = 'default';
         }
-      },
+      }
     };
   }
 

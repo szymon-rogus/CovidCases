@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {CountryDetailsComponent} from './main/country-details/country-details.component';
-import {MainPageComponent} from './main/main-page.component';
-import {UnavailableComponent} from './main/error/unavailable/unavailable.component';
+import {CountryDetailsComponent} from './components/country-details/country-details.component';
+import {MainPageComponent} from './components/main-page.component';
+import {UnavailableComponent} from './components/error/unavailable/unavailable.component';
 
 
 const routes: Routes = [
