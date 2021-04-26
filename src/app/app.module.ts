@@ -48,15 +48,15 @@ import { FooterComponent } from './components/footer/footer.component';
     FooterComponent
   ],
     imports: [
-        BrowserModule,
-        AppRoutingModule,
-        HttpClientModule,
-        OrderModule,
-        FormsModule,
-        BrowserAnimationsModule,
-        ChartsModule,
-        NgxPaginationModule,
-        TooltipModule
+      BrowserModule,
+      AppRoutingModule,
+      HttpClientModule,
+      OrderModule,
+      FormsModule,
+      BrowserAnimationsModule,
+      ChartsModule,
+      NgxPaginationModule,
+      TooltipModule
     ],
   providers: [
     CountryComponent,

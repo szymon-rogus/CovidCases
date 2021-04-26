@@ -20,6 +20,37 @@ describe('GlobalComponent', () => {
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    component.globalData = {
+      TotalConfirmed: 10000,
+      TotalRecovered: 1000,
+      TotalDeaths: 100,
+      NewConfirmed: 10,
+      NewRecovered: 5,
+      NewDeaths: 0,
+      Date: new Date(Date.now()),
+    };
+
+    fixture.detectChanges();
+
+    expect(fixture.debugElement.nativeElement.innerHTML)
+      .toContain(component.globalData.TotalConfirmed);
+
+    expect(fixture.debugElement.nativeElement.innerHTML)
+      .toContain(component.globalData.TotalRecovered);
+
+    expect(fixture.debugElement.nativeElement.innerHTML)
+      .toContain(component.globalData.TotalDeaths);
+
+    expect(fixture.debugElement.nativeElement.innerHTML)
+      .toContain(component.globalData.NewConfirmed);
+
+    expect(fixture.debugElement.nativeElement.innerHTML)
+      .toContain(component.globalData.NewRecovered);
+
+    expect(fixture.debugElement.nativeElement.innerHTML)
+      .toContain(component.globalData.NewDeaths);
+
+    expect(fixture.debugElement.nativeElement.innerHTML)
+      .toContain(component.globalData.Date);
   });
 });
