@@ -32,12 +32,25 @@ export class DetailsChartComponent implements OnInit {
         },
         onLeave: () => {
           this.element.nativeElement.style.cursor = 'default';
+        },
+      },
+      tooltips: {
+        callbacks: {
+          label: (item) => item.yLabel.toLocaleString()
         }
+      },
+      scales: {
+        yAxes: [{
+          ticks: {
+            callback: (label) => label.toLocaleString()
+          }
+        }]
       }
     };
   }
 
   ngOnInit(): void {
+
     this.chartDatasets.push(
       { data: this.getTotal(this.statistics), label: 'Total confirmed'},
       { data: this.getDeaths(this.statistics), label: 'Total deaths'},
@@ -48,46 +61,54 @@ export class DetailsChartComponent implements OnInit {
     this.chartColors.push(
       {
         backgroundColor: 'rgba(255, 0, 0, .2)',
-        borderColor: 'rgba(255, 0, 0, .7)',
+        borderColor: 'rgba(255, 0, 0, .9)',
         borderWidth: 2,
         id: 'red',
       },
       {
         backgroundColor: 'rgba(0, 0, 0, .2)',
-        borderColor: 'rgba(0, 0, 0, .7)',
+        borderColor: 'rgba(0, 0, 0, .9)',
         borderWidth: 2,
         id: 'black',
       },
       {
         backgroundColor: 'rgba(0, 255, 0, .2)',
-        borderColor: 'rgba(0, 255, 0, .7)',
+        borderColor: 'rgba(0, 255, 0, .9)',
         borderWidth: 2,
         id: 'green',
       },
       {
         backgroundColor: 'rgba(255, 165, 0, .2)',
-        borderColor: 'rgba(255, 165, 0, .7)',
+        borderColor: 'rgba(255, 165, 0, .9)',
         borderWidth: 2,
         id: 'yellow',
       }
     );
-    this.chartLabels = this.dates;
+    this.chartLabels = this.getDates();
   }
 
   private getTotal = (data: CountryDayInfo[]) => {
-    return data.map(day => day.Confirmed);
+    return data.filter((day, index) => index % 2 === 0)
+      .map(day => day.Confirmed);
   }
 
   private getDeaths = (data: CountryDayInfo[]) => {
-    return data.map(day => day.Deaths);
+    return data.filter((day, index) => index % 2 === 0)
+      .map(day => day.Deaths);
   }
 
   private getRecovered = (data: CountryDayInfo[]) => {
-    return data.map(day => day.Recovered);
+    return data.filter((day, index) => index % 2 === 0)
+      .map(day => day.Recovered);
   }
 
   getActive = (data: CountryDayInfo[]) => {
-    return data.map(day => day.Active);
+    return data.filter((day, index) => index % 2 === 0)
+      .map(day => day.Active);
+  }
+
+  private getDates = () => {
+    return this.dates.filter((date, index) => index % 2 === 0);
   }
 
   public chartClicked(e: any): void {}
