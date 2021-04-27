@@ -2,6 +2,10 @@
   margin-top: 1%;
 }
 
+hr {
+  border: 1px solid;
+}
+
 .footer-copyright {
   color: white;
 }

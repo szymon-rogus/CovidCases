@@ -2,6 +2,7 @@ import {Component, OnInit, Input, HostListener} from '@angular/core';
 import { Country } from '../../../model/Country';
 import {CountryFlagService} from '../../../services/country-flag.service';
 import {Router} from '@angular/router';
+import {StylingService} from '../../../services/styling.service';
 
 @Component({
   selector: 'app-country',
@@ -19,7 +20,8 @@ export class CountryComponent implements OnInit {
   activeCases: number;
 
   constructor(private countryFlagService: CountryFlagService,
-              private router: Router) {
+              private router: Router,
+              public stylingService: StylingService) {
 
   }
 

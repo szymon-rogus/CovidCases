@@ -1,9 +1,10 @@
 <div class="container-fluid w-100" (window:resize)="onResize($event)">
-  <div class="card text-white bg-dark mb-3">
+  <div [ngClass]="this.stylingService.darkMode ? 'card text-white bg-dark mb-3' : 'card text-black bg-light mb-3'">
     <div class="row">
       <div class="col-xl-3 col-lg-9 col-md-8 col-sm-7 col-xs-8">
-        <span tooltip="{{country.Country}} details" placement="top" show-delay="100" hide-delay="100" theme="light"
-            appHighlight (click)="routeToDetails()"> {{index}}. {{country.Country}} </span>
+        <span [ngStyle]="{color: this.stylingService.getTextColor()}"
+              tooltip="{{country.Country}} details" placement="top" show-delay="100" hide-delay="100" theme="light"
+              appHighlight (click)="routeToDetails()"> {{index}}. {{country.Country}} </span>
         <img [src]="countryFlag" alt=""/>
       </div>
       <div id="confirmed" *ngIf="!expand" class="col d-none d-xl-block">

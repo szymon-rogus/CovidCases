@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {SorterService} from '../../services/sorter.service';
 import {Direction} from './Direction';
+import {StylingService} from '../../services/styling.service';
 
 @Component({
   selector: 'app-sorter',
@@ -17,7 +18,7 @@ export class SorterComponent implements OnInit {
   @Input() expandAll: boolean;
   @Output() expandAllChange = new EventEmitter<boolean>();
 
-  constructor(private sorterService: SorterService) { }
+  constructor(private sorterService: SorterService, public stylingService: StylingService) { }
 
   ngOnInit(): void {}
 

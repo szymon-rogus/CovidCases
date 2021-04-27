@@ -3,6 +3,7 @@ import {CountryListService} from '../services/country-list.service';
 import {GlobalData} from '../model/Global';
 import {Country} from '../model/Country';
 import {Router} from '@angular/router';
+import {StylingService} from '../services/styling.service';
 
 @Component({
   selector: 'app-server',
@@ -15,7 +16,8 @@ export class MainPageComponent implements OnInit {
   globalData: GlobalData;
 
   constructor(private countryListService: CountryListService,
-              private router: Router) {
+              private router: Router,
+              public stylingService: StylingService) {
   }
 
   ngOnInit(): void {

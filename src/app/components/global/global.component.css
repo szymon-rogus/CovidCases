@@ -31,10 +31,6 @@ hr {
   border: 2px solid;
 }
 
-#date {
-  color: white;
-}
-
 #confirmed, #newConfirmed {
   color: red;
   display: flex;
@@ -54,7 +50,7 @@ hr {
 }
 
 #active {
-  color: yellow;
+  color: orange;
   display: flex;
   justify-content: flex-end;
 }

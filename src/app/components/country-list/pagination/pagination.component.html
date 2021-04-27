@@ -1,5 +1,5 @@
 <div class="container-fluid w-100">
-  <div class="card text-white bg-dark mb-3">
+  <div [ngClass]="this.stylingService.darkMode ? 'card text-white bg-dark mb-3' : 'card text-black bg-light mb-3'">
     <div class="row">
       <div class="col-12">
         <pagination-template #p="paginationApi" (pageChange)="changePage(page=$event)"
@@ -10,7 +10,7 @@
             </div>
             <div class="page-number" *ngFor="let page of p.pages" [class.current]="p.getCurrent() === page.value">
               <span (click)="p.setCurrent(page.value)" *ngIf="p.getCurrent() !== page.value">{{page.label}}</span>
-              <div *ngIf="p.getCurrent() === page.value">
+              <div [ngStyle]="{backgroundColor: this.stylingService.getTextColor(), color: this.stylingService.getBackgroundColor()}" *ngIf="p.getCurrent() === page.value">
                 <span>{{page.label}}</span>
               </div>
             </div>

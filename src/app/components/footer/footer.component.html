@@ -1,16 +1,21 @@
 <footer class="page-footer font-small">
+  <hr [ngStyle]="{color: stylingService.getTextColor()}">
   <div class="row d-flex align-items-center">
     <div class="col-7">
       <div class="footer-copyright text-center text-md-right">
         <a id="copyright"> © 2020 Copyright: </a>
-        <a id="creator" appHighlight href="https://github.com/szymon-rogus"> https://github.com/szymon-rogus </a>
+        <a id="creator" appHighlight href="https://github.com/szymon-rogus"
+           [ngStyle]="{backgroundColor: this.stylingService.getBackgroundColor() ,color: this.stylingService.getTextColor()}">
+          https://github.com/szymon-rogus </a>
         <i class="fa fa-github" aria-hidden="true"></i>
       </div>
     </div>
     <div class="col-5">
       <div id="footerRight" class="footer-copyright text-center text-md-right">
         <a id="sourceText"> Source Api: </a>
-        <a id="source" appHighlight href="https://api.covid19api.com"> https://api.covid19api.com </a>
+        <a id="source" appHighlight href="https://api.covid19api.com"
+           [ngStyle]="{backgroundColor: this.stylingService.getBackgroundColor() ,color: this.stylingService.getTextColor()}">
+          https://api.covid19api.com </a>
       </div>
     </div>
   </div>

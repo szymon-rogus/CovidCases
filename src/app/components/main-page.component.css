@@ -1,10 +1,5 @@
 .container-fluid {
-  background-color: black;
   height: 100%;
   position: fixed;
   overflow-y: scroll;
-}
-
-a {
-  color: white;
 }

@@ -1,5 +1,5 @@
 <div class="container-fluid w-100">
-  <div class="card text-white bg-dark mb-3">
+  <div [ngClass]="this.stylingService.darkMode ? 'card text-white bg-dark mb-3' : 'card text-black bg-light mb-3'">
     <div class="row">
       <div class="col-5">
         <h4>Country search</h4>

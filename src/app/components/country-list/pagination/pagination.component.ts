@@ -1,4 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {StylingService} from '../../../services/styling.service';
 
 @Component({
   selector: 'app-pagination',
@@ -10,7 +11,7 @@ export class PaginationComponent implements OnInit {
   page = 1;
   @Output() actualPage = new EventEmitter<number>();
 
-  constructor() {}
+  constructor(public stylingService: StylingService) {}
 
   ngOnInit(): void {}
 

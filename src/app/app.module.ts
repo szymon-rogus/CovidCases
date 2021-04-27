@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { TooltipModule } from 'ng2-tooltip-directive';
+import { NgToggleModule } from 'ng-toggle-button';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -56,7 +57,8 @@ import { FooterComponent } from './components/footer/footer.component';
       BrowserAnimationsModule,
       ChartsModule,
       NgxPaginationModule,
-      TooltipModule
+      TooltipModule,
+      NgToggleModule
     ],
   providers: [
     CountryComponent,

@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {GlobalData} from 'src/app/model/Global';
+import {StylingService} from '../../services/styling.service';
 
 @Component({
   selector: 'app-global',
@@ -12,7 +13,7 @@ export class GlobalComponent implements OnInit {
   activeCases: number;
   date: string;
 
-  constructor() {}
+  constructor(public stylingService: StylingService) {}
 
   ngOnInit(): void {
     this.activeCases = this.globalData.TotalConfirmed - this.globalData.TotalDeaths - this.globalData.TotalRecovered;

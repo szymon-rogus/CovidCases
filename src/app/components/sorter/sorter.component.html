@@ -1,8 +1,9 @@
 <div class="container-fluid w-100">
-  <div class="card text-white bg-dark mb-3">
+  <div [ngClass]="this.stylingService.darkMode ? 'card text-white bg-dark mb-3' : 'card text-black bg-light mb-3'">
     <div class="row">
       <div class="col-xl-3 col-lg-8 col-md-7 col-xs-6">
         <h4 (click)="setSorter('Country', upName = getNext(upName))" appHighlight
+            [ngStyle]="{color: this.stylingService.getTextColor()}"
             tooltip="Sort by Country" show-delay="100" hide-delay="100" theme="light">
           Country
           <i [ngClass]="checkDirection(upName)" aria-hidden="true"></i>
@@ -10,6 +11,7 @@
       </div>
       <div class="col d-none d-xl-block">
         <h4 (click)="setSorter('TotalConfirmed', upConfirmed = getNext(upConfirmed))" appHighlight
+            [ngStyle]="{color: this.stylingService.getTextColor()}"
             tooltip="Sort by Confirmed" show-delay="100" hide-delay="100" theme="light">
           Confirmed
           <i [ngClass]="checkDirection(upConfirmed)" aria-hidden="true"></i>
@@ -17,6 +19,7 @@
       </div>
       <div class="col d-none d-xl-block">
         <h4 (click)="setSorter('TotalDeaths', upDeaths = getNext(upDeaths))" appHighlight
+            [ngStyle]="{color: this.stylingService.getTextColor()}"
             tooltip="Sort by Deaths" show-delay="100" hide-delay="100" theme="light">
           Deaths
           <i [ngClass]="checkDirection(upDeaths)" aria-hidden="true"></i>
@@ -24,6 +27,7 @@
       </div>
       <div class="col d-none d-xl-block">
         <h4 (click)="setSorter('TotalRecovered', upRecovered = getNext(upRecovered))" appHighlight
+            [ngStyle]="{color: this.stylingService.getTextColor()}"
             tooltip="Sort by Recovered" show-delay="100" hide-delay="100" theme="light">
           Recovered
           <i [ngClass]="checkDirection(upRecovered)" aria-hidden="true"></i>
@@ -31,6 +35,7 @@
       </div>
       <div class="col d-none d-xl-block">
         <h4 (click)="setSorter('Active', upActive = getNext(upActive))" appHighlight
+            [ngStyle]="{color: this.stylingService.getTextColor()}"
             tooltip="Sort by Active" show-delay="100" hide-delay="100" theme="light">
           Active
           <i [ngClass]="checkDirection(upActive)" aria-hidden="true"></i>

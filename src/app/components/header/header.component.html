@@ -1,3 +1,7 @@
-<h1 [routerLink]="['/']"
-    routerLinkActive="active">{{headerTitle}}</h1>
-<hr>
+<h1 [ngStyle]="{backgroundColor: stylingService.getBackgroundColor(), color: stylingService.getTextColor() }">
+  <ng-toggle [value]="true"
+             [color]="{ unchecked: 'black', checked: 'white'}"
+             [switchColor]="{ unchecked: 'white', checked: 'black'}" (change)="onSwipe()"></ng-toggle>
+  {{headerTitle}}
+</h1>
+<hr [ngStyle]="{color: stylingService.getTextColor()}">
