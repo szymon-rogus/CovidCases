@@ -10,10 +10,13 @@ import {StylingService} from '../../services/styling.service';
 export class HeaderComponent implements OnInit {
 
   headerTitle = Constants.TITLE;
+  toggleMode: boolean;
 
   constructor(public stylingService: StylingService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.toggleMode = this.stylingService.darkMode;
+  }
 
   onSwipe = () => {
     this.stylingService.changeMode();

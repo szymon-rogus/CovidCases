@@ -12,11 +12,6 @@
   display: inline-block;
 }
 
-/*.page-number.current{*/
-/*  background: white!important;*/
-/*  color: black;*/
-/*}*/
-
 .page-number {
   display: flex;
   width: 28px;

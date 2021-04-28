@@ -1,8 +1,19 @@
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 h1 {
-  text-align: center;
-  padding-bottom: 10px;
-  padding-top: 15px;
+  text-align: start;
+  padding-top: 1%;
   cursor: pointer;
+}
+
+.col-4 {
+  text-align: start;
+  padding-left: 2.5%;
+  padding-top: 1%;
 }
 
 hr {

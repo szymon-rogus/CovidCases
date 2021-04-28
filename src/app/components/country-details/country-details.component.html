@@ -1,15 +1,16 @@
-<div class="container-fluid">
+<div class="container-fluid" [ngStyle]="{backgroundColor: stylingService.getBackgroundColor()}">
   <app-header></app-header>
   <div class="row">
     <div id="data" *ngIf="countryStats && size && isFetched" class="col-xl-4 col-12">
-      <div id="extendedData" class="card text-white bg-dark mb-3" tooltip="Extended data" show-delay="100" hide-delay="100"
-           placement="top" theme="light">
+      <div [ngClass]="this.stylingService.darkMode ? 'card text-white bg-dark mb-3' : 'card text-black bg-light mb-3'"
+           id="extendedData" tooltip="Extended data" show-delay="100" hide-delay="100"
+           placement="top" theme="{{this.stylingService.getTooltipTheme()}}">
         <div id="country" class="row">
           <div class="col-3">
             <em appEnlargeChevron [sizeNormal]="' fa'" [sizeLarge]="' fa-lg'"
                 class="fa fa-arrow-left" [routerLink]="['/']"
                 routerLinkActive="active"
-                tooltip="Main page" placement="top" theme="light"></em>
+                tooltip="Main page" placement="top" theme="{{this.stylingService.getTooltipTheme()}}"></em>
           </div>
           <div class="col-9">
             <h3>

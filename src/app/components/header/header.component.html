@@ -1,7 +1,14 @@
-<h1 [ngStyle]="{backgroundColor: stylingService.getBackgroundColor(), color: stylingService.getTextColor() }">
-  <ng-toggle [value]="true"
-             [color]="{ unchecked: 'black', checked: 'white'}"
-             [switchColor]="{ unchecked: 'white', checked: 'black'}" (change)="onSwipe()"></ng-toggle>
-  {{headerTitle}}
-</h1>
+<div class="row">
+  <div class="col-4">
+    <ng-toggle [value]="this.toggleMode"
+               [color]="{ unchecked: 'black', checked: 'white'}"
+               [switchColor]="{ unchecked: 'white', checked: 'black'}" (change)="onSwipe()"></ng-toggle>
+  </div>
+  <div class="col-8">
+    <h1 [ngStyle]="{backgroundColor: stylingService.getBackgroundColor(), color: stylingService.getTextColor() }">
+
+      {{headerTitle}}
+    </h1>
+  </div>
+</div>
 <hr [ngStyle]="{color: stylingService.getTextColor()}">

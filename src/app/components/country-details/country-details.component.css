@@ -1,5 +1,4 @@
 .container-fluid {
-  background-color: black;
   height: 100%;
   position: fixed;
   overflow-y: scroll;
@@ -48,10 +47,6 @@ hr {
   border: 1px solid;
 }
 
-#date {
-  color: white;
-}
-
 #confirmed, #newConfirmed {
   color: red;
 }
@@ -65,6 +60,6 @@ hr {
 }
 
 #active {
-  color: yellow;
+  color: orange;
   padding-bottom: 10px;
 }

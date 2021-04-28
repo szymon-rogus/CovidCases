@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-xl-3 col-lg-9 col-md-8 col-sm-7 col-xs-8">
         <span [ngStyle]="{color: this.stylingService.getTextColor()}"
-              tooltip="{{country.Country}} details" placement="top" show-delay="100" hide-delay="100" theme="light"
+              tooltip="{{country.Country}} details" placement="top" show-delay="100" hide-delay="100" theme="{{this.stylingService.getTooltipTheme()}}"
               appHighlight (click)="routeToDetails()"> {{index}}. {{country.Country}} </span>
         <img [src]="countryFlag" alt=""/>
       </div>
@@ -18,49 +18,6 @@
       </div>
       <div id="active" *ngIf="!expand" class="col d-none d-xl-block">
         {{getActiveCases()}}
-      </div>
-      <div class="col-lg-3 col-md-4 col-sm-5 col-xs-4 d-xl-none" (click)="expandCountry()">
-        <i *ngIf="!expand; else collapse" appEnlargeChevron [sizeNormal]="' fa'" [sizeLarge]="' fa-lg'"
-           class="fa fa-chevron-down" aria-hidden="true"></i>
-        <ng-template #collapse>
-          <i appEnlargeChevron [sizeNormal]="' fa'" [sizeLarge]="' fa-lg'" class="fa fa-chevron-up"
-             aria-hidden="true"></i>
-        </ng-template>
-      </div>
-    </div>
-    <div class="card text-white bg-dark mb-3" *ngIf="expand">
-      <hr style="margin: 20px; border: 1px solid;">
-      <div class="row" style="padding-top: 10px;">
-        <div class="col-6">
-          Total confirmed cases:
-        </div>
-        <div class="col-6" style="color: red;">
-          {{getTotalConfirmed()}}
-        </div>
-      </div>
-      <div class="row" style="padding-top: 10px;">
-        <div class="col-6">
-          Total confirmed deaths:
-        </div>
-        <div class="col-6" style="color: black; font-weight: bold;">
-          {{getTotalDeaths()}}
-        </div>
-      </div>
-      <div class="row" style="padding-top: 10px;">
-        <div class="col-6">
-          Total recovered:
-        </div>
-        <div class="col-6" style="color: rgb(16, 170, 16);">
-          {{getTotalRecovered()}}
-        </div>
-      </div>
-      <div class="row" style="padding-top: 10px;">
-        <div class="col-6">
-          Active cases:
-        </div>
-        <div class="col-6" style="color: yellow;">
-          {{getActiveCases()}}
-        </div>
       </div>
     </div>
   </div>

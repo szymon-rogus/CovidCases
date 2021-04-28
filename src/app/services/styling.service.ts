@@ -22,4 +22,8 @@ export class StylingService {
   getTextColor = () => {
     return this.darkMode ? 'white' : 'black';
   }
+
+  getTooltipTheme = () => {
+    return this.darkMode ? 'light' : 'dark';
+  }
 }
