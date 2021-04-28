@@ -1,22 +1,22 @@
 <div class="container-fluid w-100" (window:resize)="onResize($event)">
   <div [ngClass]="this.stylingService.darkMode ? 'card text-white bg-dark mb-3' : 'card text-black bg-light mb-3'">
     <div class="row">
-      <div class="col-xl-3 col-lg-9 col-md-8 col-sm-7 col-xs-8">
+      <div class="col-xl-3 col-lg-3 col-md-3 col-sm-7 col-xs-8">
         <span [ngStyle]="{color: this.stylingService.getTextColor()}"
               tooltip="{{country.Country}} details" placement="top" show-delay="100" hide-delay="100" theme="{{this.stylingService.getTooltipTheme()}}"
               appHighlight (click)="routeToDetails()"> {{index}}. {{country.Country}} </span>
         <img [src]="countryFlag" alt=""/>
       </div>
-      <div id="confirmed" *ngIf="!expand" class="col d-none d-xl-block">
+      <div id="confirmed" *ngIf="!expand" class="col d-none d-md-block">
         {{getTotalConfirmed()}}
       </div>
-      <div id="deaths" *ngIf="!expand" class="col d-none d-xl-block">
+      <div id="deaths" *ngIf="!expand" class="col d-none d-md-block">
         {{getTotalDeaths()}}
       </div>
-      <div id="recovered" *ngIf="!expand" class="col d-none d-xl-block">
+      <div id="recovered" *ngIf="!expand" class="col d-none d-md-block">
         {{getTotalRecovered()}}
       </div>
-      <div id="active" *ngIf="!expand" class="col d-none d-xl-block">
+      <div id="active" *ngIf="!expand" class="col d-none d-md-block">
         {{getActiveCases()}}
       </div>
     </div>
