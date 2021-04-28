@@ -1,10 +1,15 @@
-<div class="row">
+<div id="container" class="row">
   <div class="col-4">
-    <ng-toggle [value]="this.toggleMode"
-               [color]="{ unchecked: 'black', checked: 'white'}"
-               [switchColor]="{ unchecked: 'white', checked: 'black'}" (change)="onSwipe()"></ng-toggle>
+    <div class="row">
+      <i class="gg-sun"></i>
+      <ng-toggle [value]="this.toggleMode"
+                 [color]="{ unchecked: 'black', checked: 'white'}"
+                 [switchColor]="{ unchecked: 'white', checked: 'black'}" (change)="onSwipe()">
+      </ng-toggle>
+      <div class="moon"></div>
+    </div>
   </div>
-  <div class="col-8">
+  <div class="col-6">
     <h1 [ngStyle]="{backgroundColor: stylingService.getBackgroundColor(), color: stylingService.getTextColor() }">
 
       {{headerTitle}}
