@@ -25,7 +25,8 @@ em {
 
 #confirmed {
   padding-right: 6%;
-  color: red
+  color: red;
+  font-weight: bold;
 }
 
 #deaths {
@@ -37,11 +38,13 @@ em {
 #recovered {
   padding-right: 7%;
   color: rgb(16, 170, 16);
+  font-weight: bold;
 }
 
 #active {
   padding-right: 7%;
-  color: orange
+  color: orange;
+  font-weight: bold;
 }
 
 i {
