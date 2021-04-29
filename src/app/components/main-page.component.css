@@ -1,5 +1,7 @@
 .container-fluid {
-  height: 100%;
-  position: fixed;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
   overflow-y: scroll;
 }

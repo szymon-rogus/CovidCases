@@ -1,5 +1,7 @@
 .page-footer {
-  margin-top: 1%;
+  margin-top: auto;
+  position: relative;
+  width: 100%;
 }
 
 hr {

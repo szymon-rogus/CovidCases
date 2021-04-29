@@ -1,6 +1,6 @@
 <div class="container-fluid" [ngStyle]="{backgroundColor: this.stylingService.getBackgroundColor()}">
   <app-header></app-header>
-  <div class="row">
+  <div class="row" style="flex: 0.9">
     <div class="col-xl-8">
       <div *ngIf="countryList.length > 0">
         <app-country-list [countryList]="countryList"></app-country-list>
