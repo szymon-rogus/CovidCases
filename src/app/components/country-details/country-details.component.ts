@@ -1,11 +1,13 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Params, Router} from '@angular/router';
+
 import {CountryDetailsService} from '../../services/country-details.service';
 import {CountryDayInfo} from '../../model/CountryDayInfo';
 import {Country} from '../../model/Country';
 import {CountryListService} from '../../services/country-list.service';
 import {CountryFlagService} from '../../services/country-flag.service';
 import {StylingService} from '../../services/styling.service';
+import {Constants} from '../../shared/generalConstants/Constants';
 
 @Component({
   selector: 'app-country-details',
@@ -25,7 +27,8 @@ export class CountryDetailsComponent implements OnInit {
               private countryDetailsService: CountryDetailsService,
               private countryListService: CountryListService,
               private countryFlagService: CountryFlagService,
-              public stylingService: StylingService) {
+              public stylingService: StylingService,
+              public constants: Constants) {
     this.countryName = route.snapshot.params.country;
     this.country = this.router.getCurrentNavigation().extras.state as Country;
   }

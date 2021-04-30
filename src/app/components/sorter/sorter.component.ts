@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+
 import {SorterService} from '../../services/sorter.service';
 import {Direction} from './Direction';
 import {StylingService} from '../../services/styling.service';

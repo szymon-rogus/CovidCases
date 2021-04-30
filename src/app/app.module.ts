@@ -27,6 +27,7 @@ import { HighlightDirective } from './shared/directives/highlight.directive';
 import { SortPipe } from './shared/pipes/sort.pipe';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { Constants } from './shared/generalConstants/Constants';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { FooterComponent } from './components/footer/footer.component';
     ],
   providers: [
     CountryComponent,
-    FiltersComponent
+    FiltersComponent,
+    Constants
   ],
   bootstrap: [AppComponent]
 })

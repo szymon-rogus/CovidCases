@@ -1,4 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+
 import {StylingService} from '../../../services/styling.service';
 
 @Component({

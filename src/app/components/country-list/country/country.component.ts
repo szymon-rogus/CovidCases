@@ -1,7 +1,8 @@
 import {Component, OnInit, Input, HostListener} from '@angular/core';
-import { Country } from '../../../model/Country';
-import {CountryFlagService} from '../../../services/country-flag.service';
 import {Router} from '@angular/router';
+
+import {Country} from '../../../model/Country';
+import {CountryFlagService} from '../../../services/country-flag.service';
 import {StylingService} from '../../../services/styling.service';
 
 @Component({

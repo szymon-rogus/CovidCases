@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+
 import {Constants} from '../../shared/generalConstants/Constants';
 import {StylingService} from '../../services/styling.service';
 
@@ -9,10 +10,12 @@ import {StylingService} from '../../services/styling.service';
 })
 export class HeaderComponent implements OnInit {
 
-  headerTitle = Constants.TITLE;
+  headerTitle: string;
   toggleMode: boolean;
 
-  constructor(public stylingService: StylingService) {}
+  constructor(public stylingService: StylingService, private constants: Constants) {
+    this.headerTitle = constants.TITLE;
+  }
 
   ngOnInit(): void {
     this.toggleMode = this.stylingService.darkMode;
@@ -21,5 +24,4 @@ export class HeaderComponent implements OnInit {
   onSwipe = () => {
     this.stylingService.changeMode();
   }
-
 }

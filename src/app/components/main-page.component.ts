@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+
 import {CountryListService} from '../services/country-list.service';
 import {GlobalData} from '../model/Global';
 import {Country} from '../model/Country';
-import {Router} from '@angular/router';
 import {StylingService} from '../services/styling.service';
 
 @Component({

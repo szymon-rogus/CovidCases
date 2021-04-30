@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+
 import {StylingService} from '../../services/styling.service';
 
 @Component({
@@ -10,7 +11,5 @@ export class FooterComponent implements OnInit {
 
   constructor(public stylingService: StylingService) { }
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

@@ -7,8 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UnavailableComponent implements OnInit {
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 }

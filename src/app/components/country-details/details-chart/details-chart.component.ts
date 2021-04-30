@@ -1,4 +1,5 @@
 import {Component, ElementRef, Input, OnInit} from '@angular/core';
+
 import {CountryDayInfo} from '../../../model/CountryDayInfo';
 
 @Component({
