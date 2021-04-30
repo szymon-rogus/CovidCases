@@ -1,6 +1,6 @@
 <div id="container" class="row">
   <div class="col-4">
-    <div class="row">
+    <div id="toggle" class="row">
       <i class="gg-sun"></i>
       <ng-toggle [value]="this.toggleMode"
                  [color]="{ unchecked: 'black', checked: 'white'}"
@@ -9,7 +9,7 @@
       <div class="moon"></div>
     </div>
   </div>
-  <div class="col-6">
+  <div class="col-8">
     <h1 [ngStyle]="{backgroundColor: stylingService.getBackgroundColor(), color: stylingService.getTextColor() }">
 
       {{headerTitle}}
