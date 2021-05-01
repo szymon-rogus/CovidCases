@@ -1,8 +1,8 @@
-<app-sorter (expandAllChange)="toggleExpandAll($event)" [expandAll]="expandAll"></app-sorter>
+<app-sorter></app-sorter>
 <app-country *ngFor="let country of countryList
               | filter:filterName
               | sort: sortBy:reverse
               | paginate: {itemsPerPage:pageItems,
-              currentPage:page}; let i = index" [country]="country" [sortBy]="sortBy" [expand]="expandAll" [index]="getIndex(i)">
+              currentPage:page}; let i = index" [country]="country" [index]="getIndex(i)">
 </app-country>
 <app-pagination (actualPage)="setPage($event)" ></app-pagination>

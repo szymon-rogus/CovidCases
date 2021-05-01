@@ -1,17 +1,19 @@
-<div id="container" class="row">
+<div id="container" class="row" (window:resize)="onResize($event)">
   <div class="col-4">
     <div id="toggle" class="row">
       <i class="gg-sun"></i>
       <ng-toggle [value]="this.toggleMode"
                  [color]="{ unchecked: 'black', checked: 'white'}"
-                 [switchColor]="{ unchecked: 'white', checked: 'black'}" (change)="onSwipe()">
+                 [switchColor]="{ unchecked: 'white', checked: 'black'}"
+                 [width]="toggleWidth"
+                 [height]="toggleHeight"
+                 (change)="onSwipe()">
       </ng-toggle>
       <div class="moon"></div>
     </div>
   </div>
   <div class="col-8">
     <h1 [ngStyle]="{backgroundColor: stylingService.getBackgroundColor(), color: stylingService.getTextColor() }">
-
       {{headerTitle}}
     </h1>
   </div>

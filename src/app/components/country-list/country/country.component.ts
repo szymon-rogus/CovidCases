@@ -13,18 +13,12 @@ import {StylingService} from '../../../services/styling.service';
 export class CountryComponent implements OnInit {
 
   @Input() country: Country;
-  @Input() expand: boolean;
   @Input() index: number;
-  @Input() sortBy: string;
-  countryFlag: string;
 
+  countryFlag: string;
   activeCases: number;
 
-  constructor(private countryFlagService: CountryFlagService,
-              private router: Router,
-              public stylingService: StylingService) {
-
-  }
+  constructor(private countryFlagService: CountryFlagService, private router: Router, public stylingService: StylingService) {}
 
   ngOnInit(): void {
     this.activeCases = this.country.TotalConfirmed - this.country.TotalDeaths - this.country.TotalRecovered;
@@ -49,16 +43,5 @@ export class CountryComponent implements OnInit {
 
   getActiveCases = () => {
     return this.activeCases?.toLocaleString();
-  }
-
-  expandCountry = () => {
-    this.expand = !this.expand;
-  }
-
-  @HostListener('window:resize', ['$event'])
-  onResize = (event) => {
-    if (event.target.innerWidth >= 1200) {
-      this.expand = false;
-    }
   }
 }

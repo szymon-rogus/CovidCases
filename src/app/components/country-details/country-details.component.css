@@ -6,10 +6,6 @@
   overflow-y: scroll;
 }
 
-#chart {
-  margin-top: 20px;
-}
-
 #extendedData {
   font-size: 24px;
   font-family: Arial, serif;
@@ -64,4 +60,8 @@ hr {
 #active {
   color: orange;
   padding-bottom: 10px;
+}
+
+#chart {
+  margin-top: 20px;
 }

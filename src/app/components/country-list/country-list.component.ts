@@ -12,7 +12,6 @@ import {SorterService} from '../../services/sorter.service';
 export class CountryListComponent implements OnInit {
 
   @Input() countryList: Country[];
-  expandAll: boolean;
   sortBy: string;
   reverse: boolean;
   filterName: string;
@@ -20,7 +19,6 @@ export class CountryListComponent implements OnInit {
   pageItems: number;
 
   constructor(private filterService: FilterService, private sorterService: SorterService) {
-    this.expandAll = false;
     this.sortBy = 'Country';
     this.reverse = false;
     this.filterName = '';
@@ -42,10 +40,6 @@ export class CountryListComponent implements OnInit {
       .subscribe((reverse: boolean) => {
         this.reverse = reverse;
       });
-  }
-
-  toggleExpandAll = ($event: boolean) => {
-    this.expandAll = $event;
   }
 
   getIndex = (index: number) => {

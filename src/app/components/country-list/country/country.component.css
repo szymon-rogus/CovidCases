@@ -19,10 +19,6 @@
   text-align: end;
 }
 
-em {
-  width: 60%;
-}
-
 #confirmed {
   padding-right: 6%;
   color: red;
@@ -45,19 +41,4 @@ em {
   padding-right: 7%;
   color: orange;
   font-weight: bold;
-}
-
-i {
-  cursor: pointer;
-}
-
-@media screen and (max-width: 992px) {
-  .col-4 {
-    display:none;
-    width:0;
-    height:0;
-    opacity:0;
-    visibility: collapse;
-
-  }
 }

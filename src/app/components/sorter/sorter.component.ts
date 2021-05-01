@@ -16,8 +16,6 @@ export class SorterComponent implements OnInit {
   upDeaths: Direction = Direction.DEFAULT;
   upRecovered: Direction = Direction.DEFAULT;
   upActive: Direction = Direction.DEFAULT;
-  @Input() expandAll: boolean;
-  @Output() expandAllChange = new EventEmitter<boolean>();
 
   constructor(private sorterService: SorterService, public stylingService: StylingService) { }
 
@@ -65,10 +63,5 @@ export class SorterComponent implements OnInit {
       default:
         return 'fa fa-sort';
     }
-  }
-
-  updateExpandAll = () => {
-    this.expandAll = !this.expandAll;
-    this.expandAllChange.emit(this.expandAll);
   }
 }
