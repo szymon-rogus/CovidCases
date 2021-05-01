@@ -17,6 +17,7 @@ export class CountryComponent implements OnInit {
 
   countryFlag: string;
   activeCases: number;
+  hiddenName: boolean;
 
   constructor(private countryFlagService: CountryFlagService, private router: Router, public stylingService: StylingService) {}
 
@@ -47,10 +48,15 @@ export class CountryComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
   onResize(event?) {
-    if (window.innerWidth > 575) {
+    if (window.innerWidth >= 767) {
       this.countryFlag = this.countryFlagService.getCountryFlag(this.country.CountryCode, 36, 27);
+      this.hiddenName = false;
+    } else if (window.innerWidth < 767 && window.innerWidth > 576) {
+      this.countryFlag = this.countryFlagService.getCountryFlag(this.country.CountryCode, 28, 21);
+      this.hiddenName = true;
     } else {
       this.countryFlag = this.countryFlagService.getCountryFlag(this.country.CountryCode, 28, 21);
+      this.hiddenName = false;
     }
   }
 }

@@ -15,7 +15,7 @@
   text-align: center;
 }
 
-.col-xl-3 {
+#sorter {
   text-align: start;
   padding-left: 5%;
 }
@@ -45,24 +45,28 @@ h4 {
 
 @media (min-width: 992px) and (max-width: 1199px) {
   h4 {
-    font-size: 25px;
+    font-size: 24px;
   }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
   h4 {
-    font-size: 19px;
+    font-size: 18px;
   }
 }
 
 @media (min-width: 576px) and (max-width: 767px) {
   h4 {
-    font-size: 17px;
+    font-size: 14px;
   }
 }
 
 @media (max-width: 575px) {
   h4 {
     font-size: 15px;
+  }
+
+  #sorter {
+    padding-left: 9%;
   }
 }

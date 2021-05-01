@@ -6,17 +6,16 @@
 }
 
 .row {
-  display: flex;
   align-items: center;
-}
-
-.col-xl-3 {
-  text-align: start;
-  padding-left: 5%;
 }
 
 .col {
   text-align: end;
+}
+
+#countryParent {
+  text-align: start;
+  padding-left: 5%;
 }
 
 #confirmed {
@@ -46,37 +45,49 @@
 /* media queries */
 
 @media (min-width: 1501px) {
-  #country, #confirmed, #deaths, #recovered, #active {
+  #country, #confirmed, #deaths, #recovered, #active, #oneParam {
     font-size: 16px;
+  }
+
+  #countryParent {
+    padding-left: 5%;
   }
 }
 
 @media (min-width: 1200px ) and (max-width: 1500px) {
-  #country, #confirmed, #deaths, #recovered, #active {
+  #country, #confirmed, #deaths, #recovered, #active, #oneParam {
     font-size: 15px;
   }
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
-  #country, #confirmed, #deaths, #recovered, #active {
+  #country, #confirmed, #deaths, #recovered, #active, #oneParam {
     font-size: 16px;
   }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-  #country, #confirmed, #deaths, #recovered, #active {
+  #country, #confirmed, #deaths, #recovered, #active, #oneParam {
     font-size: 14px;
   }
 }
 
 @media (min-width: 576px) and (max-width: 767px) {
-  #country, #confirmed, #deaths, #recovered, #active {
-    font-size: 13px;
+  #country, #confirmed, #deaths, #recovered, #active, #oneParam {
+    font-size: 12px;
   }
 }
 
 @media (max-width: 575px) {
-  #country, #confirmed, #deaths, #recovered, #active {
-    font-size: 12px;
+  #country, #confirmed, #deaths, #recovered, #active, #oneParam {
+    font-size: 11px;
+  }
+
+  #countryParent {
+    padding-left: 8%;
+  }
+
+  #confirmed {
+    padding-right: 18%;
   }
 }
