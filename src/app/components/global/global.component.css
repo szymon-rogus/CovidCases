@@ -1,16 +1,11 @@
-.container-fluid {
-  font-size: 24px;
-}
-
 .card {
-  padding: 20px;
-  margin: 20px 20px 20px;
-  font-size: 24px;
+  padding: 3% 6% 3% 5%;
+  margin: 4% 2% 4%;
 }
 
 .row {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 2%;
+  padding-bottom: 2%;
 }
 
 .col-12 {
@@ -21,10 +16,6 @@
 
 .col-7, .col-5 {
   font-weight: bold;
-}
-
-.col-5 {
-  padding-right: 8%;
 }
 
 hr {

@@ -32,25 +32,25 @@ hr {
 
 @media (min-width: 1501px) {
   .page-footer {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 
 @media (min-width: 1200px ) and (max-width: 1500px) {
   .page-footer {
-    font-size: 17px;
+    font-size: 15px;
   }
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
   .page-footer {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
   .page-footer {
-    font-size: 14px;
+    font-size: 13px;
   }
 }
 

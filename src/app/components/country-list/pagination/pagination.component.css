@@ -1,5 +1,14 @@
 .card {
-  margin: 10px;
+  padding-top: 0.4%;
+  padding-bottom: 0.4%;
+  margin-top: 1.5%;
+  margin-left: 0.5%;
+  margin-right: 0.5%;
+}
+
+.row {
+  display: flex;
+  align-items: center;
 }
 
 .col-12 {
@@ -14,8 +23,6 @@
 
 .page-number {
   display: flex;
-  width: 28px;
-  height: 28px;
   cursor: pointer;
   align-items: center;
   justify-content: center;
@@ -24,6 +31,91 @@
 .pagination-previous,.pagination-next{
   display: inline-block;
   font-weight: bold;
-  padding-right: 10px;
   cursor: pointer;
+}
+
+/* media queries */
+
+@media (min-width: 1501px) {
+  .container-fluid {
+    font-size: 16px;
+  }
+
+  .pagination-previous,.pagination-next {
+    padding-right: 10px;
+  }
+
+  .page-number {
+    width: 28px;
+  }
+}
+
+@media (min-width: 1200px ) and (max-width: 1500px) {
+  .container-fluid {
+    font-size: 15px;
+  }
+
+  .pagination-previous,.pagination-next {
+    padding-right: 8px;
+  }
+
+  .page-number {
+    width: 26px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .container-fluid {
+    font-size: 16px;
+  }
+
+  .pagination-previous,.pagination-next {
+    padding-right: 6px;
+  }
+
+  .page-number {
+    width: 24px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .container-fluid {
+    font-size: 14px;
+  }
+
+  .pagination-previous,.pagination-next {
+    padding-right: 4px;
+  }
+
+  .page-number {
+    width: 22px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .container-fluid {
+    font-size: 13px;
+  }
+
+  .pagination-previous,.pagination-next {
+    padding-right: 2px;
+  }
+
+  .page-number {
+    width: 20px;
+  }
+}
+
+@media (max-width: 575px) {
+  .container-fluid {
+    font-size: 12px;
+  }
+
+  .pagination-previous,.pagination-next {
+    padding-right: 5px;
+  }
+
+  .page-number {
+    width: 18px;
+  }
 }
