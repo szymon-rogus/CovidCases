@@ -22,7 +22,7 @@ export class CountryComponent implements OnInit {
 
   ngOnInit(): void {
     this.activeCases = this.country.TotalConfirmed - this.country.TotalDeaths - this.country.TotalRecovered;
-    this.countryFlag = this.countryFlagService.getCountryFlag(this.country.CountryCode, 36, 27);
+    this.onResize();
   }
 
   routeToDetails = () => {
@@ -43,5 +43,14 @@ export class CountryComponent implements OnInit {
 
   getActiveCases = () => {
     return this.activeCases?.toLocaleString();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event?) {
+    if (window.innerWidth > 575) {
+      this.countryFlag = this.countryFlagService.getCountryFlag(this.country.CountryCode, 36, 27);
+    } else {
+      this.countryFlag = this.countryFlagService.getCountryFlag(this.country.CountryCode, 28, 21);
+    }
   }
 }

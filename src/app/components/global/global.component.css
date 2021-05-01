@@ -54,3 +54,41 @@ hr {
   display: flex;
   justify-content: flex-end;
 }
+
+/* media queries */
+
+@media (min-width: 1501px) {
+  .col-7, .col-5, #date {
+    font-size: 25px;
+  }
+}
+
+@media (min-width: 1200px ) and (max-width: 1500px) {
+  .col-7, .col-5, #date {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .col-7, .col-5, #date {
+    font-size: 25px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .col-7, .col-5, #date {
+    font-size: 22px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .col-7, .col-5, #date {
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 575px) {
+  .col-7, .col-5, #date {
+    font-size: 16px;
+  }
+}

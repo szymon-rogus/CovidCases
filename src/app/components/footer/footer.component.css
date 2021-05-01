@@ -27,3 +27,41 @@ hr {
 #footerRight {
   padding-right: 35px;
 }
+
+/* media queries */
+
+@media (min-width: 1501px) {
+  .page-footer {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1200px ) and (max-width: 1500px) {
+  .page-footer {
+    font-size: 17px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .page-footer {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .page-footer {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .page-footer {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 575px) {
+  .page-footer {
+    font-size: 12px;
+  }
+}

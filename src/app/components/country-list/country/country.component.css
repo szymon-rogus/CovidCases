@@ -42,3 +42,41 @@
   color: orange;
   font-weight: bold;
 }
+
+/* media queries */
+
+@media (min-width: 1501px) {
+  #country, #confirmed, #deaths, #recovered, #active {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1200px ) and (max-width: 1500px) {
+  #country, #confirmed, #deaths, #recovered, #active {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  #country, #confirmed, #deaths, #recovered, #active {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  #country, #confirmed, #deaths, #recovered, #active {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  #country, #confirmed, #deaths, #recovered, #active {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 575px) {
+  #country, #confirmed, #deaths, #recovered, #active {
+    font-size: 12px;
+  }
+}

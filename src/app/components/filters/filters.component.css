@@ -9,15 +9,53 @@
 }
 
 .row {
-  padding: 10px;
+  padding: 1%;
 }
 
 .col-5, .col-7 {
-  text-align: center;
+  text-align: start;
 }
 
 h4 {
   font-weight: bold;
   font-size: 24px;
   font-family: Arial, serif;
+}
+
+/* media queries */
+
+@media (min-width: 1501px) {
+  h4 {
+    font-size: 25px;
+  }
+}
+
+@media (min-width: 1200px ) and (max-width: 1500px) {
+  h4 {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  h4 {
+    font-size: 25px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  h4 {
+    font-size: 22px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  h4 {
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 575px) {
+  h4 {
+    font-size: 16px;
+  }
 }
