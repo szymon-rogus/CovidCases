@@ -1,7 +1,6 @@
 <div id="container" class="row" (window:resize)="onResize($event)">
   <div class="col-4">
     <div id="toggle" class="row">
-      <i class="gg-sun"></i>
       <ng-toggle [value]="this.toggleMode"
                  [color]="{ unchecked: 'black', checked: 'white'}"
                  [switchColor]="{ unchecked: 'white', checked: 'black'}"
@@ -9,7 +8,7 @@
                  [height]="toggleHeight"
                  (change)="onSwipe()">
       </ng-toggle>
-      <div class="moon"></div>
+      <div [ngClass]="this.stylingService.darkMode ? 'moon' : 'gg-sun'"></div>
     </div>
   </div>
   <div class="col-8">

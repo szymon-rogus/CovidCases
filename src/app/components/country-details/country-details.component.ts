@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 
 import {CountryDetailsService} from '../../services/country-details.service';
@@ -18,6 +18,7 @@ export class CountryDetailsComponent implements OnInit {
 
   country: Country;
   countryName: string;
+  countryFlag: string;
   size: number;
   countryStats: CountryDayInfo[] = [];
   date: Date;
@@ -31,6 +32,7 @@ export class CountryDetailsComponent implements OnInit {
               public constants: Constants) {
     this.countryName = route.snapshot.params.country;
     this.country = this.router.getCurrentNavigation().extras.state as Country;
+    this.onResize();
   }
 
   ngOnInit(): void {
@@ -57,10 +59,6 @@ export class CountryDetailsComponent implements OnInit {
 
   getDays = () => {
     return this.countryStats.map(day => new Date(day.Date).toLocaleDateString());
-  }
-
-  getCountryFlag = () => {
-    return this.countryFlagService.getCountryFlag(this.country?.CountryCode, 72, 54);
   }
 
   getDateAndCheckData = () => {
@@ -104,5 +102,27 @@ export class CountryDetailsComponent implements OnInit {
 
   getNewRecovered = () => {
     return this.country?.NewRecovered.toLocaleString();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event?) {
+    if (window.innerWidth >= 1500) {
+      this.countryFlag = this.countryFlagService.getCountryFlag(this.country?.CountryCode, 72, 54);
+    }
+    if (window.innerWidth < 1500 && window.innerWidth >= 1200) {
+      this.countryFlag = this.countryFlagService.getCountryFlag(this.country?.CountryCode, 56, 42);
+    }
+    if (window.innerWidth < 1200 && window.innerWidth >= 992) {
+      this.countryFlag = this.countryFlagService.getCountryFlag(this.country?.CountryCode, 72, 54);
+    }
+    if (window.innerWidth < 992 && window.innerWidth >= 768) {
+      this.countryFlag = this.countryFlagService.getCountryFlag(this.country?.CountryCode, 60, 45);
+    }
+    if (window.innerWidth < 768 && window.innerWidth >= 576) {
+      this.countryFlag = this.countryFlagService.getCountryFlag(this.country?.CountryCode, 48, 36);
+    }
+    if (window.innerWidth < 576) {
+      this.countryFlag = this.countryFlagService.getCountryFlag(this.country?.CountryCode, 40, 30);
+    }
   }
 }

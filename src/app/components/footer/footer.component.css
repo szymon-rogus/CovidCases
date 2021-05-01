@@ -4,6 +4,10 @@
   width: 100%;
 }
 
+.row {
+  padding: 0.3%;
+}
+
 hr {
   border: 1px solid;
 }
@@ -25,7 +29,7 @@ hr {
 }
 
 #footerRight {
-  padding-right: 35px;
+  padding-right: 5%;
 }
 
 /* media queries */

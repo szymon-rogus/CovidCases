@@ -1,7 +1,17 @@
+#container {
+  margin: auto;
+  position: relative;
+  width: 100%;
+}
 
 h1 {
   justify-content: center;
   cursor: pointer;
+}
+
+ng-toggle {
+  margin-right: 1%;
+  margin-left: 8%;
 }
 
 .moon {
@@ -14,8 +24,13 @@ h1 {
 
 .col-4 {
   text-align: start;
-  padding-left: 3%;
-  padding-top: 1%;
+  padding-top: 0.7%;
+}
+
+.col-8 {
+  text-align: start;
+  padding-left: 8%;
+  padding-top: 0.5%;
 }
 
 hr {

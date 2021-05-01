@@ -32,7 +32,7 @@ export class Constants {
     return this._NEW_RECOVERED;
   }
 
-  private _TITLE = 'COVID-19 pandemic info';
+  private _TITLE = 'COVID-19 info';
 
   private _TOTAL_CONFIRMED = 'Total confirmed';
 

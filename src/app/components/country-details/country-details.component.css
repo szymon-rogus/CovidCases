@@ -9,13 +9,18 @@
 #extendedData {
   font-size: 24px;
   font-family: Arial, serif;
-  margin: 20px;
-  padding: 20px;
+  padding: 2% 6% 2% 5%;
+  margin-left: 3%;
+  margin-right: 3%;
+}
+
+#data {
+  padding-bottom: 5%;
 }
 
 #country {
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 4%;
 }
 
 em {
@@ -27,8 +32,8 @@ h3 {
 }
 
 .row {
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-top: 1.2%;
+  padding-bottom: 1.2%;
 }
 
 .col-5, .col-7 {
@@ -38,7 +43,6 @@ h3 {
 .col-5 {
   display: flex;
   justify-content: flex-end;
-  padding-right: 10%;
 }
 
 hr {
@@ -62,6 +66,64 @@ hr {
   padding-bottom: 10px;
 }
 
-#chart {
-  margin-top: 20px;
+/* media queries */
+
+@media (min-width: 1501px) {
+  .col-7, .col-5, #date {
+    font-size: 25px;
+  }
+
+  h3 {
+    font-size: 28px;
+  }
+}
+
+@media (min-width: 1200px ) and (max-width: 1500px) {
+  .col-7, .col-5, #date {
+    font-size: 20px;
+  }
+
+  h3 {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .col-7, .col-5, #date {
+    font-size: 25px;
+  }
+
+  h3 {
+    font-size: 28px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .col-7, .col-5, #date {
+    font-size: 22px;
+  }
+
+  h3 {
+    font-size: 25px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .col-7, .col-5, #date {
+    font-size: 19px;
+  }
+
+  h3 {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 575px) {
+  .col-7, .col-5, #date {
+    font-size: 16px;
+  }
+
+  h3 {
+    font-size: 19px;
+  }
 }
