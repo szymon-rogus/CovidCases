@@ -16,8 +16,7 @@ export class GlobalComponent implements OnInit {
   data: Array<any>;
   newData: Array<any>;
 
-  constructor(public stylingService: StylingService, public constants: Constants) {
-  }
+  constructor(public stylingService: StylingService, public constants: Constants) {}
 
   ngOnInit(): void {
     this.date = new Date(this.globalData?.Date).toLocaleDateString();

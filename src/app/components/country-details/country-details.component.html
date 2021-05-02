@@ -29,61 +29,21 @@
           </div>
         </div>
         <hr>
-        <div class="row">
+        <div class="row" *ngFor="let singleData of getData()">
           <div class="col-7">
-            {{constants.TOTAL_CONFIRMED}}
+            {{singleData.label}}
           </div>
-          <div id="confirmed" class="col-5">
-            {{getTotalConfirmed()}}
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-7">
-            {{constants.TOTAL_DEATHS}}
-          </div>
-          <div id="deaths" class="col-5">
-            {{getTotalDeaths()}}
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-7">
-            {{constants.TOTAL_RECOVERED}}
-          </div>
-          <div id="recovered" class="col-5">
-            {{getTotalRecovered()}}
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-7">
-            {{constants.ACTIVE_CASES}}
-          </div>
-          <div id="active" class="col-5">
-            {{getActiveCases()}}
+          <div [id]="singleData.id" class="col-5">
+            {{singleData.value}}
           </div>
         </div>
         <hr>
-        <div class="row">
+        <div class="row" *ngFor="let singleNewData of getNewData()">
           <div class="col-7">
-            {{constants.NEW_CONFIRMED}}
+            {{singleNewData.label}}
           </div>
-          <div id="newConfirmed" *ngIf="country" class="col-5">
-            {{getNewConfirmed()}}
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-7">
-            {{constants.NEW_DEATHS}}
-          </div>
-          <div id="newDeaths" *ngIf="country" class="col-5">
-            {{getNewDeaths()}}
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-7">
-            {{constants.NEW_RECOVERED}}
-          </div>
-          <div id="newRecovered" *ngIf="country" class="col-5">
-            {{getNewRecovered()}}
+          <div [id]="singleNewData.id" class="col-5">
+            {{singleNewData.value}}
           </div>
         </div>
       </div>

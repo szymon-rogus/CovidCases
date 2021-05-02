@@ -76,32 +76,21 @@ export class CountryDetailsComponent implements OnInit {
     }
   }
 
-  getTotalConfirmed = () => {
-    return this.country?.TotalConfirmed.toLocaleString();
+  getData = () => {
+    return [
+      {id: 'confirmed', label: this.constants.TOTAL_CONFIRMED, value: this.country?.TotalConfirmed.toLocaleString()},
+      {id: 'deaths', label: this.constants.TOTAL_DEATHS, value: this.country?.TotalDeaths.toLocaleString()},
+      {id: 'recovered', label: this.constants.TOTAL_RECOVERED, value: this.country?.TotalRecovered.toLocaleString()},
+      {id: 'active', label: this.constants.ACTIVE_CASES, value: this.countryStats[this.size - 1]?.Active.toLocaleString()},
+    ];
   }
 
-  getTotalDeaths = () => {
-    return this.country?.TotalDeaths.toLocaleString();
-  }
-
-  getTotalRecovered = () => {
-    return this.country?.TotalRecovered.toLocaleString();
-  }
-
-  getActiveCases = () => {
-    return this.countryStats[this.size - 1]?.Active.toLocaleString();
-  }
-
-  getNewConfirmed = () => {
-    return this.country?.NewConfirmed.toLocaleString();
-  }
-
-  getNewDeaths = () => {
-    return this.country?.NewDeaths.toLocaleString();
-  }
-
-  getNewRecovered = () => {
-    return this.country?.NewRecovered.toLocaleString();
+  getNewData = () => {
+    return [
+      {id: 'newConfirmed', label: this.constants.NEW_CONFIRMED, value: this.country?.NewConfirmed.toLocaleString()},
+      {id: 'newDeaths', label: this.constants.NEW_DEATHS, value: this.country?.NewDeaths.toLocaleString()},
+      {id: 'newRecovered', label: this.constants.NEW_RECOVERED, value: this.country?.NewRecovered.toLocaleString()},
+    ];
   }
 
   @HostListener('window:resize', ['$event'])
