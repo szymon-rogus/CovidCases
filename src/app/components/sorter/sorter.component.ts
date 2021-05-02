@@ -43,16 +43,16 @@ export class SorterComponent implements OnInit {
     if (value !== 'Country') {
       this.upName = Direction.DEFAULT;
     }
-    if (value !== 'TotalConfirmed') {
+    if (value !== 'confirmed') {
       this.upConfirmed = Direction.DEFAULT;
     }
-    if (value !== 'TotalDeaths') {
+    if (value !== 'deaths') {
       this.upDeaths = Direction.DEFAULT;
     }
-    if (value !== 'TotalRecovered') {
+    if (value !== 'recovered') {
       this.upRecovered = Direction.DEFAULT;
     }
-    if (value !== 'Active') {
+    if (value !== 'active') {
       this.upActive = Direction.DEFAULT;
     }
   }

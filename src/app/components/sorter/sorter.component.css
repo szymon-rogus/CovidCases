@@ -29,6 +29,11 @@ h4 {
   justify-content: flex-end;
 }
 
+select {
+  padding-top: 5%;
+  border: none;
+}
+
 /* media queries */
 
 @media (min-width: 1501px) {
@@ -71,6 +76,6 @@ h4 {
   }
 
   #selector {
-    padding-left: 10%;
+    padding-left: 16%;
   }
 }

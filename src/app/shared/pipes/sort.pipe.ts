@@ -14,22 +14,22 @@ export class SortPipe implements PipeTransform {
         return a.Country.localeCompare(b.Country);
       });
     }
-    if (sortBy === 'TotalConfirmed') {
+    if (sortBy === 'confirmed') {
       sortedCountries =  countries.sort((a, b) => {
         return a.TotalConfirmed - b.TotalConfirmed;
       });
     }
-    if (sortBy === 'TotalDeaths') {
+    if (sortBy === 'deaths') {
       sortedCountries = countries.sort((a, b) => {
         return a.TotalDeaths - b.TotalDeaths;
       });
     }
-    if (sortBy === 'TotalRecovered') {
+    if (sortBy === 'recovered') {
       sortedCountries = countries.sort((a, b) => {
         return a.TotalRecovered - b.TotalRecovered;
       });
     }
-    if (sortBy === 'Active') {
+    if (sortBy === 'active') {
       sortedCountries =  countries.sort((a, b) => {
         return this.getActive(a) - this.getActive(b);
       });
