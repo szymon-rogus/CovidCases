@@ -12,45 +12,34 @@ import {Constants} from '../../shared/generalConstants/Constants';
 export class GlobalComponent implements OnInit {
 
   @Input() globalData: GlobalData;
-  activeCases: number;
   date: string;
+  data: Array<any>;
+  newData: Array<any>;
 
-  constructor(public stylingService: StylingService, public constants: Constants) {}
+  constructor(public stylingService: StylingService, public constants: Constants) {
+  }
 
   ngOnInit(): void {
-    this.activeCases = this.globalData.TotalConfirmed - this.globalData.TotalDeaths - this.globalData.TotalRecovered;
     this.date = new Date(this.globalData?.Date).toLocaleDateString();
+    this.data = [
+      {id: 'confirmed', label: this.constants.TOTAL_CONFIRMED, value: this.globalData?.TotalConfirmed.toLocaleString()},
+      {id: 'deaths', label: this.constants.TOTAL_DEATHS, value: this.globalData?.TotalDeaths.toLocaleString()},
+      {id: 'recovered', label: this.constants.TOTAL_RECOVERED, value: this.globalData?.TotalRecovered.toLocaleString()},
+      {id: 'active', label: this.constants.ACTIVE_CASES, value: this.getActiveCases()},
+    ];
+
+    this.newData = [
+      {id: 'newConfirmed', label: this.constants.NEW_CONFIRMED, value: this.globalData?.NewConfirmed.toLocaleString()},
+      {id: 'newDeaths', label: this.constants.NEW_DEATHS, value: this.globalData?.NewDeaths.toLocaleString()},
+      {id: 'newRecovered', label: this.constants.NEW_RECOVERED, value: this.globalData?.NewRecovered.toLocaleString()},
+    ];
   }
 
   getDate = () => {
     return this.date;
   }
 
-  getTotalConfirmed = () => {
-    return this.globalData?.TotalConfirmed.toLocaleString();
-  }
-
-  getTotalDeaths = () => {
-    return this.globalData?.TotalDeaths.toLocaleString();
-  }
-
-  getTotalRecovered = () => {
-    return this.globalData?.TotalRecovered.toLocaleString();
-  }
-
   getActiveCases = () => {
-    return this.activeCases?.toLocaleString();
-  }
-
-  getNewConfirmed = () => {
-    return this.globalData?.NewConfirmed.toLocaleString();
-  }
-
-  getNewDeaths = () => {
-    return this.globalData?.NewDeaths.toLocaleString();
-  }
-
-  getNewRecovered = () => {
-    return this.globalData?.NewRecovered.toLocaleString();
+    return (this.globalData.TotalConfirmed - this.globalData.TotalDeaths - this.globalData.TotalRecovered).toLocaleString();
   }
 }

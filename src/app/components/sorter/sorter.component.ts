@@ -25,7 +25,7 @@ export class SorterComponent implements OnInit {
   ngOnInit(): void {
     this.activeColumn = 'confirmed';
     this.onResize();
-    this.onChange('confirmed');
+    this.onChange(this.columnToggle.column);
   }
 
   setSorter = (value: string, reverse: Direction) => {
@@ -79,6 +79,5 @@ export class SorterComponent implements OnInit {
 
   onChange(event) {
     this.columnToggle.selectedColumn.emit(event);
-    console.log(event);
   }
 }

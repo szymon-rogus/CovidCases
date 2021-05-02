@@ -23,7 +23,7 @@ export class CountryComponent implements OnInit {
 
   constructor(private countryFlagService: CountryFlagService, private router: Router,
               public stylingService: StylingService, public columnToggle: ColumnToggleService) {
-    this.activeColumn = 'confirmed';
+    this.activeColumn = columnToggle.column;
   }
 
   ngOnInit(): void {

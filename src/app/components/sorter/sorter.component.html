@@ -48,7 +48,7 @@
       </div>
       <div id="selector" class="d-inline-block d-sm-none">
         <select [ngClass]="this.stylingService.darkMode ? 'card text-white bg-dark mb-3' : 'card text-black bg-light mb-3'"
-                [(ngModel)]="columnToggle.column" (ngModelChange)="onChange($event)">
+                [(ngModel)]="columnToggle.column" (ngModelChange)="onChange(columnToggle.column)">
           <option *ngFor="let column of columnToggle.columns">
             {{column}}
           </option>
