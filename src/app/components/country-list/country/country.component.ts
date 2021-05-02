@@ -4,6 +4,7 @@ import {Router} from '@angular/router';
 import {Country} from '../../../model/Country';
 import {CountryFlagService} from '../../../services/country-flag.service';
 import {StylingService} from '../../../services/styling.service';
+import {ColumnToggleService} from '../../../services/column-toggle.service';
 
 @Component({
   selector: 'app-country',
@@ -18,11 +19,18 @@ export class CountryComponent implements OnInit {
   countryFlag: string;
   activeCases: number;
   hiddenName: boolean;
+  activeColumn: string;
 
-  constructor(private countryFlagService: CountryFlagService, private router: Router, public stylingService: StylingService) {}
+  constructor(private countryFlagService: CountryFlagService, private router: Router,
+              public stylingService: StylingService, public columnToggle: ColumnToggleService) {
+    this.activeColumn = 'confirmed';
+  }
 
   ngOnInit(): void {
     this.activeCases = this.country.TotalConfirmed - this.country.TotalDeaths - this.country.TotalRecovered;
+    this.columnToggle.selectedColumn.subscribe((column: string) => {
+      this.activeColumn = column;
+    });
     this.onResize();
   }
 
@@ -48,10 +56,10 @@ export class CountryComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
   onResize(event?) {
-    if (window.innerWidth >= 767) {
+    if (window.innerWidth >= 768) {
       this.countryFlag = this.countryFlagService.getCountryFlag(this.country.CountryCode, 36, 27);
       this.hiddenName = false;
-    } else if (window.innerWidth < 767 && window.innerWidth > 576) {
+    } else if (window.innerWidth < 768 && window.innerWidth > 576) {
       this.countryFlag = this.countryFlagService.getCountryFlag(this.country.CountryCode, 28, 21);
       this.hiddenName = true;
     } else {

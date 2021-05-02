@@ -14,16 +14,16 @@
           <img [src]="countryFlag" alt="">
         </ng-template>
       </div>
-      <div id="confirmed" class="col">
+      <div id="confirmed" [ngClass]="activeColumn === 'confirmed' ? 'col' : 'col d-none d-sm-block'">
         {{getTotalConfirmed()}}
       </div>
-      <div id="deaths" class="col d-none d-sm-block">
+      <div id="deaths" [ngClass]="activeColumn === 'deaths' ? 'col' : 'col d-none d-sm-block'">
         {{getTotalDeaths()}}
       </div>
-      <div id="recovered" class="col d-none d-sm-block">
+      <div id="recovered" [ngClass]="activeColumn === 'recovered' ? 'col' : 'col d-none d-sm-block'">
         {{getTotalRecovered()}}
       </div>
-      <div id="active" class="col d-none d-sm-block">
+      <div id="active" [ngClass]="activeColumn === 'active' ? 'col' : 'col d-none d-sm-block'">
         {{getActiveCases()}}
       </div>
     </div>

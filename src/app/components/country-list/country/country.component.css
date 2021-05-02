@@ -74,20 +74,20 @@
 
 @media (min-width: 576px) and (max-width: 767px) {
   #country, #confirmed, #deaths, #recovered, #active, #oneParam {
-    font-size: 12px;
+    font-size: 13px;
   }
 }
 
 @media (max-width: 575px) {
   #country, #confirmed, #deaths, #recovered, #active, #oneParam {
-    font-size: 11px;
+    font-size: 12px;
   }
 
   #countryParent {
     padding-left: 8%;
   }
 
-  #confirmed {
-    padding-right: 18%;
+  #confirmed, #deaths, #recovered, #active {
+    padding-right: 12%;
   }
 }

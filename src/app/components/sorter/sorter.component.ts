@@ -1,8 +1,9 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 
 import {SorterService} from '../../services/sorter.service';
 import {Direction} from './Direction';
 import {StylingService} from '../../services/styling.service';
+import {ColumnToggleService} from '../../services/column-toggle.service';
 
 @Component({
   selector: 'app-sorter',
@@ -11,15 +12,21 @@ import {StylingService} from '../../services/styling.service';
 })
 export class SorterComponent implements OnInit {
 
+  icons: boolean;
+  activeColumn: string;
   upName: Direction = Direction.ASC;
   upConfirmed: Direction = Direction.DEFAULT;
   upDeaths: Direction = Direction.DEFAULT;
   upRecovered: Direction = Direction.DEFAULT;
   upActive: Direction = Direction.DEFAULT;
 
-  constructor(private sorterService: SorterService, public stylingService: StylingService) { }
+  constructor(private sorterService: SorterService, public stylingService: StylingService, public columnToggle: ColumnToggleService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.activeColumn = 'confirmed';
+    this.onResize();
+    this.onChange('confirmed');
+  }
 
   setSorter = (value: string, reverse: Direction) => {
     this.sorterService.sortBy.emit(value);
@@ -63,5 +70,15 @@ export class SorterComponent implements OnInit {
       default:
         return 'fa fa-sort';
     }
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event?) {
+    this.icons = window.innerWidth < 767 && window.innerWidth > 576;
+  }
+
+  onChange(event) {
+    this.columnToggle.selectedColumn.emit(event);
+    console.log(event);
   }
 }

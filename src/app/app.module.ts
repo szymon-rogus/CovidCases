@@ -50,16 +50,16 @@ import { Constants } from './shared/generalConstants/Constants';
     FooterComponent
   ],
     imports: [
-      BrowserModule,
-      AppRoutingModule,
-      HttpClientModule,
-      OrderModule,
-      FormsModule,
-      BrowserAnimationsModule,
-      ChartsModule,
-      NgxPaginationModule,
-      TooltipModule,
-      NgToggleModule
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        OrderModule,
+        FormsModule,
+        BrowserAnimationsModule,
+        ChartsModule,
+        NgxPaginationModule,
+        TooltipModule,
+        NgToggleModule
     ],
   providers: [
     CountryComponent,
