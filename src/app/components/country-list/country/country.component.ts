@@ -17,9 +17,9 @@ export class CountryComponent implements OnInit {
   @Input() index: number;
 
   countryFlag: string;
-  activeCases: number;
   hiddenName: boolean;
   activeColumn: string;
+  data: Array<any>;
 
   constructor(private countryFlagService: CountryFlagService, private router: Router,
               public stylingService: StylingService, public columnToggle: ColumnToggleService) {
@@ -27,31 +27,21 @@ export class CountryComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.activeCases = this.country.TotalConfirmed - this.country.TotalDeaths - this.country.TotalRecovered;
     this.columnToggle.selectedColumn.subscribe((column: string) => {
       this.activeColumn = column;
     });
     this.onResize();
+
+    this.data = [
+      {id: 'confirmed', value: this.country?.TotalConfirmed.toLocaleString()},
+      {id: 'deaths', value: this.country?.TotalDeaths.toLocaleString()},
+      {id: 'recovered', value: this.country?.TotalRecovered.toLocaleString()},
+      {id: 'active', value: (this.country.TotalConfirmed - this.country.TotalDeaths - this.country.TotalRecovered).toLocaleString()}
+    ];
   }
 
   routeToDetails = () => {
     this.router.navigate([this.country.Country], {state: this.country});
-  }
-
-  getTotalConfirmed = () => {
-    return this.country?.TotalConfirmed.toLocaleString();
-  }
-
-  getTotalDeaths = () => {
-    return this.country?.TotalDeaths.toLocaleString();
-  }
-
-  getTotalRecovered = () => {
-    return this.country?.TotalRecovered.toLocaleString();
-  }
-
-  getActiveCases = () => {
-    return this.activeCases?.toLocaleString();
   }
 
   @HostListener('window:resize', ['$event'])
