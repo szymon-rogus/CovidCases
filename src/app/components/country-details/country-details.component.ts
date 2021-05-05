@@ -22,7 +22,6 @@ export class CountryDetailsComponent implements OnInit {
   size: number;
   countryStats: CountryDayInfo[] = [];
   date: Date;
-  isFetched = false;
 
   constructor(private router: Router, private route: ActivatedRoute,
               private countryDetailsService: CountryDetailsService,
@@ -32,7 +31,6 @@ export class CountryDetailsComponent implements OnInit {
               public constants: Constants) {
     this.countryName = route.snapshot.params.country;
     this.country = this.router.getCurrentNavigation().extras.state as Country;
-    this.onResize();
   }
 
   ngOnInit(): void {
@@ -41,7 +39,6 @@ export class CountryDetailsComponent implements OnInit {
         this.countryStats = data;
         this.size = data.length;
       });
-    this.isFetched = true;
     this.route.params
       .subscribe((params: Params) => {
         this.countryName = params.country;
@@ -55,6 +52,7 @@ export class CountryDetailsComponent implements OnInit {
           );
         });
     }
+    this.onResize();
   }
 
   getDays = () => {

@@ -10,8 +10,8 @@ h1 {
 }
 
 ng-toggle {
-  margin-right: 1%;
   margin-left: 8%;
+  margin-right: 0.8%;
 }
 
 .moon {
@@ -24,7 +24,7 @@ ng-toggle {
 
 .col-4 {
   text-align: start;
-  padding-top: 0.7%;
+  padding-top: 0.8%;
 }
 
 .col-8 {
@@ -96,6 +96,7 @@ hr {
 
 @media (min-width: 992px) and (max-width: 1199px) {
   h1 {
+    padding-top: 2%;
     font-size: 36px;
   }
 
@@ -106,6 +107,7 @@ hr {
 
 @media (min-width: 768px) and (max-width: 991px) {
   h1 {
+    padding-top: 2%;
     font-size: 30px;
   }
 
@@ -116,20 +118,22 @@ hr {
 
 @media (min-width: 576px) and (max-width: 767px) {
   h1 {
+    padding-top: 3%;
     font-size: 26px;
   }
 
   #toggle {
-    padding-top: 8%;
+    padding-top: 10%;
   }
 }
 
 @media (max-width: 575px) {
   h1 {
+    padding-top: 5%;
     font-size: 24px;
   }
 
   #toggle {
-    padding-top: 10%;
+    padding-top: 14%;
   }
 }
