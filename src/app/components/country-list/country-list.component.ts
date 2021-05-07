@@ -30,7 +30,6 @@ export class CountryListComponent implements OnInit {
       .subscribe((name: string) => {
         this.filterName = name;
       });
-
     this.sorterService.sortBy
       .subscribe((sortBy: string) => {
         this.sortBy = sortBy;
