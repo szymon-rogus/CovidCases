@@ -7,7 +7,9 @@
       </div>
     </div>
     <div class="col-xl-4">
-      <app-filters></app-filters>
+      <div *ngIf="countryList.length > 0">
+        <app-filters [countryList]="countryList"></app-filters>
+      </div>
       <app-global *ngIf="globalData" [globalData]="globalData"></app-global>
     </div>
   </div>

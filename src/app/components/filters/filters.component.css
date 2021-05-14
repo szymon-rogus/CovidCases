@@ -6,6 +6,12 @@
   margin: 5% 2% 4%;
 }
 
+.completer-dropdown[_ngcontent-tsn-1] {
+  max-height: 100px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
 .col-5, .col-7 {
   text-align: start;
 }

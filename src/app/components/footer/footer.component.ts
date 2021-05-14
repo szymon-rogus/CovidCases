@@ -9,7 +9,7 @@ import {StylingService} from '../../services/styling.service';
 })
 export class FooterComponent implements OnInit {
 
-  constructor(public stylingService: StylingService) { }
+  constructor(public stylingService: StylingService) {}
 
   ngOnInit(): void {}
 }

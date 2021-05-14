@@ -5,7 +5,12 @@
         <h4>Country</h4>
       </div>
       <div class="col-7">
-        <input class="text w-100" [(ngModel)]="name" (ngModelChange)="filterByName()">
+        <input type="text" list="countries" [(ngModel)]="name" (ngModelChange)="filterByName()"/>
+        <datalist id="countries">
+          <option *ngFor="let country of countryList">
+            {{country.Country}}
+          </option>
+        </datalist>
       </div>
     </div>
   </div>
