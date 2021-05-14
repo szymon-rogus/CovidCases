@@ -23,7 +23,7 @@
     "@angular/platform-browser-dynamic": "~12.0.0-next.6",
     "@angular/router": "~12.0.0-next.6",
     "bootstrap": "^4.5.0",
-    "chart.js": "^2.9.3",
+    "chart.js": "^2.9.4",
     "express": "^4.17.1",
     "font-awesome": "^4.7.0",
     "ng-toggle-button": "^0.1.5",
