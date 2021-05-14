@@ -1,6 +1,6 @@
 <app-sorter></app-sorter>
 <app-country *ngFor="let country of countryList
-              | filter: filterName
+              | filter: filterName:filterApproach
               | sort: sortBy:reverse
               | paginate: {itemsPerPage:pageItems,
               currentPage:page}; let i = index" [country]="country" [index]="getIndex(i)">

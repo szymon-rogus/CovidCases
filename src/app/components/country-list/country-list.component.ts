@@ -14,6 +14,7 @@ export class CountryListComponent implements OnInit {
   sortBy: string;
   reverse: boolean;
   filterName: string;
+  filterApproach: boolean;
   page: number;
   pageItems: number;
 
@@ -29,6 +30,10 @@ export class CountryListComponent implements OnInit {
     this.filterService.filterName
       .subscribe((name: string) => {
         this.filterName = name;
+      });
+    this.filterService.approach
+      .subscribe((approach: boolean) => {
+        this.filterApproach = approach;
       });
     this.sorterService.sortBy
       .subscribe((sortBy: string) => {

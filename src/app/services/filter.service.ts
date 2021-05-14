@@ -6,6 +6,7 @@ import {EventEmitter, Injectable} from '@angular/core';
 export class FilterService {
 
   filterName = new EventEmitter<string>();
+  approach = new EventEmitter<boolean>();
 
   constructor() {}
 }

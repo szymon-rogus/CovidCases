@@ -7,8 +7,9 @@ import {Country} from '../../model/Country';
 })
 export class FilterPipe implements PipeTransform {
 
-  transform(countries: Country[], name?: string): Country[] {
-    return countries.filter(country => this.contains(country.Country, name));
+  transform(countries: Country[], name?: string, approach?: boolean): Country[] {
+    return approach ? countries.filter(country => this.startsWith(country.Country, name))
+      : countries.filter(country => this.contains(country.Country, name));
   }
 
   private startsWith = (name: string, regex: string) => {

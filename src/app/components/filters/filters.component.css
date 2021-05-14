@@ -2,60 +2,60 @@
   display: flex;
   justify-content: center;
   align-content: center;
-  padding: 3% 3% 3%;
+  padding: 4% 3% 2%;
   margin: 5% 2% 4%;
 }
 
-.completer-dropdown[_ngcontent-tsn-1] {
-  max-height: 100px;
-  overflow-y: auto;
-  overflow-x: hidden;
+#toggle {
+  justify-content: center;
 }
 
-.col-5, .col-7 {
-  text-align: start;
+ng-toggle {
+  margin-left: 3%;
+  margin-right: 3%;
+}
+.col-12 {
+  text-align: center;
 }
 
-h4 {
-  font-weight: bold;
-  font-size: 24px;
-  font-family: Arial, serif;
+input {
+  margin-bottom: 2%;
 }
 
 /* media queries */
 
 @media (min-width: 1501px) {
-  h4 {
-    font-size: 25px;
+  span {
+    font-size: 18px;
   }
 }
 
 @media (min-width: 1200px ) and (max-width: 1500px) {
-  h4 {
-    font-size: 20px;
+  span {
+    font-size: 16px;
   }
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
-  h4 {
-    font-size: 25px;
+  span {
+    font-size: 20px;
   }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-  h4 {
-    font-size: 22px;
+  span {
+    font-size: 18px;
   }
 }
 
 @media (min-width: 576px) and (max-width: 767px) {
-  h4 {
-    font-size: 19px;
+  span {
+    font-size: 16px;
   }
 }
 
 @media (max-width: 575px) {
-  h4 {
-    font-size: 16px;
+  span {
+    font-size: 14px;
   }
 }
