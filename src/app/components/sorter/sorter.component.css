@@ -24,11 +24,6 @@ h4 {
   font-family: Arial, serif;
 }
 
-#expandAll {
-  align-items: flex-end;
-  justify-content: flex-end;
-}
-
 select {
   padding-top: 5%;
   border: none;

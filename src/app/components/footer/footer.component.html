@@ -1,4 +1,4 @@
-<footer class="page-footer font-small">
+<footer class="page-footer">
   <hr [ngStyle]="{color: stylingService.getTextColor()}">
   <div class="row d-flex align-items-center">
     <div class="col-sm-7">
@@ -14,8 +14,10 @@
       <div id="footerRight" class="footer-copyright text-center text-md-right">
         <a id="sourceText"> Source Api: </a>
         <a id="source" appHighlight href="https://api.covid19api.com"
-           [ngStyle]="{backgroundColor: this.stylingService.getBackgroundColor() ,color: this.stylingService.getTextColor()}">
-          https://api.covid19api.com </a>
+           [ngStyle]="{backgroundColor: this.stylingService.getBackgroundColor(),
+           color: this.stylingService.getTextColor()}">
+           https://api.covid19api.com
+        </a>
       </div>
     </div>
   </div>

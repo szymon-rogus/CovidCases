@@ -5,3 +5,7 @@
   position: relative;
   overflow-y: scroll;
 }
+
+.row {
+  flex: 0.9;
+}

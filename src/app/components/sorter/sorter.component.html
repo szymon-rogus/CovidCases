@@ -1,5 +1,5 @@
 <div class="container-fluid w-100">
-  <div [ngClass]="this.stylingService.darkMode ? 'card text-white bg-dark mb-3' : 'card text-black bg-light mb-3'">
+  <div [ngClass]="this.stylingService.getCardColor()">
     <div class="row align-items-center">
       <div id="sorter" class="col-xs-6 col-xl-3 col-lg-3 col-md-3 col-sm-2 col-6">
         <h4 *ngIf="!icons; else Icons" (click)="setSorter('Country', upName = getNext(upName))" appHighlight
@@ -47,7 +47,7 @@
         </h4>
       </div>
       <div id="selector" class="d-inline-block d-sm-none">
-        <select [ngClass]="this.stylingService.darkMode ? 'card text-white bg-dark mb-3' : 'card text-black bg-light mb-3'"
+        <select [ngClass]="this.stylingService.getCardColor()"
                 [(ngModel)]="columnToggle.column" (ngModelChange)="onChange(columnToggle.column)">
           <option *ngFor="let column of columnToggle.columns">
             {{column}}

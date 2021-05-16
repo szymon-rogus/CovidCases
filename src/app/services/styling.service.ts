@@ -26,4 +26,8 @@ export class StylingService {
   getTooltipTheme = () => {
     return this.darkMode ? 'light' : 'dark';
   }
+
+  getCardColor = () => {
+    return this.darkMode ? 'card text-white bg-dark mb-3' : 'card text-black bg-light mb-3';
+  }
 }
