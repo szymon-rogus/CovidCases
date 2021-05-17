@@ -2,14 +2,10 @@
   <app-header></app-header>
   <div class="row">
     <div class="col-xl-8">
-      <div *ngIf="countryList.length > 0">
-        <app-country-list [countryList]="countryList"></app-country-list>
-      </div>
+      <app-country-list *ngIf="countryList" [countryList]="countryList"></app-country-list>
     </div>
     <div class="col-xl-4">
-      <div *ngIf="countryList.length > 0">
-        <app-filters [countryList]="countryList"></app-filters>
-      </div>
+      <app-filters *ngIf="countryList" [countryList]="countryList"></app-filters>
       <app-global *ngIf="globalData" [globalData]="globalData"></app-global>
     </div>
   </div>

@@ -15,7 +15,6 @@ export class CountryComponent implements OnInit {
 
   @Input() country: Country;
   @Input() index: number;
-
   countryFlag: string;
   hiddenName: boolean;
   activeColumn: string;

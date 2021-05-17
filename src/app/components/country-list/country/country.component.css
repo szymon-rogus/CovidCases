@@ -15,7 +15,7 @@
 
 #countryParent {
   text-align: start;
-  padding-left: 5%;
+  padding-left: 4%;
 }
 
 #confirmed {
@@ -48,10 +48,6 @@
   #country, #confirmed, #deaths, #recovered, #active, #oneParam {
     font-size: 16px;
   }
-
-  #countryParent {
-    padding-left: 5%;
-  }
 }
 
 @media (min-width: 1200px ) and (max-width: 1500px) {
@@ -83,11 +79,11 @@
     font-size: 12px;
   }
 
-  #countryParent {
-    padding-left: 8%;
-  }
-
   #confirmed, #deaths, #recovered, #active {
     padding-right: 12%;
+  }
+
+  #countryParent {
+    padding-left: 8%;
   }
 }

@@ -20,15 +20,12 @@ export class CountryDetailsComponent implements OnInit {
   countryName: string;
   countryFlag: string;
   size: number;
-  countryStats: CountryDayInfo[] = [];
+  countryStats: Array<CountryDayInfo>;
   date: Date;
 
-  constructor(private router: Router, private route: ActivatedRoute,
-              private countryDetailsService: CountryDetailsService,
-              private countryListService: CountryListService,
-              private countryFlagService: CountryFlagService,
-              public stylingService: StylingService,
-              public constants: Constants) {
+  constructor(private router: Router, private route: ActivatedRoute, private countryDetailsService: CountryDetailsService,
+              private countryListService: CountryListService, private countryFlagService: CountryFlagService,
+              public stylingService: StylingService, public constants: Constants) {
     this.countryName = route.snapshot.params.country;
     this.country = this.router.getCurrentNavigation().extras.state as Country;
   }

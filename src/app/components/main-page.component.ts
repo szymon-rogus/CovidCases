@@ -13,13 +13,10 @@ import {StylingService} from '../services/styling.service';
 })
 export class MainPageComponent implements OnInit {
 
-  countryList: Country[] = [];
+  countryList: Array<Country>;
   globalData: GlobalData;
 
-  constructor(private countryListService: CountryListService,
-              private router: Router,
-              public stylingService: StylingService) {
-  }
+  constructor(private countryListService: CountryListService, private router: Router, public stylingService: StylingService) {}
 
   ngOnInit(): void {
     this.countryListService.getCountryList()

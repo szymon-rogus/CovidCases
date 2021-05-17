@@ -10,7 +10,7 @@ import {SorterService} from '../../services/sorter.service';
 })
 export class CountryListComponent implements OnInit {
 
-  @Input() countryList: Country[];
+  @Input() countryList: Array<Country>;
   sortBy: string;
   reverse: boolean;
   filterName: string;

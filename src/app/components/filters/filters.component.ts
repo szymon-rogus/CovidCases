@@ -11,8 +11,8 @@ import {Country} from '../../model/Country';
 export class FiltersComponent implements OnInit{
 
   name: string;
-  @Input() countryList: Country[];
-  filteredList: Country[];
+  @Input() countryList: Array<Country>;
+  filteredList: Array<Country>;
   starsWith: boolean;
   toggleWidth;
   toggleHeight;
