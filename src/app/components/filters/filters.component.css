@@ -13,13 +13,14 @@
 ng-toggle {
   margin-left: 3%;
   margin-right: 3%;
+  margin-top: 0.5%;
 }
 .col-12 {
   text-align: center;
 }
 
 input {
-  margin-bottom: 2%;
+  margin-bottom: 1%;
 }
 
 i {
@@ -33,11 +34,19 @@ i {
   span {
     font-size: 18px;
   }
+
+  input {
+    font-size: 16px;
+  }
 }
 
 @media (min-width: 1200px ) and (max-width: 1500px) {
   span {
     font-size: 16px;
+  }
+
+  input {
+    font-size: 14px;
   }
 }
 
@@ -45,11 +54,19 @@ i {
   span {
     font-size: 20px;
   }
+
+  input {
+    font-size: 16px;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
   span {
     font-size: 18px;
+  }
+
+  input {
+    font-size: 14px;
   }
 }
 
@@ -57,10 +74,18 @@ i {
   span {
     font-size: 16px;
   }
+
+  input {
+    font-size: 13px;
+  }
 }
 
 @media (max-width: 575px) {
   span {
     font-size: 14px;
+  }
+
+  input {
+    font-size: 12px;
   }
 }

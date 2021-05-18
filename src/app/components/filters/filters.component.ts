@@ -16,10 +16,9 @@ export class FiltersComponent implements OnInit{
   starsWith: boolean;
   toggleWidth;
   toggleHeight;
+  iconSize: string;
 
-  constructor(private filterService: FilterService,
-              public stylingService: StylingService) {
-  }
+  constructor(private filterService: FilterService, public stylingService: StylingService) {}
 
   ngOnInit(): void {
     this.filteredList = this.countryList;
@@ -64,14 +63,17 @@ export class FiltersComponent implements OnInit{
     if (window.innerWidth > 1200) {
       this.toggleWidth = 46;
       this.toggleHeight = 24;
+      this.iconSize = 'fa fa-times fa-2x';
     }
     if (window.innerWidth <= 1200 && window.innerWidth > 768) {
       this.toggleWidth = 42;
       this.toggleHeight = 22;
+      this.iconSize = 'fa fa-times fa-2x';
     }
     if (window.innerWidth <= 767) {
       this.toggleWidth = 38;
       this.toggleHeight = 20;
+      this.iconSize = 'fa fa-times fa-lg';
     }
   }
 }

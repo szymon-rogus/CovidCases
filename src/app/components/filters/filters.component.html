@@ -1,17 +1,17 @@
 <div class="container-fluid w-100" (window:resize)="onResize($event)">
   <div [ngClass]="this.stylingService.getCardColor()">
     <div class="row">
-      <div class="col-12">
+      <div id="wrapper" class="col-12">
         <input class="text w-75" type="text" list="countries" placeholder="Country"
                [(ngModel)]="name" (ngModelChange)="filterByName()"
                (keyup)="this.filterList()">
+        <i [ngClass]="iconSize" (click)="clearInput()" tooltip="Clear"
+           theme="{{this.stylingService.getTooltipTheme()}}"></i>
         <datalist id="countries">
           <option *ngFor="let country of filteredList">
             {{country.Country}}
           </option>
         </datalist>
-        <i class="fa fa-times fa-2x" (click)="clearInput()" tooltip="Clear"
-           theme="{{this.stylingService.getTooltipTheme()}}"></i>
       </div>
     </div>
     <div class="col-12 row" id="toggle">
