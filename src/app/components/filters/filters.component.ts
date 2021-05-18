@@ -63,17 +63,17 @@ export class FiltersComponent implements OnInit{
     if (window.innerWidth > 1200) {
       this.toggleWidth = 46;
       this.toggleHeight = 24;
-      this.iconSize = 'fa fa-times fa-2x';
+      this.iconSize = 'fa fa-times fa-lg';
     }
-    if (window.innerWidth <= 1200 && window.innerWidth > 768) {
+    if (window.innerWidth <= 1200 && window.innerWidth > 575) {
       this.toggleWidth = 42;
       this.toggleHeight = 22;
-      this.iconSize = 'fa fa-times fa-2x';
+      this.iconSize = 'fa fa-times fa-lg';
     }
-    if (window.innerWidth <= 767) {
+    if (window.innerWidth <= 575) {
       this.toggleWidth = 38;
       this.toggleHeight = 20;
-      this.iconSize = 'fa fa-times fa-lg';
+      this.iconSize = 'fa fa-times';
     }
   }
 }
