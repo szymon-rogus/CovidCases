@@ -2,7 +2,7 @@
 <app-country *ngFor="let country of countryList
               | filter: filterName:filterApproach
               | sort: sortBy:reverse
-              | paginate: {itemsPerPage:pageItems,
-              currentPage:page}; let i = index" [country]="country" [index]="getIndex(i)">
+              | paginate: {itemsPerPage:pageItems,currentPage:page};
+              let i = index" [country]="country" [index]="getIndex(i)">
 </app-country>
 <app-pagination (actualPage)="setPage($event)" ></app-pagination>

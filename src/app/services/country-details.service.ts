@@ -13,8 +13,8 @@ export class CountryDetailsService {
 
   constructor(private client: HttpClient) {}
 
-  getCountryDetails(country: string): Observable<CountryDayInfo[]> {
+  getCountryDetails(country: string): Observable<Array<CountryDayInfo>> {
     const params = new HttpParams();
-    return this.client.get<CountryDayInfo[]>(this.url + country, {params}).pipe();
+    return this.client.get<Array<CountryDayInfo>>(this.url + country, {params}).pipe();
   }
 }

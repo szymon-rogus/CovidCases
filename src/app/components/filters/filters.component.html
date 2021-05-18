@@ -10,6 +10,8 @@
             {{country.Country}}
           </option>
         </datalist>
+        <i class="fa fa-times fa-2x" (click)="clearInput()" tooltip="Clear"
+           theme="{{this.stylingService.getTooltipTheme()}}"></i>
       </div>
     </div>
     <div class="col-12 row" id="toggle">

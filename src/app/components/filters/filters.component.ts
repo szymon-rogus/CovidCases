@@ -48,6 +48,11 @@ export class FiltersComponent implements OnInit{
     return name.toLowerCase().includes(regex.toLowerCase());
   }
 
+  clearInput = () => {
+    this.name = '';
+    this.filterByName();
+  }
+
   switchApproach = () => {
     this.starsWith = !this.starsWith;
     this.filterService.approach.emit(this.starsWith);
