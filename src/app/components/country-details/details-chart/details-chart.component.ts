@@ -1,6 +1,7 @@
 import {Component, ElementRef, Input, OnInit} from '@angular/core';
 
 import {CountryDayInfo} from '../../../model/CountryDayInfo';
+import {ChartType} from 'chart.js';
 
 @Component({
   selector: 'app-details-chart',
@@ -18,7 +19,7 @@ export class DetailsChartComponent implements OnInit {
   activeOn = false;
 
   chartDatasets: Array<any> = [];
-  chartType = 'line';
+  chartType: ChartType = 'line';
   chartLabels: string[];
   chartColors: Array<any> = [];
   chartOptions;
