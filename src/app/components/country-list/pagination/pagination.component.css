@@ -22,14 +22,17 @@
 .page-number {
   display: flex;
   cursor: pointer;
-  align-items: center;
-  justify-content: center;
 }
 
 .pagination-previous,.pagination-next{
   display: inline-block;
   font-weight: bold;
   cursor: pointer;
+}
+
+#number {
+  padding-left: 25%;
+  padding-right: 25%;
 }
 
 /* media queries */

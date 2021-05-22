@@ -104,7 +104,7 @@ export class DetailsChartComponent implements OnInit {
       .map(day => day.Recovered);
   }
 
-  getActive = (data: CountryDayInfo[]) => {
+  private getActive = (data: CountryDayInfo[]) => {
     return data.filter((day, index) => index % 2 === 0)
       .map(day => day.Active);
   }
