@@ -54,10 +54,10 @@ export class DetailsChartComponent implements OnInit {
   ngOnInit(): void {
 
     this.chartDatasets.push(
-      { data: this.getTotal(this.statistics), label: 'Total confirmed'},
-      { data: this.getDeaths(this.statistics), label: 'Total deaths'},
-      { data: this.getRecovered(this.statistics), label: 'Total recovered'},
-      { data: this.getActive(this.statistics), label: 'Active cases'},
+      { data: this.getData(this.statistics, day => day.Confirmed), label: 'Total confirmed'},
+      { data: this.getData(this.statistics, day => day.Deaths), label: 'Total deaths'},
+      { data: this.getData(this.statistics, day => day.Recovered), label: 'Total recovered'},
+      { data: this.getData(this.statistics, day => day.Active), label: 'Active cases'},
     );
 
     this.chartColors.push(
@@ -89,28 +89,13 @@ export class DetailsChartComponent implements OnInit {
     this.chartLabels = this.getDates();
   }
 
-  private getTotal = (data: CountryDayInfo[]) => {
-    return data.filter((day, index) => index % 2 === 0)
-      .map(day => day.Confirmed);
-  }
-
-  private getDeaths = (data: CountryDayInfo[]) => {
-    return data.filter((day, index) => index % 2 === 0)
-      .map(day => day.Deaths);
-  }
-
-  private getRecovered = (data: CountryDayInfo[]) => {
-    return data.filter((day, index) => index % 2 === 0)
-      .map(day => day.Recovered);
-  }
-
-  private getActive = (data: CountryDayInfo[]) => {
-    return data.filter((day, index) => index % 2 === 0)
-      .map(day => day.Active);
+  private getData = (data: CountryDayInfo[], mapToData) => {
+    return data.filter((day, index) => index % 3 === 0)
+      .map(mapToData);
   }
 
   private getDates = () => {
-    return this.dates.filter((date, index) => index % 2 === 0);
+    return this.dates.filter((date, index) => index % 3 === 0);
   }
 
   public chartClicked(e: any): void {}
